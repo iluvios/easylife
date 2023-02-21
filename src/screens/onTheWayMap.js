@@ -1,7 +1,8 @@
 import React from 'react';
+import {Text} from 'react-native';
 
 const OnTheWayMapScreen = () => {
-  return <div>OnTheWayMapScreen</div>;
+  return <Text>OnTheWayMapScreen</Text>;
 };
 
 export default OnTheWayMapScreen;

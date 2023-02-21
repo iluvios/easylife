@@ -1,7 +1,8 @@
 import React from 'react';
+import {Text} from 'react-native';
 
 const CodeRecoveryPasswordScreen = () => {
-  return <div>CodeRecoveryPasswordScreen</div>;
+  return <Text>CodeRecoveryPasswordScreen</Text>;
 };
 
 export default CodeRecoveryPasswordScreen;

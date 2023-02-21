@@ -1,7 +1,8 @@
 import React from 'react';
+import {Text} from 'react-native';
 
 const ScheduledScreen = () => {
-  return <div>ScheduledScreen</div>;
+  return <Text>ScheduledScreen</Text>;
 };
 
 export default ScheduledScreen;

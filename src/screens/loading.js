@@ -1,7 +1,8 @@
 import React from 'react';
+import {Text} from 'react-native';
 
 const LoadingScreen = () => {
-  return <div>LoadingScreen</div>;
+  return <Text>LoadingScreen</Text>;
 };
 
 export default LoadingScreen;

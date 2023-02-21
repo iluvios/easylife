@@ -1,7 +1,8 @@
 import React from 'react';
+import {Text} from 'react-native';
 
 const TermsScreen = () => {
-  return <div>TermsScreen</div>;
+  return <Text>TermsScreen</Text>;
 };
 
 export default TermsScreen;

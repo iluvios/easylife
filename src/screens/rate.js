@@ -1,7 +1,8 @@
 import React from 'react';
+import {Text} from 'react-native';
 
 const RateScreen = () => {
-  return <div>RateScreen</div>;
+  return <Text>RateScreen</Text>;
 };
 
 export default RateScreen;

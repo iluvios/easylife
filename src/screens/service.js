@@ -1,7 +1,8 @@
 import React from 'react';
+import {Text} from 'react-native';
 
 const ServiceScreen = () => {
-  return <div>ServiceScreen</div>;
+  return <Text>ServiceScreen</Text>;
 };
 
 export default ServiceScreen;

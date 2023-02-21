@@ -1,7 +1,8 @@
 import React from 'react';
+import {Text} from 'react-native';
 
 const CancelServiceScreen = () => {
-  return <div>CancelServiceScreen</div>;
+  return <Text>CancelServiceScreen</Text>;
 };
 
 export default CancelServiceScreen;

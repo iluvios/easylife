@@ -1,7 +1,8 @@
 import React from 'react';
+import {Text} from 'react-native';
 
 const ProgrammingScreen = () => {
-  return <div>ProgrammingScreen</div>;
+  return <Text>ProgrammingScreen</Text>;
 };
 
 export default ProgrammingScreen;

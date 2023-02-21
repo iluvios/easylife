@@ -1,7 +1,8 @@
 import React from 'react';
+import {Text} from 'react-native';
 
 const GreetScreen = () => {
-  return <div>GreetScreen</div>;
+  return <Text>GreetScreen</Text>;
 };
 
 export default GreetScreen;

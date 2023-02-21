@@ -1,7 +1,8 @@
 import React from 'react';
+import {Text} from 'react-native';
 
 const DashboardScreen = () => {
-  return <div>DashboardScreen</div>;
+  return <Text>DashboardScreen</Text>;
 };
 
 export default DashboardScreen;

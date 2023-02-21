@@ -1,7 +1,8 @@
 import React from 'react';
+import {Text} from 'react-native';
 
 const SupportScreen = () => {
-  return <div>SupportScreen</div>;
+  return <Text>SupportScreen</Text>;
 };
 
 export default SupportScreen;
