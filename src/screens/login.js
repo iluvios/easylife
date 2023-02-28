@@ -41,6 +41,10 @@ const LoginScreen = ({ navigation }) => {
       <View className="mb-7 flex justify-center items-center">
         <Image source={require('../assets/images/logo.png')} />
       </View>
+      <View className="mb-7 flex justify-center items-center">
+        <Text className="text-base font-bold h1 text-black"
+          style={{ /* "fontSize": "11px" */ }}>Iniciar sesión</Text>
+      </View>
       <View className="mx-6">
         <View className="bg-white flex flex-row justify-center items-center shadow appearance-none border rounded-md w-full leading-tight focus:outline-none focus:shadow-outline">
           <View className="pl-4">
@@ -59,7 +63,7 @@ const LoginScreen = ({ navigation }) => {
             placeholderTextColor={"#000000"}
             onChangeText={value => handleChangeInput('email', value)}
             style={{
-              fontFamily: 'PPNeueMontreal-Medium',
+              fontFamily: 'Comfortaa',
             }}
           />
         </View>
@@ -80,7 +84,7 @@ const LoginScreen = ({ navigation }) => {
             placeholderTextColor={"#000000"}
             onChangeText={value => handleChangeInput('password', value)}
             style={{
-              fontFamily: 'PPNeueMontreal-Medium',
+              fontFamily: 'Comfortaa',
             }}
           />
         </View>
@@ -102,8 +106,8 @@ const LoginScreen = ({ navigation }) => {
       <View className="mx-6 mt-7">
         <TouchableHighlight
           className="bg-blue py-4 rounded flex justify-center items-center"
-          onPress={() => handleLogin()}>
-          {/* onPress={() => navigation.navigate('dashboard')}> */}
+          // onPress={() => handleLogin()}>
+          onPress={() => navigation.navigate('Dashboard')}>
           <Text className="text-base font-bold text-white">INGRESAR</Text>
         </TouchableHighlight>
       </View>
@@ -115,7 +119,7 @@ const LoginScreen = ({ navigation }) => {
         </TouchableHighlight>
       </View>
     </View>
-  </View>
+  </View >
 };
 
 export default LoginScreen;
