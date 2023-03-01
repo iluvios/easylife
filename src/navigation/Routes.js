@@ -1,13 +1,13 @@
-import React, {useContext, useState, useEffect} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import React, { useContext, useState, useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
 import AuthStack from './AuthStack';
 import HomeStack from './HomeStack';
-import {AuthContext} from './AuthProvider';
+import { AuthContext } from './AuthProvider';
 import LoadingComponent from '../components/loading';
 
 const Routes = () => {
-  const {user, setUser} = useContext(AuthContext);
+  const { user, setUser } = useContext(AuthContext);
   const [initializing, setInitializing] = useState(true);
   const [loading, setLoading] = useState(true);
 
@@ -32,7 +32,7 @@ const Routes = () => {
 
   return (
     <NavigationContainer>
-      {user ? <HomeStack /> : <AuthStack />}
+      {!user ? <HomeStack /> : <AuthStack />}
     </NavigationContainer>
   );
 };
