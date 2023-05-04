@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "clean": "npm start -- --reset-cache",
+    "build": "react-native run-android --mode=release"
   },
   "dependencies": {
     "@react-native-community/checkbox": "^0.5.14",
@@ -40,5 +42,8 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "overrides": {
+    "xml2js": "^0.5.0"
   }
 }
