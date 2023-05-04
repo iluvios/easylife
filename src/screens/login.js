@@ -1,15 +1,28 @@
-import React, { useState, useContext } from 'react';
-import { AuthContext } from '../navigation/AuthProvider';
-import { Text, View, Image, TextInput, TouchableHighlight } from 'react-native';
+import React, {useState, useContext} from 'react';
+import {AuthContext} from '../navigation/AuthProvider';
+import {
+  Text,
+  View,
+  Image,
+  TextInput,
+  TouchableHighlight,
+  ScrollView,
+} from 'react-native';
 import IconImageComponent from '../components/iconImage';
-import CheckBox from '@react-native-community/checkbox';
-import PhoneIcon from '../assets/icons/phone.png';
+import EmailIcon from '../assets/icons/sms.png';
 import LockIcon from '../assets/icons/lock.png';
+import FacebookIcon from '../assets/icons/facebook.png';
+import GoogleIcon from '../assets/icons/google.png';
+import CellphoneIcon from '../assets/icons/cellphone.png';
+import AppleIcon from '../assets/icons/apple.png';
+import {platinum, blueberry} from '../assets/styles/const';
+import {passwordRecovery, register} from '../util/const';
 
-const LoginScreen = ({ navigation }) => {
-  const { login, setErrorMessage, handleModalVisible, setModal } =
+const LoginScreen = ({navigation}) => {
+  const {login, setErrorMessage, handleModalVisible, setModal} =
     useContext(AuthContext);
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+  const [isEmailClicked, setIsEmailClicked] = useState(false);
+  const [isPasswordClicked, setIsPasswordClicked] = useState(false);
 
   const [state, setState] = useState({
     email: '',
@@ -17,9 +30,10 @@ const LoginScreen = ({ navigation }) => {
   });
 
   const handleChangeInput = (name, value) => {
-    setState({ ...state, [name]: value });
+    setState({...state, [name]: value});
   };
 
+  //TODO:  funcionalidad pendiente
   const handleLogin = () => {
     if (state.email !== '' && state.password !== '') {
       login(state.email, state.password);
@@ -31,95 +45,134 @@ const LoginScreen = ({ navigation }) => {
       handleModalVisible();
     }
   };
-  return <View className="w-full">
-    <View
-      className="bg-white shadow-md pt-11 pb-14 mx-1"
-      // eslint-disable-next-line react-native/no-inline-styles
-      style={{
-        borderRadius: 36,
-      }}>
-      <View className="mb-7 flex justify-center items-center">
+  return (
+    <ScrollView className="w-full bg-white">
+      <View className="flex justify-center items-center mt-14">
         <Image source={require('../assets/images/logo.png')} />
       </View>
-      <View className="mb-7 flex justify-center items-center">
-        <Text className="text-base font-bold h1 text-black"
-          style={{ /* "fontSize": "11px" */ }}>Iniciar sesión</Text>
-      </View>
-      <View className="mx-6">
-        <View className="bg-white flex flex-row justify-center items-center shadow appearance-none border rounded-md w-full leading-tight focus:outline-none focus:shadow-outline">
+      <Text className="text-center text-3xl font-bold text-black my-10 leading-8">
+        Iniciar sesión
+      </Text>
+      <View className="mx-3">
+        <View
+          className={`flex flex-row justify-center items-center shadow appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
+          ${isEmailClicked ? 'border-blueberry' : 'border-platinum'}`}>
           <View className="pl-4">
             <IconImageComponent
-              image={PhoneIcon}
-              // color={blackThirdTone}
-              height={18}
-              width={18}
+              image={EmailIcon}
+              color={isEmailClicked ? blueberry : platinum}
+              height={19}
+              width={19}
             />
           </View>
           <TextInput
+            onFocus={() => setIsEmailClicked(true)}
+            onBlur={() => setIsEmailClicked(false)}
             autoCapitalize="none"
             keyboardType="email-address"
-            className="text-base flex-1 ml-2 py-4 text-white"
-            placeholder="Celular"
-            placeholderTextColor={"#000000"}
+            className="text-sm flex-1 ml-2 py-3 text-black"
+            placeholder="Correo electronico"
+            placeholderTextColor={platinum}
             onChangeText={value => handleChangeInput('email', value)}
             style={{
               fontFamily: 'Comfortaa',
             }}
           />
         </View>
-        <View className="mt-5 bg-white flex flex-row justify-center items-center shadow appearance-none border rounded-md w-full leading-tight focus:outline-none focus:shadow-outline">
+        <View
+          className={`mt-5 flex flex-row justify-center items-center shadow appearance-none border rounded-md w-full leading-tight focus:outline-none focus:shadow-outline 
+          ${isPasswordClicked ? 'border-blueberry' : 'border-platinum'}`}>
           <View className="pl-4">
             <IconImageComponent
               image={LockIcon}
-              // color={blackThirdTone}
+              color={isPasswordClicked ? blueberry : platinum}
               height={19}
               width={19}
             />
           </View>
           <TextInput
+            onFocus={() => setIsPasswordClicked(true)}
+            onBlur={() => setIsPasswordClicked(false)}
             autoCorrect={false}
             secureTextEntry={true}
-            className="text-base flex-1 ml-3 py-4 text-gray"
+            className="text-sm flex-1 ml-3 py-3 text-black"
             placeholder="Contraseña"
-            placeholderTextColor={"#000000"}
+            placeholderTextColor={platinum}
             onChangeText={value => handleChangeInput('password', value)}
             style={{
               fontFamily: 'Comfortaa',
             }}
           />
         </View>
-        <View className="flex flex-row mt-5">
-          <CheckBox
-            tintColors={{ true: '#007AFF', false: '#8E8E91' }}
-            disabled={false}
-            value={toggleCheckBox}
-            onValueChange={newValue => setToggleCheckBox(newValue)}
-          />
-          <Text className="py-1 text-sm text-blackThirdTone">
-            Acepto <Text className="underline text-blue">T Y C</Text>
+        <View className="pt-6 pl-1">
+          <Text
+            onPress={() => navigation.navigate(passwordRecovery)}
+            className="text-base text-blueberry">
+            Recuperar contraseña
           </Text>
         </View>
-        <View className="pt-2 pl-1">
-          <Text className="underline text-sm">¿Olvidaste tu contraseña?</Text>
+        <TouchableHighlight
+          className="bg-blueberry mt-10 py-4 rounded-full flex justify-center items-center"
+          onPress={() => navigation.navigate(register)}>
+          <Text className="text-xl font-bold text-white">Entrar</Text>
+        </TouchableHighlight>
+        <View className="mt-4 flex flex-row py-5 justify-center items-center">
+          <View className="w-2/6 border-t border-x-platinum border-platinum" />
+          <Text className="mx-4 text-platinum text-lg">Ingresa con</Text>
+          <View className="w-2/6 border-t border-x-platinum border-platinum" />
         </View>
-      </View>
-      <View className="mx-6 mt-7">
+        <View className="flex flex-row justify-between items-center">
+          <TouchableHighlight
+            className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
+            onPress={() => navigation.navigate(register)}>
+            <IconImageComponent
+              image={CellphoneIcon}
+              color={blueberry}
+              height={25}
+              width={25}
+            />
+          </TouchableHighlight>
+          <TouchableHighlight
+            className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
+            onPress={() => navigation.navigate(register)}>
+            <IconImageComponent
+              image={FacebookIcon}
+              color={blueberry}
+              height={26}
+              width={13}
+            />
+          </TouchableHighlight>
+          <TouchableHighlight
+            className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
+            onPress={() => navigation.navigate(register)}>
+            <IconImageComponent
+              image={GoogleIcon}
+              color={blueberry}
+              height={23}
+              width={23}
+            />
+          </TouchableHighlight>
+          <TouchableHighlight
+            className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
+            onPress={() => navigation.navigate(register)}>
+            <IconImageComponent
+              image={AppleIcon}
+              color={blueberry}
+              height={30}
+              width={23}
+            />
+          </TouchableHighlight>
+        </View>
         <TouchableHighlight
-          className="bg-blue py-4 rounded flex justify-center items-center"
-          // onPress={() => handleLogin()}>
-          onPress={() => navigation.navigate('Dashboard')}>
-          <Text className="text-base font-bold text-white">INGRESAR</Text>
+          className="bg-white my-10 py-4 rounded-full flex justify-center items-center border-turquoise border-2"
+          onPress={() => navigation.navigate(register)}>
+          <Text className="text-xl font-bold text-turquoise">
+            Soy proveedor
+          </Text>
         </TouchableHighlight>
       </View>
-      <View className="mx-6 mt-5">
-        <TouchableHighlight
-          className="bg-black py-4 rounded flex justify-center items-center border-gray border-2"
-          onPress={() => navigation.navigate('Register')}>
-          <Text className="text-base font-bold text-black">REGISTRARME</Text>
-        </TouchableHighlight>
-      </View>
-    </View>
-  </View >
+    </ScrollView>
+  );
 };
 
 export default LoginScreen;

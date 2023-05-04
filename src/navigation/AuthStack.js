@@ -1,17 +1,10 @@
 import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import RegisterPage from '../screens/register';
 import LoginPage from '../screens/login';
-//Quitar
-import Dashboard from '../screens/dashboard';
 import CodeRecoveryPasswordScreen from '../screens/codeRecoveryPassword';
 import PasswordRecovery from '../screens/passwordRecovery';
-import {
-  login,
-  register,
-  recuperarContraseña,
-  contraseñaCodigo,
-} from '../util/const';
+import {login, register, passwordRecovery, passwordCode} from '../util/const';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,22 +29,15 @@ const AuthStack = () => {
         options={{
           headerShown: false,
         }}
-        name={recuperarContraseña}
+        name={passwordRecovery}
         component={PasswordRecovery}
       />
       <Stack.Screen
         options={{
           headerShown: false,
         }}
-        name={contraseñaCodigo}
+        name={passwordCode}
         component={CodeRecoveryPasswordScreen}
-      />
-      <Stack.Screen
-        options={{
-          headerShown: false,
-        }}
-        name={"Dashboard"}
-        component={Dashboard}
       />
     </Stack.Navigator>
   );
