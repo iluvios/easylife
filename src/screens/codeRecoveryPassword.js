@@ -1,15 +1,18 @@
 import React, {useState} from 'react';
 import {Text, View, TextInput, TouchableHighlight} from 'react-native';
 import IconImageComponent from '../components/iconImage';
+import ModalComponent from '../components/modal';
 import PhoneIcon from '../assets/icons/phone.png';
 import ArrowLeftIcon from '../assets/icons/arrow-left.png';
 import {StackActions} from '@react-navigation/native';
 import {blueberry, platinum} from '../assets/styles/const';
-import {newPassword} from '../util/const';
+import {newPassword, passwordRecovery} from '../util/const';
 
 const popAction = StackActions.pop(1);
 
 const CodeRecoveryPasswordScreen = ({navigation}) => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
   const [codeState, setCodeState] = useState({
     codeOne: '',
     codeTwo: '',
@@ -39,6 +42,10 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
       ...isClikedCodeState,
       [name]: value,
     });
+  };
+
+  const handleToggleModal = () => {
+    setIsModalVisible(!isModalVisible);
   };
 
   return (
@@ -180,7 +187,7 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
           </View>
           <View className="my-10 flex flex-row justify-between">
             <Text
-              onPress={() => navigation.navigate('Register')}
+              onPress={handleToggleModal}
               className="text-base text-blueberry">
               Reenviar código
             </Text>
@@ -197,6 +204,30 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
           </TouchableHighlight>
         </View>
       </View>
+      <ModalComponent
+        isVisible={isModalVisible}
+        handleBackButtonPress={handleToggleModal}
+        handleBackdropPress={handleToggleModal}>
+        <Text className="mt-8 text-black text-xl text-center">
+          Código reenviado
+        </Text>
+        <Text className="text-platinum text-lg my-3 text-center">
+          En breve recibiras un código al celular:
+        </Text>
+        <Text className="mb-10 text-blueberry text-xl text-center">
+          +57 305 3424910
+        </Text>
+        <View className="mb-8 mx-3 flex flex-row justify-between items-center">
+          <Text
+            onPress={() => navigation.navigate(passwordRecovery)}
+            className="text-platinum text-lg">
+            Cambiar celular
+          </Text>
+          <Text onPress={handleToggleModal} className="text-blueberry text-lg">
+            Aceptar
+          </Text>
+        </View>
+      </ModalComponent>
     </View>
   );
 };
