@@ -2,10 +2,9 @@ import React, {useState} from 'react';
 import {Text, View, TextInput, TouchableHighlight} from 'react-native';
 import IconImageComponent from '../components/iconImage';
 import ModalComponent from '../components/modal';
-import PhoneIcon from '../assets/icons/phone.png';
 import ArrowLeftIcon from '../assets/icons/arrow-left.png';
 import {StackActions} from '@react-navigation/native';
-import {blueberry, platinum} from '../assets/styles/const';
+import {platinum} from '../assets/styles/const';
 import {newPassword, passwordRecovery} from '../util/const';
 
 const popAction = StackActions.pop(1);
@@ -208,7 +207,7 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
         isVisible={isModalVisible}
         handleBackButtonPress={handleToggleModal}
         handleBackdropPress={handleToggleModal}>
-        <Text className="mt-8 text-black text-xl text-center">
+        <Text className="mt-8 text-black text-xl text-center font-bold">
           Código reenviado
         </Text>
         <Text className="text-platinum text-lg my-3 text-center">

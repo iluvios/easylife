@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
 import {Text, View, TextInput, TouchableHighlight} from 'react-native';
 import IconImageComponent from '../components/iconImage';
+import ModalComponent from '../components/modal';
 import LockIcon from '../assets/icons/lock.png';
 import ArrowLeftIcon from '../assets/icons/arrow-left.png';
 import {StackActions} from '@react-navigation/native';
 import {blueberry, platinum} from '../assets/styles/const';
-import {passwordCode} from '../util/const';
 
 const popAction = StackActions.pop(1);
 
 const NewPasswordScreen = ({navigation}) => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isPasswordClicked, setIsPasswordClicked] = useState(false);
@@ -23,6 +24,12 @@ const NewPasswordScreen = ({navigation}) => {
   const handleConfirmPasswordChange = value => {
     setConfirmPassword(value);
   };
+
+  const handleToggleModal = () => {
+    setIsModalVisible(!isModalVisible);
+  };
+
+  //TODO: handle logic
 
   return (
     <View className="bg-white">
@@ -97,13 +104,29 @@ const NewPasswordScreen = ({navigation}) => {
           </View>
           <TouchableHighlight
             className="bg-blueberry py-4 rounded-full flex justify-center items-center"
-            onPress={() => navigation.navigate(passwordCode)}>
+            onPress={handleToggleModal}>
             <Text className="text-xl font-bold text-white">
               Guardar y continuar
             </Text>
           </TouchableHighlight>
         </View>
       </View>
+      <ModalComponent
+        isVisible={isModalVisible}
+        handleBackButtonPress={handleToggleModal}
+        handleBackdropPress={handleToggleModal}>
+        <Text className="mt-8 text-black text-xl text-center font-bold">
+          Fue muy <Text className="text-blueberry">easy</Text>
+        </Text>
+        <Text className="text-black text-lg my-3 text-center">
+          Contraseña guardada con éxito
+        </Text>
+        <Text
+          onPress={handleToggleModal}
+          className="text-blueberry text-lg text-center my-8">
+          Aceptar
+        </Text>
+      </ModalComponent>
     </View>
   );
 };
