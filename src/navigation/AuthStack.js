@@ -5,32 +5,34 @@ import LoginScreen from '../screens/login';
 import CodeRecoveryPasswordScreen from '../screens/codeRecoveryPassword';
 import PasswordRecoveryScreen from '../screens/passwordRecovery';
 import NewPasswordScreen from '../screens/newPassword';
+import TermsScreen from '../screens/terms';
 import {
   login,
   register,
   passwordRecovery,
   passwordCode,
   newPassword,
+  terms,
 } from '../util/const';
 
 const Stack = createNativeStackNavigator();
 
 const AuthStack = () => {
   return (
-    <Stack.Navigator initialRouteName="Login">
+    <Stack.Navigator initialRouteName={login}>
       <Stack.Screen
         options={{
           headerShown: false,
         }}
         name={login}
-        component={RegisterScreen}
+        component={LoginScreen}
       />
       <Stack.Screen
         options={{
           headerShown: false,
         }}
         name={register}
-        component={LoginScreen}
+        component={RegisterScreen}
       />
       <Stack.Screen
         options={{
@@ -52,6 +54,13 @@ const AuthStack = () => {
         }}
         name={newPassword}
         component={NewPasswordScreen}
+      />
+      <Stack.Screen
+        options={{
+          headerShown: false,
+        }}
+        name={terms}
+        component={TermsScreen}
       />
     </Stack.Navigator>
   );

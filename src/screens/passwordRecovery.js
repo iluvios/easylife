@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Text, View, TextInput, TouchableHighlight} from 'react-native';
 import IconImageComponent from '../components/iconImage';
 import PhoneIcon from '../assets/icons/phone.png';
+import EmailIcon from '../assets/icons/arroa.png';
 import ArrowLeftIcon from '../assets/icons/arrow-left.png';
 import {StackActions} from '@react-navigation/native';
 import {blueberry, platinum} from '../assets/styles/const';
@@ -11,10 +12,19 @@ const popAction = StackActions.pop(1);
 
 const PasswordRecoveryScreen = ({navigation}) => {
   const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
   const [isPhoneClicked, setIsPhoneClicked] = useState(false);
+  const [isEmailClicked, setIsEmailClicked] = useState(false);
+  const [isRecoveryWithPhone, setRecoveryWithPhone] = useState(false);
 
   const handlePhoneChange = value => {
     setPhone(value);
+  };
+
+  const handleToggleRecoveryWithPhone = () => {
+    setRecoveryWithPhone(!isRecoveryWithPhone);
+    setIsPhoneClicked(true);
+    setIsEmailClicked(true);
   };
 
   return (
@@ -51,35 +61,65 @@ const PasswordRecoveryScreen = ({navigation}) => {
           </Text>
 
           <Text
-            onPress={() => navigation.navigate('Register')}
+            onPress={handleToggleRecoveryWithPhone}
             className="mt-10 text-base text-blueberry">
-            Recuperar con correo electronico
+            {isRecoveryWithPhone
+              ? 'Recuperar con número de celular'
+              : 'Recuperar con correo electronico'}
           </Text>
 
-          <View
-            className={`my-10 flex flex-row justify-center items-center shadow appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
-          ${isPhoneClicked ? 'border-blueberry' : 'border-platinum'}`}>
-            <View className="pl-4">
-              <IconImageComponent
-                image={PhoneIcon}
-                color={isPhoneClicked ? blueberry : platinum}
-                height={19}
-                width={19}
+          {isRecoveryWithPhone ? (
+            <View
+              className={`my-10 flex flex-row justify-center items-center shadow appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
+          ${isEmailClicked ? 'border-blueberry' : 'border-platinum'}`}>
+              <View className="pl-4">
+                <IconImageComponent
+                  image={EmailIcon}
+                  color={isEmailClicked ? blueberry : platinum}
+                  height={19}
+                  width={19}
+                />
+              </View>
+              <TextInput
+                onFocus={() => setIsEmailClicked(true)}
+                onBlur={() => setIsEmailClicked(false)}
+                keyboardType="email-address"
+                className="text-sm flex-1 ml-2 py-3 text-black"
+                placeholder="Correo electrónico"
+                placeholderTextColor={platinum}
+                onChangeText={value => handlePhoneChange(value)}
+                style={{
+                  fontFamily: 'Comfortaa',
+                }}
               />
             </View>
-            <TextInput
-              onFocus={() => setIsPhoneClicked(true)}
-              onBlur={() => setIsPhoneClicked(false)}
-              keyboardType="phone-pad"
-              className="text-sm flex-1 ml-2 py-3 text-black"
-              placeholder="Celular"
-              placeholderTextColor={platinum}
-              onChangeText={value => handlePhoneChange(value)}
-              style={{
-                fontFamily: 'Comfortaa',
-              }}
-            />
-          </View>
+          ) : (
+            <View
+              className={`my-10 flex flex-row justify-center items-center shadow appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
+          ${isPhoneClicked ? 'border-blueberry' : 'border-platinum'}`}>
+              <View className="pl-4">
+                <IconImageComponent
+                  image={PhoneIcon}
+                  color={isPhoneClicked ? blueberry : platinum}
+                  height={19}
+                  width={19}
+                />
+              </View>
+              <TextInput
+                onFocus={() => setIsPhoneClicked(true)}
+                onBlur={() => setIsPhoneClicked(false)}
+                keyboardType="phone-pad"
+                className="text-sm flex-1 ml-2 py-3 text-black"
+                placeholder="Celular"
+                placeholderTextColor={platinum}
+                onChangeText={value => handlePhoneChange(value)}
+                style={{
+                  fontFamily: 'Comfortaa',
+                }}
+              />
+            </View>
+          )}
+
           <TouchableHighlight
             className="bg-blueberry py-4 rounded-full flex justify-center items-center"
             onPress={() => navigation.navigate(passwordCode)}>

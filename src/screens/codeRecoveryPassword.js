@@ -218,7 +218,10 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
         </Text>
         <View className="mb-8 mx-3 flex flex-row justify-between items-center">
           <Text
-            onPress={() => navigation.navigate(passwordRecovery)}
+            onPress={() => {
+              handleToggleModal();
+              navigation.navigate(passwordRecovery);
+            }}
             className="text-platinum text-lg">
             Cambiar celular
           </Text>
