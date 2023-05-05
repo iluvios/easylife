@@ -1,10 +1,17 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import RegisterPage from '../screens/register';
-import LoginPage from '../screens/login';
+import RegisterScreen from '../screens/register';
+import LoginScreen from '../screens/login';
 import CodeRecoveryPasswordScreen from '../screens/codeRecoveryPassword';
-import PasswordRecovery from '../screens/passwordRecovery';
-import {login, register, passwordRecovery, passwordCode} from '../util/const';
+import PasswordRecoveryScreen from '../screens/passwordRecovery';
+import NewPasswordScreen from '../screens/newPassword';
+import {
+  login,
+  register,
+  passwordRecovery,
+  passwordCode,
+  newPassword,
+} from '../util/const';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,21 +23,21 @@ const AuthStack = () => {
           headerShown: false,
         }}
         name={login}
-        component={LoginPage}
+        component={RegisterScreen}
       />
       <Stack.Screen
         options={{
           headerShown: false,
         }}
         name={register}
-        component={RegisterPage}
+        component={LoginScreen}
       />
       <Stack.Screen
         options={{
           headerShown: false,
         }}
         name={passwordRecovery}
-        component={PasswordRecovery}
+        component={PasswordRecoveryScreen}
       />
       <Stack.Screen
         options={{
@@ -38,6 +45,13 @@ const AuthStack = () => {
         }}
         name={passwordCode}
         component={CodeRecoveryPasswordScreen}
+      />
+      <Stack.Screen
+        options={{
+          headerShown: false,
+        }}
+        name={newPassword}
+        component={NewPasswordScreen}
       />
     </Stack.Navigator>
   );

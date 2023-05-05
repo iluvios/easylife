@@ -21,6 +21,7 @@ export const contratar = 'Contratar';
 export const canceladoMap = 'CanceladoMap';
 export const passwordRecovery = 'PasswordRecovery';
 export const passwordCode = 'PasswordCode';
+export const newPassword = 'NewPassword';
 export const agendar = 'Agendar';
 export const programando = 'Programando';
 export const programados = 'Programados';
