@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import Swiper from 'react-native-swiper';
 import ExploreImage from '../assets/images/explore.png';
 import SelectOneImage from '../assets/images/select-one.png';

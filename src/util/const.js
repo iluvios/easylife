@@ -30,3 +30,71 @@ export const perfil = 'Perfil';
 export const support = 'Support';
 export const faqs = 'Faqs';
 export const walkthrough = 'Walkthrough';
+
+//create services array of objects of service with title and id: barberia, conduccion, grua, lavado, limpieza, manicure, mantenimiento, maquillaje, medico, mudanza, ninero, pasear, peluqueria, plomeria, taller, veteriniaria
+export const Services = [
+  {
+    title: 'Barbería',
+    id: 'barberia',
+  },
+  {
+    title: 'Conducción',
+    id: 'conduccion',
+  },
+  {
+    title: 'Grua',
+    id: 'grua',
+  },
+  {
+    title: 'Lavado',
+    id: 'lavado',
+  },
+  {
+    title: 'Limpieza',
+    id: 'limpieza',
+  },
+  {
+    title: 'Manicure',
+    id: 'manicure',
+  },
+  {
+    title: 'Mantenimiento',
+    id: 'mantenimiento',
+  },
+  {
+    title: 'Maquillaje',
+    id: 'maquillaje',
+  },
+  {
+    title: 'Médico',
+    id: 'medico',
+  },
+  {
+    title: 'Mudanza',
+    id: 'mudanza',
+  },
+  {
+    title: 'Niñera',
+    id: 'ninera',
+  },
+  {
+    title: 'Pasear',
+    id: 'pasear',
+  },
+  {
+    title: 'Peluquería',
+    id: 'peluqueria',
+  },
+  {
+    title: 'Plomería',
+    id: 'plomeria',
+  },
+  {
+    title: 'Taller',
+    id: 'taller',
+  },
+  {
+    title: 'Veterinaria',
+    id: 'veterinaria',
+  },
+];
