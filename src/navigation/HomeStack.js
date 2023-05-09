@@ -5,12 +5,14 @@ import IconImageComponent from '../components/iconImage';
 import MessagesIcon from '../assets/icons/messages.png';
 import SearchIcon from '../assets/icons/search.png';
 import HomeIcon from '../assets/icons/home.png';
-import Dashboard from '../screens/dashboard';
+import DashboardScreen from '../screens/dashboard';
 import ExploreScreen from '../screens/explore';
 import FaqsScreen from '../screens/faqs';
 import WalkthroughScreen from '../screens/walkthrough';
+import ServiceScreen from '../screens/service';
 import {
-  loading,
+  service,
+  dashboardStack,
   dashboard,
   explore,
   support,
@@ -43,6 +45,27 @@ const HomeStack = () => {
   );
 };
 
+const DashboardStack = () => {
+  return (
+    <Stack.Navigator initialRouteName={dashboard}>
+      <Stack.Screen
+        name={dashboard}
+        component={DashboardScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name={service}
+        component={ServiceScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
 const MainTab = () => {
   const IconComponent = useCallback(
     (color, icon) => (
@@ -52,7 +75,7 @@ const MainTab = () => {
   );
   return (
     <Tab.Navigator
-      initialRouteName={loading}
+      initialRouteName={dashboardStack}
       screenOptions={{
         tabBarInactiveTintColor: platinum,
         tabBarActiveTintColor: turquoise,
@@ -62,8 +85,8 @@ const MainTab = () => {
         },
       }}>
       <Tab.Screen
-        name={dashboard}
-        component={Dashboard}
+        name={dashboardStack}
+        component={DashboardStack}
         options={{
           headerShown: false,
           tabBarIcon: ({color}) => IconComponent(color, HomeIcon),

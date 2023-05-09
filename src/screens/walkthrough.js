@@ -68,12 +68,12 @@ const WalkthroughScreen = ({navigation}) => {
             disponibles para ti, hazlo más{' '}
             <Text className="text-blueberry">easy</Text>
           </Text>
-          <Text
-            onPress={handleContinue}
-            className="mt-20 mr-3 text-xl text-blueberry text-right w-fit">
-            Continuar
-          </Text>
         </View>
+        <Text
+          onPress={handleContinue}
+          className="mr-3 text-xl text-blueberry text-right w-fit absolute bottom-10 right-0">
+          Continuar
+        </Text>
       </View>
       <View style={styles.slide3}>
         <View className="mt-44">
@@ -95,46 +95,45 @@ const WalkthroughScreen = ({navigation}) => {
               <Text className="text-blueberry">easy</Text>
             </Text>
           </View>
-          <Text
-            onPress={handleContinue}
-            className="mt-20 mr-3 text-xl text-blueberry text-right w-fit">
-            Continuar
-          </Text>
         </View>
+        <Text
+          onPress={handleContinue}
+          className="mr-3 text-xl text-blueberry text-right w-fit absolute bottom-10 right-0">
+          Continuar
+        </Text>
       </View>
       <View style={styles.slide4}>
-        <View className="position absolute top-80 right-0 bg-white z-10 mr-3 py-4 px-3 rounded-xl">
-          <Text className="text-base text-chineseblack font-bold">
-            Ya vamos en camino,
-          </Text>
-          <Text className="text-base text-chineseblack font-bold">
-            todo lo solucionaremos <Text className="text-blueberry">easy</Text>
-          </Text>
-        </View>
-        <View className="mt-14">
-          <Image source={HireImage} />
-        </View>
-        <View className="mt-12">
-          <View className="ml-3">
-            <Text className="mt-1 font-bold text-5xl text-blueberry">
-              Contratar
+        <View className="mx-3">
+          <View className="position absolute top-80 right-0 bg-white z-10 mr-3 py-4 px-3 rounded-xl">
+            <Text className="text-base text-chineseblack font-bold">
+              Ya vamos en camino,
             </Text>
-            <Text className="mt-3 text-black text-xl">
-              Sin papeleos ni esperas, todo lo que
-            </Text>
-            <Text className="text-black text-xl">
-              necesecitas a solo un click, así de{' '}
+            <Text className="text-base text-chineseblack font-bold">
+              todo lo solucionaremos{' '}
               <Text className="text-blueberry">easy</Text>
             </Text>
           </View>
-          <Text
-            onPress={() => {
-              navigation.navigate(home);
-            }}
-            className="mt-20 mr-3 text-xl text-blueberry text-right w-fit">
-            Terminar
-          </Text>
+          <View className="mt-14">
+            <Image source={HireImage} />
+          </View>
+          <View className="mt-12">
+            <Text className="font-bold text-5xl text-blueberry">Contratar</Text>
+            <Text className="mt-3 text-black text-xl">
+              Sin papeleos ni esperas, todo lo
+            </Text>
+            <Text className="text-black text-xl">
+              que necesecitas a solo un click, así de{' '}
+              <Text className="text-blueberry">easy</Text>
+            </Text>
+          </View>
         </View>
+        <Text
+          onPress={() => {
+            navigation.navigate(home);
+          }}
+          className="mr-3 text-xl text-blueberry text-right w-fit absolute bottom-10 right-0">
+          Terminar
+        </Text>
       </View>
     </Swiper>
   );

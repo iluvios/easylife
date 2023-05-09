@@ -15,23 +15,6 @@ import TicketStarIcon from '../assets/icons/ticket-star.png';
 import SearchWhiteIcon from '../assets/icons/search-white.png';
 import AdvertisementImage from '../assets/images/advertisement.png';
 
-import LimpiezaImage from '../assets/images/services/limpieza.png';
-import ConduccionImage from '../assets/images/services/conduccion.png';
-import BarberiaImage from '../assets/images/services/barberia.png';
-import GruaImage from '../assets/images/services/grua.png';
-import LavadoImage from '../assets/images/services/lavado.png';
-import ManicureImage from '../assets/images/services/manicure.png';
-import MantenimientoImage from '../assets/images/services/mantenimiento.png';
-import MaquillajeImage from '../assets/images/services/maquillaje.png';
-import MedicoImage from '../assets/images/services/medico.png';
-import MudanzaImage from '../assets/images/services/mudanza.png';
-import NineroImage from '../assets/images/services/ninero.png';
-import PasearImage from '../assets/images/services/pasear.png';
-import PeluqueriaImage from '../assets/images/services/peluqueria.png';
-import PlomeriaImage from '../assets/images/services/plomeria.png';
-import TallerImage from '../assets/images/services/taller.png';
-import VeterinariaImage from '../assets/images/services/veterinaria.png';
-
 import {Services} from '../util/const';
 import {blueberry, platinum} from '../assets/styles/const';
 
@@ -40,56 +23,26 @@ const DashboardScreen = () => {
   const firstRow = Services.slice(0, half);
   const secondRow = Services.slice(half);
 
+  const columns = 3;
+  const rows = Math.ceil(Services.length / columns);
+  const rowsArr = Array.from(Array(rows)).map((_, i) => i);
+
   const [searchText, setSearchText] = useState('');
   const [isSearchClicked, setIsSearchClicked] = useState(false);
+  const [isViewServicesOpen, setIsViewServicesOpen] = useState(false);
 
   const handleChangeSearchInput = value => {
     setSearchText(value);
   };
 
-  const handleImageCard = service => {
-    switch (service) {
-      case 'barberia':
-        return BarberiaImage;
-      case 'conduccion':
-        return ConduccionImage;
-      case 'grua':
-        return GruaImage;
-      case 'lavado':
-        return LavadoImage;
-      case 'limpieza':
-        return LimpiezaImage;
-      case 'manicure':
-        return ManicureImage;
-      case 'mantenimiento':
-        return MantenimientoImage;
-      case 'maquillaje':
-        return MaquillajeImage;
-      case 'medico':
-        return MedicoImage;
-      case 'mudanza':
-        return MudanzaImage;
-      case 'ninero':
-        return NineroImage;
-      case 'pasear':
-        return PasearImage;
-      case 'peluqueria':
-        return PeluqueriaImage;
-      case 'plomeria':
-        return PlomeriaImage;
-      case 'taller':
-        return TallerImage;
-      case 'veterinaria':
-        return VeterinariaImage;
-      default:
-        return MantenimientoImage;
-    }
+  const handleChangeViewServicesOpen = () => {
+    setIsViewServicesOpen(!isViewServicesOpen);
   };
 
   return (
     <ScrollView className="bg-white h-full w-full">
-      <View className="ml-3">
-        <View className="flex flex-row mt-11">
+      <View>
+        <View className="flex flex-row mt-11 ml-3">
           <Image source={ProfileIcon} />
           <View className="flex-col ml-3">
             <Text className="text-3xl text-blueberry">Camilo</Text>
@@ -107,7 +60,7 @@ const DashboardScreen = () => {
           </View>
         </View>
 
-        <View className="mt-10">
+        <View className="mt-10 ml-3">
           <View className="flex flex-row">
             <View
               className={`flex flex-row justify-center items-center shadow appearance-none border rounded-xl w-4/5 leading-tight focus:outline-none focus:shadow-outline 
@@ -124,46 +77,82 @@ const DashboardScreen = () => {
                 }}
               />
             </View>
-            <View className="absolute right-0 mr-3 p-3 bg-blueberry rounded-xl justify-center items-center">
+            <TouchableHighlight
+              onPress={() => {
+                console.log(searchText);
+              }}
+              className="absolute right-0 mr-3 p-3 bg-blueberry rounded-xl justify-center items-center">
               <Image source={SearchWhiteIcon} />
-            </View>
+            </TouchableHighlight>
           </View>
         </View>
 
-        <View className="mt-5">
-          <Image source={AdvertisementImage} className="rounded-3xl" />
-        </View>
+        {!isViewServicesOpen && (
+          <View className="mt-5 ml-3">
+            <Image source={AdvertisementImage} className="rounded-3xl" />
+          </View>
+        )}
 
-        <View className="mt-10">
+        <View className="mt-10 ml-3">
           <View className="flex flex-row justify-between">
             <Text className="text-xl font-bold text-platinum">Servicios</Text>
-            <Text className="text-lg text-blueberry mr-3">Ver todos</Text>
+            <Text
+              onPress={handleChangeViewServicesOpen}
+              className="text-lg text-blueberry mr-3">
+              {isViewServicesOpen ? 'Ocultar' : 'Ver todos'}
+            </Text>
           </View>
         </View>
         <View className="flex flex-col mt-5">
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            {firstRow.map((service, index) => (
-              <CardWithIcon
-                key={service.id}
-                image={handleImageCard(service.id)}
-                title={service.title}
-                isLast={index === Services.length - 1}
-              />
-            ))}
-          </ScrollView>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            {secondRow.map((service, index) => (
-              <CardWithIcon
-                key={service.id}
-                image={handleImageCard(service.id)}
-                title={service.title}
-                isLast={index === Services.length - 1}
-              />
-            ))}
-          </ScrollView>
+          {isViewServicesOpen ? (
+            <View className="flex-row">
+              {[...Array(columns)].map((_, j) => (
+                <View key={j} style={{flex: 1}}>
+                  {rowsArr.map(i => {
+                    const service = Services[i * columns + j];
+                    if (!service) {
+                      return null;
+                    }
+                    return (
+                      <CardWithIcon
+                        isReducedSize={true}
+                        key={service.id}
+                        image={service.image}
+                        title={service.title}
+                        isLast={false}
+                      />
+                    );
+                  })}
+                </View>
+              ))}
+            </View>
+          ) : (
+            <>
+              <View className="flex-row">
+                {firstRow.map((service, index) => (
+                  <CardWithIcon
+                    key={service.id}
+                    image={service.image}
+                    title={service.title}
+                    isLast={index === Services.length - 1}
+                  />
+                ))}
+              </View>
+              <View className="flex-row">
+                {secondRow.map((service, index) => (
+                  <CardWithIcon
+                    key={service.id}
+                    image={service.image}
+                    title={service.title}
+                    isLast={index === Services.length - 1}
+                  />
+                ))}
+              </View>
+            </>
+          )}
         </View>
         <TouchableHighlight
-          className="bg-white my-10 py-4 rounded-full border-turquoise border-2 mr-3"
+          className="bg-white my-10 py-4 rounded-full border-turquoise border-2 mx-3"
           onPress={() => {}}>
           <View className="flex flex-row justify-center items-center">
             <Image source={TicketStarIcon} />
