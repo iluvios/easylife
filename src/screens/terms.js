@@ -29,7 +29,7 @@ const TermsScreen = ({navigation}) => {
             <IconImageComponent image={ArrowLeftIcon} height={40} width={40} />
           </TouchableHighlight>
           <View className="flex flex-col">
-            <Text className="text-xl font-bold text-black ml-3">
+            <Text className="text-xl font-bold text-black ml-5">
               Términos y condiciones
             </Text>
             <Text className="text-platinum text-sm ml-3 mt-2">

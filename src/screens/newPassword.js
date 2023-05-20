@@ -42,7 +42,7 @@ const NewPasswordScreen = ({navigation}) => {
             className="rounded-xl p-1 w-12 h-12 shadow-2xl shadow-blueberry bg-white flex justify-center items-center">
             <IconImageComponent image={ArrowLeftIcon} height={40} width={40} />
           </TouchableHighlight>
-          <Text className="text-xl font-bold text-black ml-3">
+          <Text className="text-xl font-bold text-black ml-5">
             Recuperar contraseña
           </Text>
         </View>
