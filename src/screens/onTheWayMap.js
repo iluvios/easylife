@@ -1,8 +1,199 @@
-import React from 'react';
-import {Text} from 'react-native';
+import React, {useState} from 'react';
+import {
+  Text,
+  View,
+  TouchableHighlight,
+  Image,
+  ImageBackground,
+} from 'react-native';
+import IconImageComponent from '../components/iconImage';
+import ArrowLeftIcon from '../assets/icons/arrow-left.png';
+import MessageIcon from '../assets/icons/message.png';
+import MoneyIcon from '../assets/icons/money-small.png';
+import LineWhite from '../assets/images/line-white.png';
+import LocationBlue from '../assets/images/location-blue.png';
+import LogoWhite from '../assets/images/logo-white.png';
+import BGStreet from '../assets/images/bg-street.png';
+import AvatarSmallImage from '../assets/images/avatar-small.png';
+import StarYellowSmallImage from '../assets/images/star-yellow-small.png';
+import PhoneWhiteImage from '../assets/images/phone-white.png';
+import WhatsappWhiteImage from '../assets/images/whatsapp-white.png';
+import LogoGreen from '../assets/images/logo-green.png';
+import DotsBlue from '../assets/images/dots-blue.png';
+import LineGreen from '../assets/images/line-green.png';
+import NotchImage from '../assets/images/notch.png';
+import {StackActions} from '@react-navigation/native';
+import {support, arriveMap, profile} from '../util/const';
+import {platinum, blueberry} from '../assets/styles/const';
 
-const OnTheWayMapScreen = () => {
-  return <Text>OnTheWayMapScreen</Text>;
+const popAction = StackActions.pop(1);
+
+const OnTheWayMapScreen = ({navigation}) => {
+  const [isPanelVisible, setIsPanelVisible] = useState(true);
+  const handleToggleModal = () => {
+    setIsPanelVisible(!isPanelVisible);
+  };
+
+  return (
+    <View className="bg-white h-full">
+      <ImageBackground source={BGStreet} resizeMode="cover" className="h-full">
+        <View className="mx-3">
+          <View className="flex flex-row justify-between items-center mt-10">
+            <TouchableHighlight
+              onPress={() => {
+                navigation.dispatch(popAction);
+              }}
+              className="rounded-xl p-1 w-12 h-12 shadow-2xl shadow-blueberry bg-white flex justify-center items-center">
+              <IconImageComponent
+                image={ArrowLeftIcon}
+                height={40}
+                width={40}
+              />
+            </TouchableHighlight>
+            <TouchableHighlight
+              onPress={() => {
+                navigation.navigate(support);
+              }}
+              className="rounded-xl p-1 w-12 h-12 shadow-2xl shadow-blueberry bg-white flex justify-center items-center">
+              <IconImageComponent image={MessageIcon} height={35} width={35} />
+            </TouchableHighlight>
+          </View>
+          <View className="mt-5">
+            <View className="mx-8 bg-white rounded-3xl justify-center items-center z-10">
+              <Text className="my-7 mx-9 text-blueberry text-3xl">
+                easy en camino
+              </Text>
+            </View>
+            <View className="absolute mt-28 right-20">
+              <Image source={LogoGreen} />
+            </View>
+            <View className="absolute mt-24 left-16 ml-2 pt-2">
+              <Image source={DotsBlue} />
+            </View>
+            <View className="absolute mt-40 -right-4">
+              <Image source={LineGreen} />
+            </View>
+          </View>
+        </View>
+      </ImageBackground>
+      <View
+        style={{
+          width: '100%',
+          flex: 1,
+          position: 'absolute',
+          bottom: 0,
+        }}>
+        <View className="bg-white min-h-fit rounded-tr-3xl rounded-tl-3xl">
+          <View className="ml-3">
+            <View className="mt-5 flex justify-center items-center">
+              <TouchableHighlight onPress={handleToggleModal}>
+                <Image source={NotchImage} />
+              </TouchableHighlight>
+            </View>
+            {/*Buscando */}
+            <View className="mt-5">
+              {isPanelVisible && (
+                <View>
+                  <View className="flex flex-row justify-around">
+                    <View className="flex flex-row">
+                      <View className="bg-blueberry rounded-xl w-10 h-10 justify-center items-center">
+                        <Image
+                          source={LogoWhite}
+                          style={{
+                            width: 18,
+                            height: 23,
+                          }}
+                        />
+                      </View>
+                      <View className="ml-3 justify-center items-center">
+                        <Image
+                          source={LineWhite}
+                          style={{
+                            width: 101,
+                            height: 5,
+                            tintColor: blueberry,
+                            borderRadius: 10,
+                          }}
+                        />
+                      </View>
+                    </View>
+                    <View className="flex-row justify-center items-center">
+                      <Text className="mr-3 text-blueberry text-xs">5 min</Text>
+                      <Image source={LocationBlue} />
+                    </View>
+                  </View>
+                  <Text className="text-platinum text-xl mt-5">
+                    Detalles del servicio
+                  </Text>
+                  <Text className="mt-5 text-chineseblack font-bold text-xl">
+                    Conductor elegido
+                  </Text>
+                  <Text className="text-platinum text-lg mt-3">Precio</Text>
+                  <View className="flex-row justify-between mt-3">
+                    <Text className="text-chineseblack text-lg font-bold">
+                      $ 120.000 cop
+                    </Text>
+                    <View className="mr-3 flex-row justify-center items-center">
+                      <IconImageComponent
+                        image={MoneyIcon}
+                        width={24}
+                        height={24}
+                        color={platinum}
+                      />
+                      <Text className="ml-1 text-platinum text-lg">
+                        Efectivo
+                      </Text>
+                    </View>
+                  </View>
+                  <Text className="text-platinum text-lg mt-3">Conductor</Text>
+                  <View className="flex-row items-center mt-3">
+                    <Image source={AvatarSmallImage} />
+                    <Text className="ml-3 text-chineseblack text-xl font-bold">
+                      Juan R.
+                    </Text>
+                    <Text className="ml-3 text-platinum text-lg">4.5</Text>
+                    <View className="ml-3">
+                      <Image source={StarYellowSmallImage} />
+                    </View>
+                    <Text
+                      onPress={() => {
+                        navigation.navigate(profile);
+                      }}
+                      className="ml-3 text-blueberry text-lg ">
+                      Profile
+                    </Text>
+                    <View
+                      className="ml-4 justify-center items-center bg-blueberry rounded-full"
+                      style={{
+                        width: 48,
+                        height: 50,
+                      }}>
+                      <Image source={PhoneWhiteImage} />
+                    </View>
+                    <View
+                      className="ml-4 justify-center items-center bg-green rounded-full"
+                      style={{
+                        width: 48,
+                        height: 50,
+                      }}>
+                      <Image source={WhatsappWhiteImage} />
+                    </View>
+                  </View>
+                  <Text
+                    onPress={() => {
+                      navigation.navigate(arriveMap);
+                    }}
+                    className="text-platinum font-bold text-2xl text-center mt-10 mb-7">
+                    Cancelar servicio
+                  </Text>
+                </View>
+              )}
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  );
 };
 
 export default OnTheWayMapScreen;
