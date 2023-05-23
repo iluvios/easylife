@@ -52,8 +52,9 @@ Aquí la app de que te facilita la vida agrupando muchos servicios ocasionales e
 
 ## Contribuidores
 
-Yeison Andrés Garzón Toro
-Johan Alvarez
+Yeison Andrés Garzón Toro<br/>
+
+Johan Alvarez<br/>
 Jose Durango Alvarez
 
 ## Proceso de build
