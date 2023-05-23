@@ -7,7 +7,7 @@ import SearchIcon from '../assets/icons/search-normal.png';
 import HomeIcon from '../assets/icons/home.png';
 import DashboardScreen from '../screens/dashboard';
 import ExploreScreen from '../screens/explore';
-import FaqsScreen from '../screens/faqs';
+import SupportScreen from '../screens/support';
 import WalkthroughScreen from '../screens/walkthrough';
 import ServiceScreen from '../screens/service';
 import RequestServiceScreen from '../screens/requestService';
@@ -17,6 +17,11 @@ import ArriveMapScreen from '../screens/arriveMap';
 import CanceledServiceScreen from '../screens/canceledService';
 import RateScreen from '../screens/rate';
 import ProfileScreen from '../screens/profile';
+import ScheduleScreen from '../screens/schedule';
+import ProgrammingScreen from '../screens/programming';
+import ServicesScreen from '../screens/services';
+import ScheduledScreen from '../screens/scheduled';
+import FaqsScreen from '../screens/faqs';
 import {
   service,
   dashboardStack,
@@ -32,6 +37,12 @@ import {
   rateService,
   profile,
   canceledService,
+  schedule,
+  programming,
+  services,
+  scheduled,
+  faqsStack,
+  faqs,
 } from '../util/const';
 import {white, platinum, turquoise} from '../assets/styles/const';
 
@@ -93,6 +104,55 @@ const HomeStack = () => {
       <Stack.Screen
         name={canceledService}
         component={CanceledServiceScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name={schedule}
+        component={ScheduleScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name={programming}
+        component={ProgrammingScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name={services}
+        component={ServicesScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name={scheduled}
+        component={ScheduledScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const SupportStack = () => {
+  return (
+    <Stack.Navigator initialRouteName={support}>
+      <Stack.Screen
+        name={support}
+        component={SupportScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name={faqs}
+        component={FaqsScreen}
         options={{
           headerShown: false,
         }}
@@ -164,8 +224,8 @@ const MainTab = () => {
         }}
       />
       <Tab.Screen
-        name={support}
-        component={FaqsScreen}
+        name={faqsStack}
+        component={SupportStack}
         options={{
           headerShown: false,
           tabBarIcon: ({color}) => IconComponent(color, MessagesIcon),

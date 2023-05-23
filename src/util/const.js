@@ -8,7 +8,7 @@ export const register = 'Register';
 export const dashboardStack = 'DashboardStack';
 export const dashboard = 'Dashboard';
 export const home = 'Home';
-export const servicios = 'Servicios';
+export const services = 'Services';
 export const service = 'Service';
 export const requestService = 'RequestService';
 export const searchMap = 'SearchMap';
@@ -24,12 +24,13 @@ export const canceledService = 'CanceledService';
 export const passwordRecovery = 'PasswordRecovery';
 export const passwordCode = 'PasswordCode';
 export const newPassword = 'NewPassword';
-export const agendar = 'Agendar';
-export const programando = 'Programando';
-export const programados = 'Programados';
+export const schedule = 'Schedule';
+export const programming = 'Programming';
+export const scheduled = 'Scheduled';
 export const profile = 'Profile';
 export const support = 'Support';
 export const faqs = 'Faqs';
+export const faqsStack = 'FaqsStack';
 export const walkthrough = 'Walkthrough';
 
 import LimpiezaImage from '../assets/images/services/limpieza.png';
@@ -132,3 +133,37 @@ export const Services = [
     image: VeterinariaImage,
   },
 ];
+
+export const formateDate = fecha => {
+  const meses = [
+    'Ene',
+    'Feb',
+    'Mar',
+    'Abr',
+    'May',
+    'Jun',
+    'Jul',
+    'Ago',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dic',
+  ];
+
+  const dia = fecha.getDate();
+  const mes = meses[fecha.getMonth()];
+
+  return `${dia}/${mes}`;
+};
+
+export const formateTime = hour => {
+  let hours = hour.getHours();
+  const minutes = hour.getMinutes();
+  const ampm = hours >= 12 ? 'pm' : 'am';
+
+  hours = hours % 12;
+  hours = hours ? hours : 12;
+
+  const formattedTime = `${hours}:${String(minutes).padStart(2, '0')} ${ampm}`;
+  return formattedTime;
+};
