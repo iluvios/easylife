@@ -15,8 +15,8 @@ import TicketStarIcon from '../assets/icons/ticket-star.png';
 import SearchWhiteIcon from '../assets/icons/search-white.png';
 import AdvertisementImage from '../assets/images/advertisement.png';
 
-import {Services} from '../util/const';
-import {blueberry, platinum} from '../assets/styles/const';
+import {Services, service} from '../util/const';
+import {platinum} from '../assets/styles/const';
 
 const DashboardScreen = () => {
   const half = Math.ceil(Services.length / 2);
@@ -109,17 +109,17 @@ const DashboardScreen = () => {
               {[...Array(columns)].map((_, j) => (
                 <View key={j} style={{flex: 1}}>
                   {rowsArr.map(i => {
-                    const service = Services[i * columns + j];
-                    if (!service) {
+                    const srv = Services[i * columns + j];
+                    if (!srv) {
                       return null;
                     }
                     return (
                       <CardWithIcon
-                        isReducedSize={true}
-                        key={service.id}
-                        image={service.image}
-                        title={service.title}
-                        isLast={false}
+                        navigate={service}
+                        key={srv.id}
+                        image={srv.image}
+                        title={srv.title}
+                        isLast={srv}
                       />
                     );
                   })}
@@ -129,21 +129,23 @@ const DashboardScreen = () => {
           ) : (
             <>
               <View className="flex-row">
-                {firstRow.map((service, index) => (
+                {firstRow.map((srv, index) => (
                   <CardWithIcon
-                    key={service.id}
-                    image={service.image}
-                    title={service.title}
+                    key={srv.id}
+                    image={srv.image}
+                    title={srv.title}
+                    navigate={service}
                     isLast={index === Services.length - 1}
                   />
                 ))}
               </View>
               <View className="flex-row">
-                {secondRow.map((service, index) => (
+                {secondRow.map((srv, index) => (
                   <CardWithIcon
-                    key={service.id}
-                    image={service.image}
-                    title={service.title}
+                    navigate={service}
+                    key={srv.id}
+                    image={srv.image}
+                    title={srv.title}
                     isLast={index === Services.length - 1}
                   />
                 ))}

@@ -8,6 +8,7 @@ import {
   TouchableHighlight,
   ScrollView,
 } from 'react-native';
+import ModalComponent from '../components/modal';
 import IconImageComponent from '../components/iconImage';
 import EmailIcon from '../assets/icons/sms.png';
 import LockIcon from '../assets/icons/lock.png';
@@ -15,10 +16,14 @@ import FacebookIcon from '../assets/icons/facebook.png';
 import GoogleIcon from '../assets/icons/google.png';
 import CellphoneIcon from '../assets/icons/cellphone.png';
 import AppleIcon from '../assets/icons/apple.png';
+import FacebookBigIcon from '../assets/icons/facebook-big.png';
+import GoogleBigIcon from '../assets/icons/google-big.png';
+import AppleBigIcon from '../assets/icons/apple-big.png';
 import {platinum, blueberry} from '../assets/styles/const';
 import {passwordRecovery, register} from '../util/const';
 
 const LoginScreen = ({navigation}) => {
+  const [isModalVisible, setIsModalVisible] = useState(true);
   const {login, setErrorMessage, handleModalVisible, setModal} =
     useContext(AuthContext);
   const [isEmailClicked, setIsEmailClicked] = useState(false);
@@ -27,6 +32,9 @@ const LoginScreen = ({navigation}) => {
   const [state, setState] = useState({
     email: '',
     password: '',
+    facebookLogin: false,
+    googleLogin: false,
+    appleLogin: false,
   });
 
   const handleChangeInput = (name, value) => {
@@ -45,6 +53,57 @@ const LoginScreen = ({navigation}) => {
       handleModalVisible();
     }
   };
+
+  const handleToggleModal = () => {
+    setIsModalVisible(!isModalVisible);
+  };
+
+  const renderBrandModalLogin = () => {
+    const loginOptions = [
+      {
+        name: 'facebook',
+        icon: FacebookBigIcon,
+        message: 'Conectando con Facebook...',
+        active: state.facebookLogin,
+      },
+      {
+        name: 'google',
+        icon: GoogleBigIcon,
+        message: 'Conectando con Google...',
+        active: state.googleLogin,
+      },
+      {
+        name: 'apple',
+        icon: AppleBigIcon,
+        message: 'Conectando con Apple...',
+        active: state.appleLogin,
+      },
+    ];
+
+    return loginOptions.map((option, index) => {
+      if (option.active) {
+        return (
+          <View key={index}>
+            <Text className="mt-8 text-black text-xl text-center font-bold">
+              Ingresa <Text className="text-blueberry">easy</Text>
+            </Text>
+            <View className="mt-6 justify-center items-center">
+              <Image source={option.icon} />
+            </View>
+            <View className="mt-6 mb-8 mx-3 ">
+              <Text
+                onPress={handleToggleModal}
+                className="text-chineseblack text-lg text-center">
+                {option.message}
+              </Text>
+            </View>
+          </View>
+        );
+      }
+      return null;
+    });
+  };
+
   return (
     <ScrollView className="w-full bg-white">
       <View className="flex justify-center items-center mt-14">
@@ -134,7 +193,14 @@ const LoginScreen = ({navigation}) => {
           </TouchableHighlight>
           <TouchableHighlight
             className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
-            onPress={() => navigation.navigate(register)}>
+            onPress={() => {
+              setState({
+                facebookLogin: true,
+                googleLogin: false,
+                appleLogin: false,
+              });
+              handleToggleModal();
+            }}>
             <IconImageComponent
               image={FacebookIcon}
               color={blueberry}
@@ -144,7 +210,14 @@ const LoginScreen = ({navigation}) => {
           </TouchableHighlight>
           <TouchableHighlight
             className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
-            onPress={() => navigation.navigate(register)}>
+            onPress={() => {
+              setState({
+                facebookLogin: false,
+                googleLogin: true,
+                appleLogin: false,
+              });
+              handleToggleModal();
+            }}>
             <IconImageComponent
               image={GoogleIcon}
               color={blueberry}
@@ -154,7 +227,14 @@ const LoginScreen = ({navigation}) => {
           </TouchableHighlight>
           <TouchableHighlight
             className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
-            onPress={() => navigation.navigate(register)}>
+            onPress={() => {
+              setState({
+                facebookLogin: false,
+                googleLogin: false,
+                appleLogin: true,
+              });
+              handleToggleModal();
+            }}>
             <IconImageComponent
               image={AppleIcon}
               color={blueberry}
@@ -171,6 +251,12 @@ const LoginScreen = ({navigation}) => {
           </Text>
         </TouchableHighlight>
       </View>
+      <ModalComponent
+        isVisible={isModalVisible}
+        handleBackButtonPress={handleToggleModal}
+        handleBackdropPress={handleToggleModal}>
+        {renderBrandModalLogin()}
+      </ModalComponent>
     </ScrollView>
   );
 };

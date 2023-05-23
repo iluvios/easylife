@@ -63,8 +63,17 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
           </Text>
         </View>
         <View>
-          <Text className="mt-12 text-base text-black">
-            Ingresa el código enviado.
+          <View className="flex-row justify-between">
+            <Text className="mt-12 text-base text-black">
+              Ingresa el código enviado.
+            </Text>
+            <Text className="mt-12 text-base text-red font-bold">
+              Código incorrecto
+            </Text>
+          </View>
+          <Text className="mt-4 text-platinum text-sm">
+            Si no lo encuentras en tu bandeja principal, revisa en SPAM o en
+            correos no deseados.
           </Text>
           <View className="mt-10 flex flex-row justify-center items-center">
             <View

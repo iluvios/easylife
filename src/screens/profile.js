@@ -7,6 +7,7 @@ import AvatarImage from '../assets/images/avatar.png';
 import StarYellowSmallImage from '../assets/images/star-yellow-small.png';
 import ArrowLeftIcon from '../assets/icons/arrow-left.png';
 import {StackActions} from '@react-navigation/native';
+import {formateDate} from '../util/const';
 
 const popAction = StackActions.pop(1);
 
@@ -42,28 +43,6 @@ const comments = [
 ];
 
 const ProfileScreen = ({navigation}) => {
-  function formateDate(fecha) {
-    const meses = [
-      'Ene',
-      'Feb',
-      'Mar',
-      'Abr',
-      'May',
-      'Jun',
-      'Jul',
-      'Ago',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dic',
-    ];
-
-    const dia = fecha.getDate();
-    const mes = meses[fecha.getMonth()];
-
-    return `${dia}/${mes}`;
-  }
-
   function renderStarImages(count) {
     const imagenes = [];
 
