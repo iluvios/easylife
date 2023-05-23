@@ -3,7 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import IconImageComponent from '../components/iconImage';
 import MessagesIcon from '../assets/icons/message-white.png';
-import SearchIcon from '../assets/icons/search.png';
+import SearchIcon from '../assets/icons/search-normal.png';
 import HomeIcon from '../assets/icons/home.png';
 import DashboardScreen from '../screens/dashboard';
 import ExploreScreen from '../screens/explore';
@@ -14,6 +14,7 @@ import RequestServiceScreen from '../screens/requestService';
 import SearchMapScreen from '../screens/searchMap';
 import OnTheWayMapScreen from '../screens/onTheWayMap';
 import ArriveMapScreen from '../screens/arriveMap';
+import CanceledServiceScreen from '../screens/canceledService';
 import RateScreen from '../screens/rate';
 import ProfileScreen from '../screens/profile';
 import {
@@ -30,6 +31,7 @@ import {
   arriveMap,
   rateService,
   profile,
+  canceledService,
 } from '../util/const';
 import {white, platinum, turquoise} from '../assets/styles/const';
 
@@ -84,6 +86,13 @@ const HomeStack = () => {
       <Stack.Screen
         name={arriveMap}
         component={ArriveMapScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name={canceledService}
+        component={CanceledServiceScreen}
         options={{
           headerShown: false,
         }}

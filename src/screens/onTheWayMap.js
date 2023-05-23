@@ -6,6 +6,7 @@ import {
   Image,
   ImageBackground,
 } from 'react-native';
+import ModalComponent from '../components/modal';
 import IconImageComponent from '../components/iconImage';
 import ArrowLeftIcon from '../assets/icons/arrow-left.png';
 import MessageIcon from '../assets/icons/message.png';
@@ -23,15 +24,21 @@ import DotsBlue from '../assets/images/dots-blue.png';
 import LineGreen from '../assets/images/line-green.png';
 import NotchImage from '../assets/images/notch.png';
 import {StackActions} from '@react-navigation/native';
-import {support, arriveMap, profile} from '../util/const';
+import {support, arriveMap, profile, canceledService} from '../util/const';
 import {platinum, blueberry} from '../assets/styles/const';
 
 const popAction = StackActions.pop(1);
 
 const OnTheWayMapScreen = ({navigation}) => {
   const [isPanelVisible, setIsPanelVisible] = useState(true);
-  const handleToggleModal = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const handleTogglePanel = () => {
     setIsPanelVisible(!isPanelVisible);
+  };
+
+  const handleToggleModal = () => {
+    setIsModalVisible(!isModalVisible);
   };
 
   return (
@@ -86,7 +93,7 @@ const OnTheWayMapScreen = ({navigation}) => {
         <View className="bg-white min-h-fit rounded-tr-3xl rounded-tl-3xl">
           <View className="ml-3">
             <View className="mt-5 flex justify-center items-center">
-              <TouchableHighlight onPress={handleToggleModal}>
+              <TouchableHighlight onPress={handleTogglePanel}>
                 <Image source={NotchImage} />
               </TouchableHighlight>
             </View>
@@ -162,14 +169,15 @@ const OnTheWayMapScreen = ({navigation}) => {
                       className="ml-3 text-blueberry text-lg ">
                       Profile
                     </Text>
-                    <View
+                    <TouchableHighlight
+                      onPress={() => navigation.navigate(arriveMap)}
                       className="ml-4 justify-center items-center bg-blueberry rounded-full"
                       style={{
                         width: 48,
                         height: 50,
                       }}>
                       <Image source={PhoneWhiteImage} />
-                    </View>
+                    </TouchableHighlight>
                     <View
                       className="ml-4 justify-center items-center bg-green rounded-full"
                       style={{
@@ -181,7 +189,7 @@ const OnTheWayMapScreen = ({navigation}) => {
                   </View>
                   <Text
                     onPress={() => {
-                      navigation.navigate(arriveMap);
+                      handleToggleModal();
                     }}
                     className="text-platinum font-bold text-2xl text-center mt-10 mb-7">
                     Cancelar servicio
@@ -192,6 +200,35 @@ const OnTheWayMapScreen = ({navigation}) => {
           </View>
         </View>
       </View>
+      <ModalComponent
+        isVisible={isModalVisible}
+        handleBackButtonPress={handleToggleModal}
+        handleBackdropPress={handleToggleModal}>
+        <View className="mx-3">
+          <Text className="mt-8 text-red text-xl font-bold text-center">
+            Cancelar servicio?
+          </Text>
+          <Text className="mt-5 text-chineseblack text-xl text-center">
+            Piénsalo una vez más, al cancelar el servico tu ranking de confianza
+            baja, tus próximos servicios no serán prioritarios para los easys.
+          </Text>
+          <View className="my-10 mx-3  flex-row justify-between">
+            <Text
+              onPress={() => {
+                handleToggleModal();
+                navigation.navigate(canceledService);
+              }}
+              className="text-platinum text-xl">
+              Si, cancelar
+            </Text>
+            <Text
+              onPress={handleToggleModal}
+              className="text-blueberry text-xl font-bold">
+              No, continuar
+            </Text>
+          </View>
+        </View>
+      </ModalComponent>
     </View>
   );
 };
