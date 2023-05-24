@@ -59,7 +59,7 @@ const RateScreen = ({navigation}) => {
           </View>
         </View>
         <View
-          className={`mt-10 flex flex-row justify-center items-start shadow appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-20 mr-3 ${
+          className={`mt-10 flex flex-row justify-center items-start appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-20 mr-3 ${
             commentClicked ? 'border-blueberry' : 'border-platinum'
           }`}>
           <View className="flex-row justify-center items-center">

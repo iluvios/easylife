@@ -183,7 +183,7 @@ const ProgrammingScreen = ({navigation}) => {
           <Text className="mt-3 text-chineseblack text-xl">$100.000 cop</Text>
           <Text className="mt-5 text-platinum text-lg">Nota</Text>
           <View
-            className={`mt-3 flex flex-row justify-center items-start shadow appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-20 mr-3 ${
+            className={`mt-3 flex flex-row justify-center items-start appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-20 mr-3 ${
               rememberClicked ? 'border-blueberry' : 'border-platinum'
             }`}>
             <TextInput

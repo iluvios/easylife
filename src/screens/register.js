@@ -65,7 +65,7 @@ const RegisterScreen = ({navigation}) => {
         </Text>
         <View className="mx-3">
           <View
-            className={`flex flex-row justify-center items-center shadow appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
+            className={`flex flex-row justify-center items-center appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
           ${isNameClicked ? 'border-blueberry' : 'border-platinum'}`}>
             <View className="pl-4">
               <IconImageComponent
@@ -89,7 +89,7 @@ const RegisterScreen = ({navigation}) => {
             />
           </View>
           <View
-            className={`mt-5 flex flex-row justify-center items-center shadow appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
+            className={`mt-5 flex flex-row justify-center items-center appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
           ${isEmailClicked ? 'border-blueberry' : 'border-platinum'}`}>
             <View className="pl-4">
               <IconImageComponent
@@ -114,7 +114,7 @@ const RegisterScreen = ({navigation}) => {
             />
           </View>
           <View
-            className={`mt-5 flex flex-row justify-center items-center shadow appearance-none border rounded-md w-full leading-tight focus:outline-none focus:shadow-outline 
+            className={`mt-5 flex flex-row justify-center items-center appearance-none border rounded-md w-full leading-tight focus:outline-none focus:shadow-outline 
           ${isPasswordClicked ? 'border-blueberry' : 'border-platinum'}`}>
             <View className="pl-4">
               <IconImageComponent

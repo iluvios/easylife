@@ -70,7 +70,7 @@ const PasswordRecoveryScreen = ({navigation}) => {
 
           {isRecoveryWithPhone ? (
             <View
-              className={`my-10 flex flex-row justify-center items-center shadow appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
+              className={`my-10 flex flex-row justify-center items-center appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
           ${isEmailClicked ? 'border-blueberry' : 'border-platinum'}`}>
               <View className="pl-4">
                 <IconImageComponent
@@ -95,7 +95,7 @@ const PasswordRecoveryScreen = ({navigation}) => {
             </View>
           ) : (
             <View
-              className={`my-10 flex flex-row justify-center items-center shadow appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
+              className={`my-10 flex flex-row justify-center items-center appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
           ${isPhoneClicked ? 'border-blueberry' : 'border-platinum'}`}>
               <View className="pl-4">
                 <IconImageComponent

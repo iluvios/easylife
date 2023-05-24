@@ -51,7 +51,7 @@ const NewPasswordScreen = ({navigation}) => {
             Ingresa tu nueva contraseña
           </Text>
           <View
-            className={`flex flex-row justify-center items-center shadow appearance-none border rounded-md w-full leading-tight focus:outline-none focus:shadow-outline 
+            className={`flex flex-row justify-center items-center appearance-none border rounded-md w-full leading-tight focus:outline-none focus:shadow-outline 
           ${isPasswordClicked ? 'border-blueberry' : 'border-platinum'}`}>
             <View className="pl-4">
               <IconImageComponent
@@ -76,7 +76,7 @@ const NewPasswordScreen = ({navigation}) => {
             />
           </View>
           <View
-            className={`mt-5 mb-10 flex flex-row justify-center items-center shadow appearance-none border rounded-md w-full leading-tight focus:outline-none focus:shadow-outline 
+            className={`mt-5 mb-10 flex flex-row justify-center items-center appearance-none border rounded-md w-full leading-tight focus:outline-none focus:shadow-outline 
           ${
             isConfirmPasswordClicked ? 'border-blueberry' : 'border-platinum'
           }`}>

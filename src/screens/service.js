@@ -179,7 +179,7 @@ const ServiceScreen = ({navigation}) => {
               Ingresa tú nueva ubicación
             </Text>
             <View
-              className={`mt-10 flex flex-row justify-center items-start shadow appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-12 mr-3 ${
+              className={`mt-10 flex flex-row justify-center items-start appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-12 mr-3 ${
                 state.addressClicked ? 'border-blueberry' : 'border-platinum'
               }`}>
               <View className="flex-row justify-center items-center">
@@ -208,7 +208,7 @@ const ServiceScreen = ({navigation}) => {
               </View>
             </View>
             <View
-              className={`mt-5 flex flex-row justify-center items-start shadow appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-20 mr-3 ${
+              className={`mt-5 flex flex-row justify-center items-start appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-20 mr-3 ${
                 state.rememberClicked ? 'border-blueberry' : 'border-platinum'
               }`}>
               <TextInput
@@ -255,7 +255,7 @@ const ServiceScreen = ({navigation}) => {
               Ingresa tú nuevo metodo de pago
             </Text>
             <View
-              className={`mt-10 flex flex-row justify-center items-start shadow appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-12 mr-3 ${
+              className={`mt-10 flex flex-row justify-center items-start appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-12 mr-3 ${
                 state.accountNumberClicked
                   ? 'border-blueberry'
                   : 'border-platinum'
@@ -283,7 +283,7 @@ const ServiceScreen = ({navigation}) => {
               </View>
             </View>
             <View
-              className={`mt-5 flex flex-row justify-center items-start shadow appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-12 mr-3 ${
+              className={`mt-5 flex flex-row justify-center items-start appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-12 mr-3 ${
                 state.accountNameClicked
                   ? 'border-blueberry'
                   : 'border-platinum'
@@ -311,7 +311,7 @@ const ServiceScreen = ({navigation}) => {
               </View>
             </View>
             <View
-              className={`mt-5 flex flex-row justify-center items-start shadow appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-12 mr-3 ${
+              className={`mt-5 flex flex-row justify-center items-start appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-12 mr-3 ${
                 state.accountLastNameClicked
                   ? 'border-blueberry'
                   : 'border-platinum'
@@ -341,7 +341,7 @@ const ServiceScreen = ({navigation}) => {
 
             <View className="mt-5 flex-row items-center">
               <View
-                className={`w-44 flex flex-row justify-center items-start shadow appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-12 mr-3 ${
+                className={`w-44 flex flex-row justify-center items-start appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-12 mr-3 ${
                   state.accountExpirationDateClicked
                     ? 'border-blueberry'
                     : 'border-platinum'
@@ -375,7 +375,7 @@ const ServiceScreen = ({navigation}) => {
                 </View>
               </View>
               <View
-                className={`w-44 flex flex-row justify-center items-start shadow appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-12 mr-3 ${
+                className={`w-44 flex flex-row justify-center items-start appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-12 mr-3 ${
                   state.accountCodeClicked
                     ? 'border-blueberry'
                     : 'border-platinum'

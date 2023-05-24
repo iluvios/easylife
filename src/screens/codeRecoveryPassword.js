@@ -77,7 +77,7 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
           </Text>
           <View className="mt-10 flex flex-row justify-center items-center">
             <View
-              className={`mr-1 w-12 h-12 shadow appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
+              className={`mr-1 w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
           ${
             isClickedCodeState.codeOne ? 'border-blueberry' : 'border-platinum'
           }`}>
@@ -96,7 +96,7 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
               />
             </View>
             <View
-              className={`mr-1 w-12 h-12 shadow appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
+              className={`mr-1 w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
           ${
             isClickedCodeState.codeTwo ? 'border-blueberry' : 'border-platinum'
           }`}>
@@ -115,7 +115,7 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
               />
             </View>
             <View
-              className={`mr-1 w-12 h-12 shadow appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
+              className={`mr-1 w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
           ${
             isClickedCodeState.codeThree
               ? 'border-blueberry'
@@ -136,7 +136,7 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
               />
             </View>
             <View
-              className={`mr-1 w-12 h-12 shadow appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
+              className={`mr-1 w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
           ${
             isClickedCodeState.codeFour ? 'border-blueberry' : 'border-platinum'
           }`}>
@@ -155,7 +155,7 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
               />
             </View>
             <View
-              className={`mr-1 w-12 h-12 shadow appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
+              className={`mr-1 w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
           ${
             isClickedCodeState.codeFive ? 'border-blueberry' : 'border-platinum'
           }`}>
@@ -174,7 +174,7 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
               />
             </View>
             <View
-              className={`w-12 h-12 shadow appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
+              className={`w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
           ${
             isClickedCodeState.codeSix ? 'border-blueberry' : 'border-platinum'
           }`}>
