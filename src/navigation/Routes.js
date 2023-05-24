@@ -1,6 +1,5 @@
 import React, {useContext, useState, useEffect} from 'react';
-import {View, Text} from 'react-native';
-import Toast, {BaseToast, ErrorToast} from 'react-native-toast-message';
+import Toast, {BaseToast} from 'react-native-toast-message';
 import {NavigationContainer} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
 import AuthStack from './AuthStack';
