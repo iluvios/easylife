@@ -15,10 +15,10 @@ import TicketStarIcon from '../assets/icons/ticket-star.png';
 import SearchWhiteIcon from '../assets/icons/search-white.png';
 import AdvertisementImage from '../assets/images/advertisement.png';
 
-import {Services, service} from '../util/const';
+import {Services, service, userProfile, faqsStack} from '../util/const';
 import {platinum} from '../assets/styles/const';
 
-const DashboardScreen = () => {
+const DashboardScreen = ({navigation}) => {
   const half = Math.ceil(Services.length / 2);
   const firstRow = Services.slice(0, half);
   const secondRow = Services.slice(half);
@@ -43,7 +43,13 @@ const DashboardScreen = () => {
     <ScrollView className="bg-white h-full w-full">
       <View>
         <View className="flex flex-row mt-11 ml-3">
-          <Image source={ProfileIcon} />
+          <TouchableHighlight
+            className="rounded-xl"
+            onPress={() => {
+              navigation.navigate(faqsStack, {screen: userProfile});
+            }}>
+            <Image source={ProfileIcon} />
+          </TouchableHighlight>
           <View className="flex-col ml-3">
             <Text className="text-3xl text-blueberry">Camilo</Text>
             <View className="flex-row justify-center items-center">
@@ -63,7 +69,7 @@ const DashboardScreen = () => {
         <View className="mt-10 ml-3">
           <View className="flex flex-row">
             <View
-              className={`flex flex-row justify-center items-center shadow appearance-none border rounded-xl w-4/5 leading-tight focus:outline-none focus:shadow-outline 
+              className={`flex flex-row justify-center items-center appearance-none border rounded-xl w-4/5 leading-tight focus:outline-none focus:shadow-outline 
           ${isSearchClicked ? 'border-blueberry' : 'border-platinum'}`}>
               <TextInput
                 onFocus={() => setIsSearchClicked(true)}

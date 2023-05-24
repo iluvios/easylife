@@ -24,7 +24,13 @@ import DotsBlue from '../assets/images/dots-blue.png';
 import LineGreen from '../assets/images/line-green.png';
 import NotchImage from '../assets/images/notch.png';
 import {StackActions} from '@react-navigation/native';
-import {support, arriveMap, profile, canceledService} from '../util/const';
+import {
+  support,
+  arriveMap,
+  rateProfile,
+  canceledService,
+  faqsStack,
+} from '../util/const';
 import {platinum, blueberry} from '../assets/styles/const';
 
 const popAction = StackActions.pop(1);
@@ -59,7 +65,7 @@ const OnTheWayMapScreen = ({navigation}) => {
             </TouchableHighlight>
             <TouchableHighlight
               onPress={() => {
-                navigation.navigate(support);
+                navigation.navigate(faqsStack, {screen: support});
               }}
               className="rounded-xl p-1 w-12 h-12 shadow-2xl shadow-blueberry bg-white flex justify-center items-center">
               <IconImageComponent image={MessageIcon} height={35} width={35} />
@@ -164,7 +170,7 @@ const OnTheWayMapScreen = ({navigation}) => {
                     </View>
                     <Text
                       onPress={() => {
-                        navigation.navigate(profile);
+                        navigation.navigate(rateProfile);
                       }}
                       className="ml-3 text-blueberry text-lg ">
                       Profile

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {
   Text,
   View,
@@ -12,7 +12,7 @@ import LogoRed from '../assets/images/logo-red.png';
 import MessageIcon from '../assets/icons/message.png';
 import BGMapRed from '../assets/images/bg-map-red.png';
 import NotchImage from '../assets/images/notch.png';
-import {support, home} from '../util/const';
+import {support, home, faqsStack} from '../util/const';
 import {platinum} from '../assets/styles/const';
 
 const CanceledServiceScreen = ({navigation}) => {
@@ -40,7 +40,7 @@ const CanceledServiceScreen = ({navigation}) => {
         <View className="mx-3 flex flex-row justify-end mt-10">
           <TouchableHighlight
             onPress={() => {
-              navigation.navigate(support);
+              navigation.navigate(faqsStack, {screen: support});
             }}
             className="rounded-xl p-1 w-12 h-12 shadow-2xl shadow-blueberry bg-white flex justify-center items-center">
             <IconImageComponent image={MessageIcon} height={35} width={35} />

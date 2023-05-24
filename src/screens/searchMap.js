@@ -16,7 +16,7 @@ import BGMap from '../assets/images/bg-map.png';
 import PointMap from '../assets/images/point-map.png';
 import NotchImage from '../assets/images/notch.png';
 import {StackActions} from '@react-navigation/native';
-import {support, onTheWayMap} from '../util/const';
+import {support, onTheWayMap, faqsStack} from '../util/const';
 import {platinum} from '../assets/styles/const';
 
 const popAction = StackActions.pop(1);
@@ -45,7 +45,7 @@ const SearchMapScreen = ({navigation}) => {
             </TouchableHighlight>
             <TouchableHighlight
               onPress={() => {
-                navigation.navigate(support);
+                navigation.navigate(faqsStack, {screen: support});
               }}
               className="rounded-xl p-1 w-12 h-12 shadow-2xl shadow-blueberry bg-white flex justify-center items-center">
               <IconImageComponent image={MessageIcon} height={35} width={35} />

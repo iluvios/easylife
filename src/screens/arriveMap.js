@@ -17,7 +17,7 @@ import DotsBlue from '../assets/images/dots-blue.png';
 import LineGreen from '../assets/images/line-green.png';
 import NotchImage from '../assets/images/notch.png';
 import {StackActions} from '@react-navigation/native';
-import {support, rateService} from '../util/const';
+import {support, rateService, faqsStack} from '../util/const';
 
 const popAction = StackActions.pop(1);
 
@@ -45,7 +45,7 @@ const ArriveMapScreen = ({navigation}) => {
             </TouchableHighlight>
             <TouchableHighlight
               onPress={() => {
-                navigation.navigate(support);
+                navigation.navigate(faqsStack, {screen: support});
               }}
               className="rounded-xl p-1 w-12 h-12 shadow-2xl shadow-blueberry bg-white flex justify-center items-center">
               <IconImageComponent image={MessageIcon} height={35} width={35} />
