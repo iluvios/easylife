@@ -23,6 +23,7 @@ import ServicesScreen from '../screens/services';
 import ScheduledScreen from '../screens/scheduled';
 import FaqsScreen from '../screens/faqs';
 import UserProfileScreen from '../screens/userProfile';
+import LoadingScreen from '../screens/loading';
 import {
   service,
   dashboardStack,
@@ -45,6 +46,7 @@ import {
   faqsStack,
   faqs,
   userProfile,
+  loading,
 } from '../util/const';
 import {white, platinum, turquoise} from '../assets/styles/const';
 
@@ -53,7 +55,14 @@ const Tab = createBottomTabNavigator();
 
 const HomeStack = () => {
   return (
-    <Stack.Navigator initialRouteName={walkthrough}>
+    <Stack.Navigator initialRouteName={loading}>
+      <Stack.Screen
+        name={loading}
+        component={LoadingScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
       <Stack.Screen
         name={walkthrough}
         component={WalkthroughScreen}
