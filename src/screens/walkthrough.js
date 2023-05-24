@@ -5,7 +5,7 @@ import ExploreImage from '../assets/images/explore.png';
 import SelectOneImage from '../assets/images/select-one.png';
 import SelectTwoImage from '../assets/images/select-two.png';
 import HireImage from '../assets/images/hire.png';
-import {white} from '../assets/styles/const';
+import {platinum, turquoise, white} from '../assets/styles/const';
 import {home} from '../util/const';
 
 const styles = StyleSheet.create({
@@ -31,6 +31,31 @@ const styles = StyleSheet.create({
   },
 });
 
+const swiperStyles = StyleSheet.create({
+  dot: {
+    backgroundColor: platinum,
+    width: 10,
+    height: 10,
+    borderRadius: 50,
+    marginLeft: 3,
+    marginRight: 3,
+    opacity: 0.5,
+  },
+  activeDot: {
+    backgroundColor: turquoise,
+    width: 20,
+    height: 10,
+    borderRadius: 7,
+    marginLeft: 3,
+    marginRight: 3,
+  },
+  pagination: {
+    justifyContent: 'flex-start',
+    marginLeft: 10,
+    marginBottom: 19,
+  },
+});
+
 const WalkthroughScreen = ({navigation}) => {
   const swiperRef = useRef(null);
 
@@ -43,7 +68,10 @@ const WalkthroughScreen = ({navigation}) => {
       style={styles.wrapper}
       loop={false}
       scrollEnabled={true}
-      ref={swiperRef}>
+      ref={swiperRef}
+      dotStyle={swiperStyles.dot}
+      activeDotStyle={swiperStyles.activeDot}
+      paginationStyle={swiperStyles.pagination}>
       <View style={styles.slide1}>
         <View className="mx-2">
           <Text className="font-bold text-3xl text-black text-center">
