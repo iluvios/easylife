@@ -142,17 +142,21 @@ const RegisterScreen = ({navigation}) => {
                 }}
               />
             </View>
-            <TouchableHighlight
-              className="bg-blueberry mt-10 py-4 rounded-full flex justify-center items-center"
-              onPress={handleToggleModal}>
-              <Text className="text-xl font-bold text-white">Continuar</Text>
-            </TouchableHighlight>
+            <Animatable.View animation="fadeInDown">
+              <TouchableHighlight
+                className="bg-blueberry mt-10 py-4 rounded-full flex justify-center items-center"
+                onPress={handleToggleModal}>
+                <Text className="text-xl font-bold text-white">Continuar</Text>
+              </TouchableHighlight>
+            </Animatable.View>
             <View className="mt-4 flex flex-row py-5 justify-center items-center">
               <View className="w-2/6 border-t border-x-platinum border-platinum" />
               <Text className="mx-4 text-platinum text-lg">Ingresa con</Text>
               <View className="w-2/6 border-t border-x-platinum border-platinum" />
             </View>
-            <View className="flex flex-row justify-between items-center">
+            <Animatable.View
+              animation="fadeInRight"
+              className="flex flex-row justify-between items-center">
               <TouchableHighlight
                 className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
                 onPress={() => navigation.navigate(register)}>
@@ -183,7 +187,7 @@ const RegisterScreen = ({navigation}) => {
                   width={23}
                 />
               </TouchableHighlight>
-            </View>
+            </Animatable.View>
             <TouchableHighlight
               className="bg-white my-10 py-4 rounded-full flex justify-center items-center border-turquoise border-2"
               onPress={() => navigation.navigate(register)}>

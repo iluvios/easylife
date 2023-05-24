@@ -10,8 +10,8 @@ const ModalComponent = ({
 }) => {
   return (
     <Modal
-      animationIn="fadeInUp"
-      animationOut="fadeOutDown"
+      animationIn="slideInUp"
+      animationOut="slideOutDown"
       isVisible={isVisible}
       onBackdropPress={handleBackdropPress}
       onBackButtonPress={handleBackButtonPress}>
