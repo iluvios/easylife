@@ -16,12 +16,13 @@ import OnTheWayMapScreen from '../screens/onTheWayMap';
 import ArriveMapScreen from '../screens/arriveMap';
 import CanceledServiceScreen from '../screens/canceledService';
 import RateScreen from '../screens/rate';
-import ProfileScreen from '../screens/profile';
+import RateProfileScreen from '../screens/rateProfile';
 import ScheduleScreen from '../screens/schedule';
 import ProgrammingScreen from '../screens/programming';
 import ServicesScreen from '../screens/services';
 import ScheduledScreen from '../screens/scheduled';
 import FaqsScreen from '../screens/faqs';
+import UserProfileScreen from '../screens/userProfile';
 import {
   service,
   dashboardStack,
@@ -35,7 +36,7 @@ import {
   onTheWayMap,
   arriveMap,
   rateService,
-  profile,
+  rateProfile,
   canceledService,
   schedule,
   programming,
@@ -43,6 +44,7 @@ import {
   scheduled,
   faqsStack,
   faqs,
+  userProfile,
 } from '../util/const';
 import {white, platinum, turquoise} from '../assets/styles/const';
 
@@ -157,6 +159,13 @@ const SupportStack = () => {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+        name={userProfile}
+        component={UserProfileScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 };
@@ -179,8 +188,8 @@ const DashboardStack = () => {
         }}
       />
       <Stack.Screen
-        name={profile}
-        component={ProfileScreen}
+        name={rateProfile}
+        component={RateProfileScreen}
         options={{
           headerShown: false,
         }}
