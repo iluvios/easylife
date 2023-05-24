@@ -1,10 +1,34 @@
 import React, {useContext, useState, useEffect} from 'react';
+import {View, Text} from 'react-native';
+import Toast, {BaseToast, ErrorToast} from 'react-native-toast-message';
 import {NavigationContainer} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
 import AuthStack from './AuthStack';
 import HomeStack from './HomeStack';
 import {AuthContext} from './AuthProvider';
 import LoadingComponent from '../components/loading';
+import {turquoise, white} from '../assets/styles/const';
+
+const toastConfig = {
+  success: props => (
+    <BaseToast
+      {...props}
+      style={{
+        borderLeftColor: turquoise,
+        borderBottomLeftRadius: 30,
+        borderBottomRightRadius: 30,
+        width: '100%',
+        backgroundColor: turquoise,
+      }}
+      contentContainerStyle={{paddingHorizontal: 60}}
+      text1Style={{
+        fontSize: 20,
+        fontWeight: '700',
+        color: white,
+      }}
+    />
+  ),
+};
 
 const Routes = () => {
   const {user, setUser} = useContext(AuthContext);
@@ -32,7 +56,8 @@ const Routes = () => {
 
   return (
     <NavigationContainer>
-      {!user ? <AuthStack /> : <HomeStack />}
+      {!user ? <HomeStack /> : <AuthStack />}
+      <Toast topOffset={0} config={toastConfig} />
     </NavigationContainer>
   );
 };
