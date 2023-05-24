@@ -27,9 +27,10 @@ export const newPassword = 'NewPassword';
 export const schedule = 'Schedule';
 export const programming = 'Programming';
 export const scheduled = 'Scheduled';
-export const profile = 'Profile';
+export const rateProfile = 'RateProfile';
 export const support = 'Support';
 export const faqs = 'Faqs';
+export const userProfile = 'UserProfile';
 export const faqsStack = 'FaqsStack';
 export const walkthrough = 'Walkthrough';
 
