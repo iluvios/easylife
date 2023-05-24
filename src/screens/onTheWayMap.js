@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import * as Animatable from 'react-native-animatable';
 import {
   Text,
   View,
@@ -89,7 +90,8 @@ const OnTheWayMapScreen = ({navigation}) => {
           </View>
         </View>
       </ImageBackground>
-      <View
+      <Animatable.View
+        animation="slideInUp"
         style={{
           width: '100%',
           flex: 1,
@@ -107,7 +109,9 @@ const OnTheWayMapScreen = ({navigation}) => {
             <View className="mt-5">
               {isPanelVisible && (
                 <View>
-                  <View className="flex flex-row justify-around">
+                  <Animatable.View
+                    className="flex flex-row justify-around"
+                    animation="fadeInUp">
                     <View className="flex flex-row">
                       <View className="bg-blueberry rounded-xl w-10 h-10 justify-center items-center">
                         <Image
@@ -134,7 +138,7 @@ const OnTheWayMapScreen = ({navigation}) => {
                       <Text className="mr-3 text-blueberry text-xs">5 min</Text>
                       <Image source={LocationBlue} />
                     </View>
-                  </View>
+                  </Animatable.View>
                   <Text className="text-platinum text-xl mt-5">
                     Detalles del servicio
                   </Text>
@@ -142,7 +146,9 @@ const OnTheWayMapScreen = ({navigation}) => {
                     Conductor elegido
                   </Text>
                   <Text className="text-platinum text-lg mt-3">Precio</Text>
-                  <View className="flex-row justify-between mt-3">
+                  <Animatable.View
+                    className="flex-row justify-between mt-3"
+                    animation="fadeInUp">
                     <Text className="text-chineseblack text-lg font-bold">
                       $ 120.000 cop
                     </Text>
@@ -157,9 +163,11 @@ const OnTheWayMapScreen = ({navigation}) => {
                         Efectivo
                       </Text>
                     </View>
-                  </View>
+                  </Animatable.View>
                   <Text className="text-platinum text-lg mt-3">Conductor</Text>
-                  <View className="flex-row items-center mt-3">
+                  <Animatable.View
+                    className="flex-row items-center mt-3"
+                    animation="fadeInUp">
                     <Image source={AvatarSmallImage} />
                     <Text className="ml-3 text-chineseblack text-xl font-bold">
                       Juan R.
@@ -192,7 +200,7 @@ const OnTheWayMapScreen = ({navigation}) => {
                       }}>
                       <Image source={WhatsappWhiteImage} />
                     </View>
-                  </View>
+                  </Animatable.View>
                   <Text
                     onPress={() => {
                       handleToggleModal();
@@ -205,7 +213,7 @@ const OnTheWayMapScreen = ({navigation}) => {
             </View>
           </View>
         </View>
-      </View>
+      </Animatable.View>
       <ModalComponent
         isVisible={isModalVisible}
         handleBackButtonPress={handleToggleModal}

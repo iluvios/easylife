@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import * as Animatable from 'react-native-animatable';
 import {
   View,
   Text,
@@ -43,31 +44,35 @@ const DashboardScreen = ({navigation}) => {
     <ScrollView className="bg-white h-full w-full">
       <View>
         <View className="flex flex-row mt-11 ml-3">
-          <TouchableHighlight
-            className="rounded-xl"
-            onPress={() => {
-              navigation.navigate(faqsStack, {screen: userProfile});
-            }}>
-            <Image source={ProfileIcon} />
-          </TouchableHighlight>
-          <View className="flex-col ml-3">
-            <Text className="text-3xl text-blueberry">Camilo</Text>
-            <View className="flex-row justify-center items-center">
-              <Text className="text-chineseblack text-xs">
-                Carrera 49, Cl. 7 Sur #50
-              </Text>
-              <Image source={ArrowBottomIcon} className="ml-3" />
+          <Animatable.View className="flex-row" animation="fadeInLeft">
+            <TouchableHighlight
+              className="rounded-xl"
+              onPress={() => {
+                navigation.navigate(faqsStack, {screen: userProfile});
+              }}>
+              <Image source={ProfileIcon} />
+            </TouchableHighlight>
+            <View className="flex-col ml-3">
+              <Text className="text-3xl text-blueberry">Camilo</Text>
+              <View className="flex-row justify-center items-center">
+                <Text className="text-chineseblack text-xs">
+                  Carrera 49, Cl. 7 Sur #50
+                </Text>
+                <Image source={ArrowBottomIcon} className="ml-3" />
+              </View>
             </View>
-          </View>
-          <View className="absolute right-0 mr-3">
+          </Animatable.View>
+          <Animatable.View
+            className="absolute right-0 mr-3"
+            animation="fadeInRight">
             <View className="shadow-2xl shadow-blueberry p-1 bg-white rounded-xl">
               <Image source={CalendarIcon} />
             </View>
-          </View>
+          </Animatable.View>
         </View>
 
         <View className="mt-10 ml-3">
-          <View className="flex flex-row">
+          <Animatable.View className="flex flex-row" animation="fadeInDown">
             <View
               className={`flex flex-row justify-center items-center appearance-none border rounded-xl w-4/5 leading-tight focus:outline-none focus:shadow-outline 
           ${isSearchClicked ? 'border-blueberry' : 'border-platinum'}`}>
@@ -90,7 +95,7 @@ const DashboardScreen = ({navigation}) => {
               className="absolute right-0 mr-3 p-3 bg-blueberry rounded-xl justify-center items-center">
               <Image source={SearchWhiteIcon} />
             </TouchableHighlight>
-          </View>
+          </Animatable.View>
         </View>
 
         {!isViewServicesOpen && (
@@ -134,7 +139,7 @@ const DashboardScreen = ({navigation}) => {
             </View>
           ) : (
             <>
-              <View className="flex-row">
+              <Animatable.View className="flex-row" animation="fadeInRight">
                 {firstRow.map((srv, index) => (
                   <CardWithIcon
                     key={srv.id}
@@ -144,8 +149,8 @@ const DashboardScreen = ({navigation}) => {
                     isLast={index === Services.length - 1}
                   />
                 ))}
-              </View>
-              <View className="flex-row">
+              </Animatable.View>
+              <Animatable.View className="flex-row" animation="fadeInDown">
                 {secondRow.map((srv, index) => (
                   <CardWithIcon
                     navigate={service}
@@ -155,20 +160,22 @@ const DashboardScreen = ({navigation}) => {
                     isLast={index === Services.length - 1}
                   />
                 ))}
-              </View>
+              </Animatable.View>
             </>
           )}
         </View>
-        <TouchableHighlight
-          className="bg-white my-10 py-4 rounded-full border-turquoise border-2 mx-3"
-          onPress={() => {}}>
-          <View className="flex flex-row justify-center items-center">
-            <Image source={TicketStarIcon} />
-            <Text className="text-xl font-bold text-turquoise ml-3">
-              Tus creditos
-            </Text>
-          </View>
-        </TouchableHighlight>
+        <Animatable.View animation="fadeInUp">
+          <TouchableHighlight
+            className="bg-white my-10 py-4 rounded-full border-turquoise border-2 mx-3"
+            onPress={() => {}}>
+            <View className="flex flex-row justify-center items-center">
+              <Image source={TicketStarIcon} />
+              <Text className="text-xl font-bold text-turquoise ml-3">
+                Tus creditos
+              </Text>
+            </View>
+          </TouchableHighlight>
+        </Animatable.View>
       </View>
     </ScrollView>
   );

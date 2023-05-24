@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import * as Animatable from 'react-native-animatable';
 import {
   Text,
   View,
@@ -46,11 +47,14 @@ const CanceledServiceScreen = ({navigation}) => {
             <IconImageComponent image={MessageIcon} height={35} width={35} />
           </TouchableHighlight>
         </View>
-        <View className="mt-11 justify-center items-center">
+        <Animatable.View
+          className="mt-11 justify-center items-center"
+          animation="fadeInRight">
           <Image source={LogoRed} />
-        </View>
+        </Animatable.View>
       </ImageBackground>
-      <View
+      <Animatable.View
+        animation="slideInUp"
         style={{
           width: '100%',
           flex: 1,
@@ -67,7 +71,7 @@ const CanceledServiceScreen = ({navigation}) => {
             {/*Buscando */}
             <View className="mt-5">
               {isPanelVisible && (
-                <View>
+                <Animatable.View animation="fadeInUp">
                   <Text className="mt-5 text-red font-bold text-3xl text-center">
                     Servicio cancelado
                   </Text>
@@ -117,19 +121,20 @@ const CanceledServiceScreen = ({navigation}) => {
                   <Text className="ml-2 text-xl text-platinum">
                     Otra razón, cuentanos
                   </Text>
-                  <Text
+                  <Animatable.Text
+                    animation="fadeInLeft"
                     onPress={() => {
                       navigation.navigate(home);
                     }}
                     className="mt-12 mb-8 text-xl text-blueberry text-center">
                     Continuar
-                  </Text>
-                </View>
+                  </Animatable.Text>
+                </Animatable.View>
               )}
             </View>
           </View>
         </View>
-      </View>
+      </Animatable.View>
     </View>
   );
 };

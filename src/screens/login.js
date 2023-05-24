@@ -1,4 +1,5 @@
 import React, {useState, useContext} from 'react';
+import * as Animatable from 'react-native-animatable';
 import {AuthContext} from '../navigation/AuthProvider';
 import {
   Text,
@@ -23,7 +24,7 @@ import {platinum, blueberry} from '../assets/styles/const';
 import {passwordRecovery, register} from '../util/const';
 
 const LoginScreen = ({navigation}) => {
-  const [isModalVisible, setIsModalVisible] = useState(true);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const {login, setErrorMessage, handleModalVisible, setModal} =
     useContext(AuthContext);
   const [isEmailClicked, setIsEmailClicked] = useState(false);
@@ -107,150 +108,154 @@ const LoginScreen = ({navigation}) => {
   return (
     <ScrollView className="w-full bg-white">
       <View className="flex justify-center items-center mt-14">
-        <Image source={require('../assets/images/logo.png')} />
+        <Animatable.View animation="fadeInUp">
+          <Image source={require('../assets/images/logo.png')} />
+        </Animatable.View>
       </View>
-      <Text className="text-center text-3xl font-bold text-black my-10 leading-8">
-        Iniciar sesión
-      </Text>
-      <View className="mx-3">
-        <View
-          className={`flex flex-row justify-center items-center appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
+      <Animatable.View animation="fadeIn">
+        <Text className="text-center text-3xl font-bold text-black my-10 leading-8">
+          Iniciar sesión
+        </Text>
+        <View className="mx-3">
+          <View
+            className={`flex flex-row justify-center items-center appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
           ${isEmailClicked ? 'border-blueberry' : 'border-platinum'}`}>
-          <View className="pl-4">
-            <IconImageComponent
-              image={EmailIcon}
-              color={isEmailClicked ? blueberry : platinum}
-              height={19}
-              width={19}
+            <View className="pl-4">
+              <IconImageComponent
+                image={EmailIcon}
+                color={isEmailClicked ? blueberry : platinum}
+                height={19}
+                width={19}
+              />
+            </View>
+            <TextInput
+              onFocus={() => setIsEmailClicked(true)}
+              onBlur={() => setIsEmailClicked(false)}
+              autoCapitalize="none"
+              keyboardType="email-address"
+              className="text-sm flex-1 ml-2 py-3 text-black"
+              placeholder="Correo electronico"
+              placeholderTextColor={platinum}
+              onChangeText={value => handleChangeInput('email', value)}
+              style={{
+                fontFamily: 'Comfortaa',
+              }}
             />
           </View>
-          <TextInput
-            onFocus={() => setIsEmailClicked(true)}
-            onBlur={() => setIsEmailClicked(false)}
-            autoCapitalize="none"
-            keyboardType="email-address"
-            className="text-sm flex-1 ml-2 py-3 text-black"
-            placeholder="Correo electronico"
-            placeholderTextColor={platinum}
-            onChangeText={value => handleChangeInput('email', value)}
-            style={{
-              fontFamily: 'Comfortaa',
-            }}
-          />
-        </View>
-        <View
-          className={`mt-5 flex flex-row justify-center items-center appearance-none border rounded-md w-full leading-tight focus:outline-none focus:shadow-outline 
+          <View
+            className={`mt-5 flex flex-row justify-center items-center appearance-none border rounded-md w-full leading-tight focus:outline-none focus:shadow-outline 
           ${isPasswordClicked ? 'border-blueberry' : 'border-platinum'}`}>
-          <View className="pl-4">
-            <IconImageComponent
-              image={LockIcon}
-              color={isPasswordClicked ? blueberry : platinum}
-              height={19}
-              width={19}
+            <View className="pl-4">
+              <IconImageComponent
+                image={LockIcon}
+                color={isPasswordClicked ? blueberry : platinum}
+                height={19}
+                width={19}
+              />
+            </View>
+            <TextInput
+              onFocus={() => setIsPasswordClicked(true)}
+              onBlur={() => setIsPasswordClicked(false)}
+              autoCorrect={false}
+              secureTextEntry={true}
+              className="text-sm flex-1 ml-3 py-3 text-black"
+              placeholder="Contraseña"
+              placeholderTextColor={platinum}
+              onChangeText={value => handleChangeInput('password', value)}
+              style={{
+                fontFamily: 'Comfortaa',
+              }}
             />
           </View>
-          <TextInput
-            onFocus={() => setIsPasswordClicked(true)}
-            onBlur={() => setIsPasswordClicked(false)}
-            autoCorrect={false}
-            secureTextEntry={true}
-            className="text-sm flex-1 ml-3 py-3 text-black"
-            placeholder="Contraseña"
-            placeholderTextColor={platinum}
-            onChangeText={value => handleChangeInput('password', value)}
-            style={{
-              fontFamily: 'Comfortaa',
-            }}
-          />
-        </View>
-        <View className="pt-6 pl-1">
-          <Text
-            onPress={() => navigation.navigate(passwordRecovery)}
-            className="text-base text-blueberry">
-            Recuperar contraseña
-          </Text>
-        </View>
-        <TouchableHighlight
-          className="bg-blueberry mt-10 py-4 rounded-full flex justify-center items-center"
-          onPress={() => navigation.navigate(register)}>
-          <Text className="text-xl font-bold text-white">Entrar</Text>
-        </TouchableHighlight>
-        <View className="mt-4 flex flex-row py-5 justify-center items-center">
-          <View className="w-2/6 border-t border-x-platinum border-platinum" />
-          <Text className="mx-4 text-platinum text-lg">Ingresa con</Text>
-          <View className="w-2/6 border-t border-x-platinum border-platinum" />
-        </View>
-        <View className="flex flex-row justify-between items-center">
+          <View className="pt-6 pl-1">
+            <Text
+              onPress={() => navigation.navigate(passwordRecovery)}
+              className="text-base text-blueberry">
+              Recuperar contraseña
+            </Text>
+          </View>
           <TouchableHighlight
-            className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
+            className="bg-blueberry mt-10 py-4 rounded-full flex justify-center items-center"
             onPress={() => navigation.navigate(register)}>
-            <IconImageComponent
-              image={CellphoneIcon}
-              color={blueberry}
-              height={25}
-              width={25}
-            />
+            <Text className="text-xl font-bold text-white">Entrar</Text>
           </TouchableHighlight>
+          <View className="mt-4 flex flex-row py-5 justify-center items-center">
+            <View className="w-2/6 border-t border-x-platinum border-platinum" />
+            <Text className="mx-4 text-platinum text-lg">Ingresa con</Text>
+            <View className="w-2/6 border-t border-x-platinum border-platinum" />
+          </View>
+          <View className="flex flex-row justify-between items-center">
+            <TouchableHighlight
+              className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
+              onPress={() => navigation.navigate(register)}>
+              <IconImageComponent
+                image={CellphoneIcon}
+                color={blueberry}
+                height={25}
+                width={25}
+              />
+            </TouchableHighlight>
+            <TouchableHighlight
+              className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
+              onPress={() => {
+                setState({
+                  facebookLogin: true,
+                  googleLogin: false,
+                  appleLogin: false,
+                });
+                handleToggleModal();
+              }}>
+              <IconImageComponent
+                image={FacebookIcon}
+                color={blueberry}
+                height={26}
+                width={13}
+              />
+            </TouchableHighlight>
+            <TouchableHighlight
+              className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
+              onPress={() => {
+                setState({
+                  facebookLogin: false,
+                  googleLogin: true,
+                  appleLogin: false,
+                });
+                handleToggleModal();
+              }}>
+              <IconImageComponent
+                image={GoogleIcon}
+                color={blueberry}
+                height={23}
+                width={23}
+              />
+            </TouchableHighlight>
+            <TouchableHighlight
+              className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
+              onPress={() => {
+                setState({
+                  facebookLogin: false,
+                  googleLogin: false,
+                  appleLogin: true,
+                });
+                handleToggleModal();
+              }}>
+              <IconImageComponent
+                image={AppleIcon}
+                color={blueberry}
+                height={30}
+                width={23}
+              />
+            </TouchableHighlight>
+          </View>
           <TouchableHighlight
-            className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
-            onPress={() => {
-              setState({
-                facebookLogin: true,
-                googleLogin: false,
-                appleLogin: false,
-              });
-              handleToggleModal();
-            }}>
-            <IconImageComponent
-              image={FacebookIcon}
-              color={blueberry}
-              height={26}
-              width={13}
-            />
-          </TouchableHighlight>
-          <TouchableHighlight
-            className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
-            onPress={() => {
-              setState({
-                facebookLogin: false,
-                googleLogin: true,
-                appleLogin: false,
-              });
-              handleToggleModal();
-            }}>
-            <IconImageComponent
-              image={GoogleIcon}
-              color={blueberry}
-              height={23}
-              width={23}
-            />
-          </TouchableHighlight>
-          <TouchableHighlight
-            className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
-            onPress={() => {
-              setState({
-                facebookLogin: false,
-                googleLogin: false,
-                appleLogin: true,
-              });
-              handleToggleModal();
-            }}>
-            <IconImageComponent
-              image={AppleIcon}
-              color={blueberry}
-              height={30}
-              width={23}
-            />
+            className="bg-white my-10 py-4 rounded-full flex justify-center items-center border-turquoise border-2"
+            onPress={() => navigation.navigate(register)}>
+            <Text className="text-xl font-bold text-turquoise">
+              Soy proveedor
+            </Text>
           </TouchableHighlight>
         </View>
-        <TouchableHighlight
-          className="bg-white my-10 py-4 rounded-full flex justify-center items-center border-turquoise border-2"
-          onPress={() => navigation.navigate(register)}>
-          <Text className="text-xl font-bold text-turquoise">
-            Soy proveedor
-          </Text>
-        </TouchableHighlight>
-      </View>
+      </Animatable.View>
       <ModalComponent
         isVisible={isModalVisible}
         handleBackButtonPress={handleToggleModal}
