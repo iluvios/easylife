@@ -74,7 +74,11 @@ const OnTheWayMapScreen = ({navigation}) => {
           </View>
           <View className="mt-5">
             <View className="mx-8 bg-white rounded-3xl justify-center items-center z-10">
-              <Text className="my-7 mx-9 text-blueberry text-3xl">
+              <Text
+                style={{
+                  fontFamily: 'Comfortaa-Bold',
+                }}
+                className="my-7 text-blueberry text-3xl">
                 easy en camino
               </Text>
             </View>
@@ -135,21 +139,45 @@ const OnTheWayMapScreen = ({navigation}) => {
                       </View>
                     </View>
                     <View className="flex-row justify-center items-center">
-                      <Text className="mr-3 text-blueberry text-xs">5 min</Text>
+                      <Text
+                        style={{
+                          fontFamily: 'Manrope-Regular',
+                        }}
+                        className="mr-3 text-blueberry text-xs">
+                        5 min
+                      </Text>
                       <Image source={LocationBlue} />
                     </View>
                   </Animatable.View>
-                  <Text className="text-platinum text-xl mt-5">
+                  <Text
+                    style={{
+                      fontFamily: 'Manrope-Regular',
+                    }}
+                    className="text-platinum text-xl mt-5">
                     Detalles del servicio
                   </Text>
-                  <Text className="mt-5 text-chineseblack font-bold text-xl">
+                  <Text
+                    style={{
+                      fontFamily: 'Manrope-Bold',
+                    }}
+                    className="mt-5 text-chineseblack text-xl">
                     Conductor elegido
                   </Text>
-                  <Text className="text-platinum text-lg mt-3">Precio</Text>
+                  <Text
+                    style={{
+                      fontFamily: 'Manrope-Regular',
+                    }}
+                    className="text-platinum text-lg mt-3">
+                    Precio
+                  </Text>
                   <Animatable.View
                     className="flex-row justify-between mt-3"
                     animation="fadeInUp">
-                    <Text className="text-chineseblack text-lg font-bold">
+                    <Text
+                      style={{
+                        fontFamily: 'Manrope-Bold',
+                      }}
+                      className="text-chineseblack text-lg">
                       $ 120.000 cop
                     </Text>
                     <View className="mr-3 flex-row justify-center items-center">
@@ -159,17 +187,31 @@ const OnTheWayMapScreen = ({navigation}) => {
                         height={24}
                         color={platinum}
                       />
-                      <Text className="ml-1 text-platinum text-lg">
+                      <Text
+                        style={{
+                          fontFamily: 'Manrope-Regular',
+                        }}
+                        className="ml-1 text-platinum text-lg">
                         Efectivo
                       </Text>
                     </View>
                   </Animatable.View>
-                  <Text className="text-platinum text-lg mt-3">Conductor</Text>
+                  <Text
+                    style={{
+                      fontFamily: 'Manrope-Regular',
+                    }}
+                    className="text-platinum text-lg mt-3">
+                    Conductor
+                  </Text>
                   <Animatable.View
                     className="flex-row items-center mt-3"
                     animation="fadeInUp">
                     <Image source={AvatarSmallImage} />
-                    <Text className="ml-3 text-chineseblack text-xl font-bold">
+                    <Text
+                      style={{
+                        fontFamily: 'Manrope-Bold',
+                      }}
+                      className="ml-3 text-chineseblack text-xl">
                       Juan R.
                     </Text>
                     <Text className="ml-3 text-platinum text-lg">4.5</Text>
@@ -177,6 +219,9 @@ const OnTheWayMapScreen = ({navigation}) => {
                       <Image source={StarYellowSmallImage} />
                     </View>
                     <Text
+                      style={{
+                        fontFamily: 'Manrope-Regular',
+                      }}
                       onPress={() => {
                         navigation.navigate(rateProfile);
                       }}
@@ -202,10 +247,13 @@ const OnTheWayMapScreen = ({navigation}) => {
                     </View>
                   </Animatable.View>
                   <Text
+                    style={{
+                      fontFamily: 'Manrope-Bold',
+                    }}
                     onPress={() => {
                       handleToggleModal();
                     }}
-                    className="text-platinum font-bold text-2xl text-center mt-10 mb-7">
+                    className="text-platinum text-2xl text-center mt-10 mb-7">
                     Cancelar servicio
                   </Text>
                 </View>
@@ -219,15 +267,26 @@ const OnTheWayMapScreen = ({navigation}) => {
         handleBackButtonPress={handleToggleModal}
         handleBackdropPress={handleToggleModal}>
         <View className="mx-3">
-          <Text className="mt-8 text-red text-xl font-bold text-center">
+          <Text
+            style={{
+              fontFamily: 'Comfortaa-Bold',
+            }}
+            className="mt-8 text-red text-xl text-center">
             Cancelar servicio?
           </Text>
-          <Text className="mt-5 text-chineseblack text-xl text-center">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="mt-5 text-chineseblack text-xl text-center">
             Piénsalo una vez más, al cancelar el servico tu ranking de confianza
             baja, tus próximos servicios no serán prioritarios para los easys.
           </Text>
           <View className="my-10 mx-3  flex-row justify-between">
             <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
               onPress={() => {
                 handleToggleModal();
                 navigation.navigate(canceledService);
@@ -236,8 +295,11 @@ const OnTheWayMapScreen = ({navigation}) => {
               Si, cancelar
             </Text>
             <Text
+              style={{
+                fontFamily: 'Manrope-Bold',
+              }}
               onPress={handleToggleModal}
-              className="text-blueberry text-xl font-bold">
+              className="text-blueberry text-xl">
               No, continuar
             </Text>
           </View>

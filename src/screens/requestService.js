@@ -49,7 +49,11 @@ const RequestServiceScreen = ({navigation}) => {
       <View className="absolute">
         <Image source={currentLogo} />
       </View>
-      <Text className="text-white text-xl absolute bottom-20">
+      <Text
+        style={{
+          fontFamily: 'Comfortaa-Bold',
+        }}
+        className="text-white text-xl absolute bottom-20">
         Creando orden...
       </Text>
     </View>

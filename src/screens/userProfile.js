@@ -63,7 +63,13 @@ const UserProfileScreen = ({navigation}) => {
                   width={40}
                 />
               </TouchableHighlight>
-              <Text className="ml-5 text-white text-3xl font-bold">Perfil</Text>
+              <Text
+                style={{
+                  fontFamily: 'Comfortaa-Bold',
+                }}
+                className="ml-5 text-white text-3xl">
+                {state.isEditable ? 'Editar perfil' : 'Perfil'}
+              </Text>
             </View>
             {!state.isEditable && (
               <TouchableHighlight
@@ -83,7 +89,13 @@ const UserProfileScreen = ({navigation}) => {
                 height={30}
                 width={30}
               />
-              <Text className="ml-3 text-white text-xl font-bold">3.500</Text>
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Bold',
+                }}
+                className="ml-3 text-white text-xl">
+                3.500
+              </Text>
             </View>
           </View>
         </View>
@@ -99,7 +111,11 @@ const UserProfileScreen = ({navigation}) => {
         <View className="bg-white min-h-fit rounded-tr-3xl rounded-tl-3xl">
           <View className="mx-3">
             <View className="mt-10">
-              <Text className="text-platinum text-base mb-3">
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
+                className="text-platinum text-base mb-3">
                 Nombre y apellido
               </Text>
               <View
@@ -122,11 +138,17 @@ const UserProfileScreen = ({navigation}) => {
                   placeholderTextColor={platinum}
                   onChangeText={value => handleChangeInput('name', value)}
                   style={{
-                    fontFamily: 'Comfortaa',
+                    fontFamily: 'Manrope-Regular',
                   }}
                 />
               </View>
-              <Text className="text-platinum text-base mb-3">Celular</Text>
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
+                className="text-platinum text-base mb-3">
+                Celular
+              </Text>
               <View
                 className={`mb-5 flex flex-row justify-center items-center appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
           ${state.isEditable ? 'border-blueberry' : 'border-platinum'}`}>
@@ -147,11 +169,17 @@ const UserProfileScreen = ({navigation}) => {
                   placeholderTextColor={platinum}
                   onChangeText={value => handleChangeInput('phone', value)}
                   style={{
-                    fontFamily: 'Comfortaa',
+                    fontFamily: 'Manrope-Regular',
                   }}
                 />
               </View>
-              <Text className="text-platinum text-base mb-3">Email</Text>
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
+                className="text-platinum text-base mb-3">
+                Email
+              </Text>
               <View
                 className={`flex flex-row justify-center items-center appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
           ${state.isEditable ? 'border-blueberry' : 'border-platinum'}`}>
@@ -172,7 +200,7 @@ const UserProfileScreen = ({navigation}) => {
                   placeholderTextColor={platinum}
                   onChangeText={value => handleChangeInput('email', value)}
                   style={{
-                    fontFamily: 'Comfortaa',
+                    fontFamily: 'Manrope-Regular',
                   }}
                 />
               </View>
@@ -185,7 +213,11 @@ const UserProfileScreen = ({navigation}) => {
                     showToast();
                     handleChangeInput('isEditable', false);
                   }}>
-                  <Text className="text-xl font-bold text-white">
+                  <Text
+                    style={{
+                      fontFamily: 'Manrope-Bold',
+                    }}
+                    className="text-xl text-white">
                     Guardar cambios
                   </Text>
                 </TouchableHighlight>
@@ -197,7 +229,11 @@ const UserProfileScreen = ({navigation}) => {
                     }}
                     className="bg-white border-turquoise py-4 rounded-full w-full justify-center items-center"
                     onPress={() => {}}>
-                    <Text className="text-xl font-bold text-turquoise">
+                    <Text
+                      style={{
+                        fontFamily: 'Manrope-Bold',
+                      }}
+                      className="text-xl text-turquoise">
                       Cambiar a Proveedor
                     </Text>
                   </TouchableHighlight>
@@ -206,7 +242,11 @@ const UserProfileScreen = ({navigation}) => {
                     onPress={() => {
                       logout();
                     }}>
-                    <Text className="text-xl font-bold text-white">
+                    <Text
+                      style={{
+                        fontFamily: 'Manrope-Bold',
+                      }}
+                      className="text-xl text-white">
                       Cerrar sesión
                     </Text>
                   </TouchableHighlight>

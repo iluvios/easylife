@@ -102,9 +102,21 @@ const ServiceScreen = ({navigation}) => {
           <Image
             source={name === 'isAddressContent' ? HomeOutline : MoneySmallImage}
           />
-          <Text className="ml-3 text-chineseblack text-xl">{text}</Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="ml-3 text-chineseblack text-xl">
+            {text}
+          </Text>
         </View>
-        <Text className="text-blueberry text-lg">Editar</Text>
+        <Text
+          style={{
+            fontFamily: 'Manrope-Regular',
+          }}
+          className="text-blueberry text-lg">
+          Editar
+        </Text>
       </View>
     );
   };
@@ -113,10 +125,18 @@ const ServiceScreen = ({navigation}) => {
     if (modalState.isAddressContent) {
       return (
         <View>
-          <Text className="mt-8 text-black text-xl font-bold">
+          <Text
+            style={{
+              fontFamily: 'Comfortaa-Bold',
+            }}
+            className="mt-8 text-black text-xl">
             Selecciona una dirección
           </Text>
-          <Text className="text-platinum text-lg">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-platinum text-lg">
             Aquí llegará el easy de tu servicio
           </Text>
           <View className="mb-10">
@@ -127,6 +147,9 @@ const ServiceScreen = ({navigation}) => {
           <View className="flex-row justify-center items-center mb-8">
             <Image source={LocationAddIcon} />
             <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
               onPress={() => {
                 handleTogglePannel('isAddAddressContent');
               }}
@@ -141,10 +164,18 @@ const ServiceScreen = ({navigation}) => {
     if (modalState.isPaymentMethodContent) {
       return (
         <View>
-          <Text className="mt-8 text-black text-xl font-bold">
+          <Text
+            style={{
+              fontFamily: 'Comfortaa-Bold',
+            }}
+            className="mt-8 text-black text-xl">
             Cómo quieres pagar?
           </Text>
-          <Text className="text-platinum text-lg">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-platinum text-lg">
             Selecciona de donde saldrá el pago
           </Text>
           <View className="mb-10">
@@ -155,6 +186,9 @@ const ServiceScreen = ({navigation}) => {
           <View className="flex-row justify-center items-center mb-8">
             <Image source={CardAddIcon} />
             <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
               onPress={() => {
                 handleTogglePannel('isAddPaymentMethodContent');
               }}
@@ -171,11 +205,19 @@ const ServiceScreen = ({navigation}) => {
     if (modalState.isAddAddressContent) {
       return (
         <View className="mt-12">
-          <Text className="text-center text-blue font-bold text-3xl text-blueberry">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Bold',
+            }}
+            className="text-center text-blue text-3xl text-blueberry">
             Nueva dirección
           </Text>
           <View className="ml-3 mt-5">
-            <Text className="text-chineseblack text-xl ">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="text-chineseblack text-xl ">
               Ingresa tú nueva ubicación
             </Text>
             <View
@@ -202,7 +244,7 @@ const ServiceScreen = ({navigation}) => {
                     handleChangeInputState('address', value)
                   }
                   style={{
-                    fontFamily: 'Comfortaa',
+                    fontFamily: 'Manrope-Regular',
                   }}
                 />
               </View>
@@ -223,19 +265,25 @@ const ServiceScreen = ({navigation}) => {
                   handleChangeInputState('remember', value)
                 }
                 style={{
-                  fontFamily: 'Comfortaa',
+                  fontFamily: 'Manrope-Regular',
                 }}
               />
             </View>
             <View className="mt-10 mb-8 flex-row justify-between items-center">
               <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
                 onPress={handleTogglePannel}
                 className="ml-4 text-xl text-platinum">
                 Cancelar
               </Text>
               <Text
+                style={{
+                  fontFamily: 'Manrope-Bold',
+                }}
                 onPress={handleTogglePannel}
-                className="mr-5 text-xl text-blueberry font-bold">
+                className="mr-5 text-xl text-blueberry">
                 Guardar
               </Text>
             </View>
@@ -247,11 +295,19 @@ const ServiceScreen = ({navigation}) => {
     if (modalState.isAddPaymentMethodContent) {
       return (
         <View className="mt-12">
-          <Text className="text-center text-blue font-bold text-3xl text-blueberry">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Bold',
+            }}
+            className="text-center text-blue text-3xl text-blueberry">
             Nueva cuenta
           </Text>
           <View className="ml-3 mt-5">
-            <Text className="text-chineseblack text-xl ">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="text-chineseblack text-xl ">
               Ingresa tú nuevo metodo de pago
             </Text>
             <View
@@ -277,7 +333,7 @@ const ServiceScreen = ({navigation}) => {
                     handleChangeInputState('accountNumber', value)
                   }
                   style={{
-                    fontFamily: 'Comfortaa',
+                    fontFamily: 'Manrope-Regular',
                   }}
                 />
               </View>
@@ -305,7 +361,7 @@ const ServiceScreen = ({navigation}) => {
                     handleChangeInputState('accountName', value)
                   }
                   style={{
-                    fontFamily: 'Comfortaa',
+                    fontFamily: 'Manrope-Regular',
                   }}
                 />
               </View>
@@ -333,7 +389,7 @@ const ServiceScreen = ({navigation}) => {
                     handleChangeInputState('accountLastName', value)
                   }
                   style={{
-                    fontFamily: 'Comfortaa',
+                    fontFamily: 'Manrope-Regular',
                   }}
                 />
               </View>
@@ -369,7 +425,7 @@ const ServiceScreen = ({navigation}) => {
                       handleChangeInputState('accountExpirationDate', value)
                     }
                     style={{
-                      fontFamily: 'Comfortaa',
+                      fontFamily: 'Manrope-Regular',
                     }}
                   />
                 </View>
@@ -397,26 +453,36 @@ const ServiceScreen = ({navigation}) => {
                       handleChangeInputState('accountCode', value)
                     }
                     style={{
-                      fontFamily: 'Comfortaa',
+                      fontFamily: 'Manrope-Regular',
                     }}
                   />
                 </View>
               </View>
             </View>
-            <Text className="mt-5 ml-2 text-base text-platinum">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="mt-5 ml-2 text-base text-platinum">
               Información confidencial y segura.{' '}
               <Text className="text-blueberry">Privacidad</Text>
             </Text>
 
             <View className="mt-10 mb-8 flex-row justify-between items-center">
               <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
                 onPress={handleTogglePannel}
                 className="ml-4 text-xl text-platinum">
                 Cancelar
               </Text>
               <Text
+                style={{
+                  fontFamily: 'Manrope-Bold',
+                }}
                 onPress={handleTogglePannel}
-                className="mr-5 text-xl text-blueberry font-bold">
+                className="mr-5 text-xl text-blueberry">
                 Guardar
               </Text>
             </View>
@@ -437,7 +503,11 @@ const ServiceScreen = ({navigation}) => {
             className="rounded-xl p-1 w-12 h-12 shadow-2xl shadow-blueberry bg-white flex justify-center items-center">
             <IconImageComponent image={ArrowLeftIcon} height={40} width={40} />
           </TouchableHighlight>
-          <Text className="text-3xl font-bold text-chineseblack ml-5">
+          <Text
+            style={{
+              fontFamily: 'Comfortaa-Bold',
+            }}
+            className="text-3xl text-chineseblack ml-5">
             Conductor elegido
           </Text>
         </View>
@@ -445,26 +515,64 @@ const ServiceScreen = ({navigation}) => {
           <Image source={ConduccionImage} />
         </View>
         <View className="mt-5">
-          <Text className="text-chineseblack text-lg">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-chineseblack text-lg">
             1. El conductor te llevará en tú vehiculo.
           </Text>
-          <Text className="text-chineseblack text-lg mt-3">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-chineseblack text-lg mt-3">
             2. El valor del servicio cubre el máx de{' '}
-            <Text className="font-bold">1 hora</Text>.
+            <Text
+              style={{
+                fontFamily: 'Manrope-Bold',
+              }}>
+              1 hora
+            </Text>
+            .
           </Text>
-          <Text className="text-chineseblack text-lg mt-3">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-chineseblack text-lg mt-3">
             3. El recargo adicional por minuto es de{' '}
-            <Text className="font-bold">$800</Text>.
+            <Text
+              style={{
+                fontFamily: 'Manrope-Bold',
+              }}>
+              $800
+            </Text>
+            .
           </Text>
-          <Text className="text-platinum text-base font-bold">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Bold',
+            }}
+            className="text-platinum text-sm">
             El valor del tiempo adicional se cargara a tu cuenta
           </Text>
         </View>
         <View className="mt-8">
-          <Text className="text-chineseblack text-xl font-bold">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Bold',
+            }}
+            className="text-chineseblack text-xl">
             Detalles de solicitud
           </Text>
-          <Text className="mt-5 text-platinum text-lg">Recogida</Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="mt-5 text-platinum text-lg">
+            Recogida
+          </Text>
           <View className="flex-row mt-3 justify-start items-center">
             <IconImageComponent image={TeacherIcon} width={24} height={24} />
             <TouchableOpacity
@@ -476,6 +584,7 @@ const ServiceScreen = ({navigation}) => {
                   className="ml-3 text-chineseblack text-xl"
                   style={{
                     maxWidth: 250,
+                    fontFamily: 'Manrope-Regular',
                   }}>
                   Carrera 49, Cl. 7 Sur #50
                 </Text>
@@ -488,11 +597,21 @@ const ServiceScreen = ({navigation}) => {
                 </View>
               </View>
             </TouchableOpacity>
-            <Text className="text-blueberry text-lg absolute right-0 mr-3">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="text-blueberry text-lg absolute right-0 mr-3">
               Mapa
             </Text>
           </View>
-          <Text className="mt-5 text-platinum text-lg">Destino</Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="mt-5 text-platinum text-lg">
+            Destino
+          </Text>
           <View className="flex-row mt-3 justify-start items-center">
             <IconImageComponent image={LocationIcon} width={17} height={20} />
             <TouchableOpacity
@@ -504,6 +623,7 @@ const ServiceScreen = ({navigation}) => {
                   className="ml-3 text-chineseblack text-xl"
                   style={{
                     maxWidth: 250,
+                    fontFamily: 'Manrope-Regular',
                   }}>
                   Tv. 35c Sur #33-57
                 </Text>
@@ -516,11 +636,21 @@ const ServiceScreen = ({navigation}) => {
                 </View>
               </View>
             </TouchableOpacity>
-            <Text className="text-blueberry text-lg absolute right-0 mr-3">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="text-blueberry text-lg absolute right-0 mr-3">
               Mapa
             </Text>
           </View>
-          <Text className="mt-5 text-platinum text-lg">Medio de pago</Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="mt-5 text-platinum text-lg">
+            Medio de pago
+          </Text>
           <View className="flex-row mt-3 justify-start items-center">
             <IconImageComponent image={MoneyIcon} width={24} height={24} />
             <TouchableOpacity
@@ -528,7 +658,13 @@ const ServiceScreen = ({navigation}) => {
                 handleToggleModal('isPaymentMethodContent');
               }}>
               <View className="flex-row justify-start items-center">
-                <Text className="ml-3 text-chineseblack text-xl">Efectivo</Text>
+                <Text
+                  style={{
+                    fontFamily: 'Manrope-Regular',
+                  }}
+                  className="ml-3 text-chineseblack text-xl">
+                  Efectivo
+                </Text>
                 <View className="ml-3 ">
                   <IconImageComponent
                     image={ArrowBottomBigIcon}
@@ -547,9 +683,19 @@ const ServiceScreen = ({navigation}) => {
               onPress={() => {
                 navigation.navigate(schedule);
               }}>
-              <Text className="text-xl font-bold text-white">Agendar</Text>
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Bold',
+                }}
+                className="text-xl text-white">
+                Agendar
+              </Text>
             </TouchableHighlight>
-            <Text className="text-lg text-skyblue text-center">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="text-lg text-skyblue text-center">
               $100.000 cop
             </Text>
           </View>
@@ -559,9 +705,19 @@ const ServiceScreen = ({navigation}) => {
               onPress={() => {
                 navigation.navigate(requestService);
               }}>
-              <Text className="text-xl font-bold text-white">Solicitar ya</Text>
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Bold',
+                }}
+                className="text-xl text-white">
+                Solicitar ya
+              </Text>
             </TouchableHighlight>
-            <Text className="text-lg text-blueberry text-center">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="text-lg text-blueberry text-center">
               $120.000 cop
             </Text>
           </View>

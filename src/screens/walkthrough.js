@@ -74,12 +74,26 @@ const WalkthroughScreen = ({navigation}) => {
       paginationStyle={swiperStyles.pagination}>
       <View style={styles.slide1}>
         <View className="mx-2">
-          <Text className="font-bold text-3xl text-black text-center">
+          <Text
+            style={{
+              fontFamily: 'Comfortaa-Bold',
+            }}
+            className="text-3xl text-black text-center">
             Hola <Text className="text-blueberry">Camilo!</Text>
           </Text>
-          <Text className="mt-5 text-black text-xl text-center">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="mt-5 text-black text-xl text-center">
             Nos emociona mucho poder ayudarte, con{' '}
-            <Text className="font-bold">easy</Text> podras...
+            <Text
+              style={{
+                fontFamily: 'Manrope-Bold',
+              }}>
+              easy
+            </Text>{' '}
+            podras...
           </Text>
         </View>
       </View>
@@ -88,16 +102,33 @@ const WalkthroughScreen = ({navigation}) => {
           <View className="mt-10">
             <Image source={ExploreImage} />
           </View>
-          <Text className="font-bold text-5xl text-blueberry">Explorar</Text>
-          <Text className="mt-5 text-black text-xl">
+          <Text
+            style={{
+              fontFamily: 'Comfortaa-Bold',
+            }}
+            className=" text-5xl text-blueberry">
+            Explorar
+          </Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="mt-5 text-black text-xl">
             Entre una decena de servicios
           </Text>
-          <Text className="text-black text-xl">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-black text-xl">
             disponibles para ti, hazlo más{' '}
             <Text className="text-blueberry">easy</Text>
           </Text>
         </View>
         <Text
+          style={{
+            fontFamily: 'Manrope-Regular',
+          }}
           onPress={handleContinue}
           className="mr-3 text-xl text-blueberry text-right w-fit absolute bottom-10 right-0">
           Continuar
@@ -112,19 +143,34 @@ const WalkthroughScreen = ({navigation}) => {
         </View>
         <View className="mt-12">
           <View className="ml-3">
-            <Text className="mt-1 font-bold text-5xl text-blueberry">
+            <Text
+              style={{
+                fontFamily: 'Comfortaa-Bold',
+              }}
+              className="mt-1 text-5xl text-blueberry">
               Seleccionar
             </Text>
-            <Text className="mt-3 text-black text-xl">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="mt-3 text-black text-xl">
               La opción que más acomode a tu
             </Text>
-            <Text className="text-black text-xl">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="text-black text-xl">
               necesidad de forma segura y{' '}
               <Text className="text-blueberry">easy</Text>
             </Text>
           </View>
         </View>
         <Text
+          style={{
+            fontFamily: 'Manrope-Regular',
+          }}
           onPress={handleContinue}
           className="mr-3 text-xl text-blueberry text-right w-fit absolute bottom-10 right-0">
           Continuar
@@ -145,17 +191,34 @@ const WalkthroughScreen = ({navigation}) => {
             <Image source={HireImage} />
           </View>
           <View className="mt-12">
-            <Text className="font-bold text-5xl text-blueberry">Contratar</Text>
-            <Text className="mt-3 text-black text-xl">
+            <Text
+              style={{
+                fontFamily: 'Comfortaa-Bold',
+              }}
+              className="text-5xl text-blueberry">
+              Contratar
+            </Text>
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="mt-3 text-black text-xl">
               Sin papeleos ni esperas, todo lo
             </Text>
-            <Text className="text-black text-xl">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="text-black text-xl">
               que necesecitas a solo un click, así de{' '}
               <Text className="text-blueberry">easy</Text>
             </Text>
           </View>
         </View>
         <Text
+          style={{
+            fontFamily: 'Manrope-Regular',
+          }}
           onPress={() => {
             navigation.navigate(home);
           }}

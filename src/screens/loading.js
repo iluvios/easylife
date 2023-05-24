@@ -49,7 +49,11 @@ const LoadingScreen = ({navigation}) => {
       <View className="absolute">
         <Image source={currentLogo} />
       </View>
-      <Text className="text-platinum text-xl absolute bottom-20">
+      <Text
+        style={{
+          fontFamily: 'Comfortaa-Bold',
+        }}
+        className="text-platinum text-xl absolute bottom-20">
         Estamos preparando todo para ti
       </Text>
     </View>

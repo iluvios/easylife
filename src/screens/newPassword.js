@@ -42,12 +42,20 @@ const NewPasswordScreen = ({navigation}) => {
             className="rounded-xl p-1 w-12 h-12 shadow-2xl shadow-blueberry bg-white flex justify-center items-center">
             <IconImageComponent image={ArrowLeftIcon} height={40} width={40} />
           </TouchableHighlight>
-          <Text className="text-xl font-bold text-black ml-5">
+          <Text
+            style={{
+              fontFamily: 'Comfortaa-Bold',
+            }}
+            className="text-xl text-black ml-5">
             Recuperar contraseña
           </Text>
         </View>
         <View>
-          <Text className="mt-12 mb-10 text-base text-black">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="mt-12 mb-10 text-base text-black">
             Ingresa tu nueva contraseña
           </Text>
           <View
@@ -71,7 +79,7 @@ const NewPasswordScreen = ({navigation}) => {
               placeholderTextColor={platinum}
               onChangeText={value => handlePasswordChange(value)}
               style={{
-                fontFamily: 'Comfortaa',
+                fontFamily: 'Manrope-Regular',
               }}
             />
           </View>
@@ -98,14 +106,18 @@ const NewPasswordScreen = ({navigation}) => {
               placeholderTextColor={platinum}
               onChangeText={value => handleConfirmPasswordChange(value)}
               style={{
-                fontFamily: 'Comfortaa',
+                fontFamily: 'Manrope-Regular',
               }}
             />
           </View>
           <TouchableHighlight
             className="bg-blueberry py-4 rounded-full flex justify-center items-center"
             onPress={handleToggleModal}>
-            <Text className="text-xl font-bold text-white">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Bold',
+              }}
+              className="text-xl text-white">
               Guardar y continuar
             </Text>
           </TouchableHighlight>
@@ -115,13 +127,24 @@ const NewPasswordScreen = ({navigation}) => {
         isVisible={isModalVisible}
         handleBackButtonPress={handleToggleModal}
         handleBackdropPress={handleToggleModal}>
-        <Text className="mt-8 text-black text-xl text-center font-bold">
+        <Text
+          style={{
+            fontFamily: 'Comfortaa-Bold',
+          }}
+          className="mt-8 text-black text-xl text-center">
           Fue muy <Text className="text-blueberry">easy</Text>
         </Text>
-        <Text className="text-black text-lg my-3 text-center">
+        <Text
+          style={{
+            fontFamily: 'Manrope-Regular',
+          }}
+          className="text-black text-lg my-3 text-center">
           Contraseña guardada con éxito
         </Text>
         <Text
+          style={{
+            fontFamily: 'Manrope-Regular',
+          }}
           onPress={handleToggleModal}
           className="text-blueberry text-lg text-center my-8">
           Aceptar

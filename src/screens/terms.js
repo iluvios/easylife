@@ -29,10 +29,18 @@ const TermsScreen = ({navigation}) => {
             <IconImageComponent image={ArrowLeftIcon} height={40} width={40} />
           </TouchableHighlight>
           <View className="flex flex-col">
-            <Text className="text-xl font-bold text-black ml-5">
+            <Text
+              style={{
+                fontFamily: 'Comfortaa-Bold',
+              }}
+              className="text-xl text-black ml-5">
               Términos y condiciones
             </Text>
-            <Text className="text-platinum text-sm ml-3 mt-2">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="text-platinum text-sm ml-5 mt-2">
               Ultima actulización: 24 Junio, 2020
             </Text>
           </View>
@@ -41,10 +49,13 @@ const TermsScreen = ({navigation}) => {
           <TouchableHighlight
             className={`${
               isPolicyOpen ? 'bg-white' : 'bg-skyblue'
-            } px-4 rounded-full flex justify-center items-center`}
+            } px-4 pb-1 rounded-full flex justify-center items-center`}
             onPress={handleClosePolicy}>
             <Text
-              className={`text-xl font-bold ${
+              style={{
+                fontFamily: isPolicyOpen ? 'Manrope-Regular' : 'Manrope-Bold',
+              }}
+              className={`text-lg ${
                 isPolicyOpen ? 'text-platinum' : 'text-white'
               }`}>
               Mis derechos
@@ -53,10 +64,13 @@ const TermsScreen = ({navigation}) => {
           <TouchableHighlight
             className={`${
               isPolicyOpen ? 'bg-skyblue' : 'bg-white'
-            } px-4 rounded-full flex justify-center items-center`}
+            } px-4 pb-1 rounded-full flex justify-center items-center`}
             onPress={handleOpenPolicy}>
             <Text
-              className={`text-xl font-bold ${
+              style={{
+                fontFamily: isPolicyOpen ? 'Manrope-Bold' : 'Manrope-Regular',
+              }}
+              className={`text-lg ${
                 isPolicyOpen ? 'text-white' : 'text-platinum'
               }`}>
               Política de privacidad
@@ -66,7 +80,11 @@ const TermsScreen = ({navigation}) => {
         {isPolicyOpen ? (
           <View className="mt-10">
             <View>
-              <Text className="text-black p-3 text-lg">
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
+                className="text-black p-3 text-lg">
                 Privacidad Nulla feugiat eget tempus mattis facilisis semper
                 vitae. Nisi habitant sapien at dolor duis morbi. Nunc proin dis
                 pharetra sed porttitor pulvinar neque vestibulum porta.
@@ -74,7 +92,11 @@ const TermsScreen = ({navigation}) => {
                 nibh sagittis viverra sed a magnis tincidunt. Amet cras dictumst
                 fringilla metus.
               </Text>
-              <Text className="text-black p-3 text-lg">
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
+                className="text-black p-3 text-lg">
                 Orci ipsum est sit porttitor odio ultrices aliquam id
                 pellentesque. Lacinia vel gravida rutrum vestibulum. Nec id
                 scelerisque et leo mi fringilla. Fermentum facilisi imperdiet
@@ -83,7 +105,11 @@ const TermsScreen = ({navigation}) => {
               </Text>
             </View>
             <View className="bg-platinum rounded-2xl">
-              <Text className="text-black p-3 text-base">
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
+                className="text-black p-3 text-base">
                 Ornare cursus urna rutrum non non rhoncus turpis enim tortor.
                 Sociis lorem tellus donec proin nisl at. Sit porttitor nec massa
                 vitae et a lobortis nibh quam. Maecenas cursus et potenti libero
@@ -102,14 +128,22 @@ const TermsScreen = ({navigation}) => {
         ) : (
           <View className="mt-10">
             <View className="bg-platinum rounded-2xl">
-              <Text className="text-black p-3 text-base">
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
+                className="text-black p-3 text-base">
                 Derechos Ornare cursus urna rutrum non non rhoncus turpis enim
                 tortor. Sociis lorem tellus donec proin nisl at. Sit porttitor
                 nec massa vitae et a lobortis nibh quam. Maecenas cursus et
                 potenti libero id. At ut nunc neque adipiscing tincidunt nisl
                 quis. Leo dictumst dui bibendum id ut eget donec. Nisl.
               </Text>
-              <Text className="text-black p-3 text-base">
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
+                className="text-black p-3 text-base">
                 Tellus a viverra mi ut amet at. In tellus purus nunc quisque
                 nascetur fames. Etiam convallis placerat aliquet bibendum
                 ullamcorper mauris facilisi. Ullamcorper nibh id viverra eget.
@@ -118,7 +152,11 @@ const TermsScreen = ({navigation}) => {
               </Text>
             </View>
             <View>
-              <Text className="text-black p-3 text-lg">
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
+                className="text-black p-3 text-lg">
                 Nulla feugiat eget tempus mattis facilisis semper vitae. Nisi
                 habitant sapien at dolor duis morbi. Nunc proin dis pharetra sed
                 porttitor pulvinar neque vestibulum porta. Imperdiet vel id
@@ -126,7 +164,11 @@ const TermsScreen = ({navigation}) => {
                 viverra sed a magnis tincidunt. Amet cras dictumst fringilla
                 metus.
               </Text>
-              <Text className="text-black p-3 text-lg">
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
+                className="text-black p-3 text-lg">
                 Orci ipsum est sit porttitor odio ultrices aliquam id
                 pellentesque. Lacinia vel gravida rutrum vestibulum. Nec id
                 scelerisque et leo mi fringilla. Fermentum facilisi imperdiet
@@ -139,7 +181,13 @@ const TermsScreen = ({navigation}) => {
         <TouchableHighlight
           className="bg-skyblue my-10 py-4 rounded-full flex justify-center items-center w-full"
           onPress={() => {}}>
-          <Text className="text-xl font-bold text-white">Aceptar</Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Bold',
+            }}
+            className="text-xl text-white">
+            Aceptar
+          </Text>
         </TouchableHighlight>
       </View>
     </ScrollView>

@@ -58,26 +58,42 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
             className="rounded-xl p-1 w-12 h-12 shadow-2xl shadow-blueberry bg-white flex justify-center items-center">
             <IconImageComponent image={ArrowLeftIcon} height={40} width={40} />
           </TouchableHighlight>
-          <Text className="text-xl font-bold text-black ml-5">
+          <Text
+            style={{
+              fontFamily: 'Comfortaa-Bold',
+            }}
+            className="text-xl text-black ml-5">
             Recuperar contraseña
           </Text>
         </View>
         <View>
           <View className="flex-row justify-between">
-            <Text className="mt-12 text-base text-black">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="mt-12 text-base text-black">
               Ingresa el código enviado.
             </Text>
-            <Text className="mt-12 text-base text-red font-bold">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Bold',
+              }}
+              className="mt-12 text-base text-red">
               Código incorrecto
             </Text>
           </View>
-          <Text className="mt-4 text-platinum text-sm">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="mt-4 text-platinum text-xs">
             Si no lo encuentras en tu bandeja principal, revisa en SPAM o en
             correos no deseados.
           </Text>
           <View className="mt-10 flex flex-row justify-center items-center">
             <View
-              className={`mr-1 w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
+              className={`flex justify-center items-center mr-1 w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
           ${
             isClickedCodeState.codeOne ? 'border-blueberry' : 'border-platinum'
           }`}>
@@ -91,12 +107,12 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
                 placeholderTextColor={platinum}
                 onChangeText={value => handlePhoneChange('codeOne', value)}
                 style={{
-                  fontFamily: 'Comfortaa',
+                  fontFamily: 'Manrope-Regular',
                 }}
               />
             </View>
             <View
-              className={`mr-1 w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
+              className={`flex justify-center items-center mr-1 w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
           ${
             isClickedCodeState.codeTwo ? 'border-blueberry' : 'border-platinum'
           }`}>
@@ -110,12 +126,12 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
                 placeholderTextColor={platinum}
                 onChangeText={value => handlePhoneChange('codeTwo', value)}
                 style={{
-                  fontFamily: 'Comfortaa',
+                  fontFamily: 'Manrope-Regular',
                 }}
               />
             </View>
             <View
-              className={`mr-1 w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
+              className={`flex justify-center items-center mr-1 w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
           ${
             isClickedCodeState.codeThree
               ? 'border-blueberry'
@@ -131,12 +147,12 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
                 placeholderTextColor={platinum}
                 onChangeText={value => handlePhoneChange('codeThree', value)}
                 style={{
-                  fontFamily: 'Comfortaa',
+                  fontFamily: 'Manrope-Regular',
                 }}
               />
             </View>
             <View
-              className={`mr-1 w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
+              className={`flex justify-center items-center mr-1 w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
           ${
             isClickedCodeState.codeFour ? 'border-blueberry' : 'border-platinum'
           }`}>
@@ -150,12 +166,12 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
                 placeholderTextColor={platinum}
                 onChangeText={value => handlePhoneChange('codeFour', value)}
                 style={{
-                  fontFamily: 'Comfortaa',
+                  fontFamily: 'Manrope-Regular',
                 }}
               />
             </View>
             <View
-              className={`mr-1 w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
+              className={`flex justify-center items-center mr-1 w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
           ${
             isClickedCodeState.codeFive ? 'border-blueberry' : 'border-platinum'
           }`}>
@@ -169,12 +185,12 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
                 placeholderTextColor={platinum}
                 onChangeText={value => handlePhoneChange('codeFive', value)}
                 style={{
-                  fontFamily: 'Comfortaa',
+                  fontFamily: 'Manrope-Regular',
                 }}
               />
             </View>
             <View
-              className={`w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
+              className={`flex justify-center items-center w-12 h-12 appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline 
           ${
             isClickedCodeState.codeSix ? 'border-blueberry' : 'border-platinum'
           }`}>
@@ -188,18 +204,24 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
                 placeholderTextColor={platinum}
                 onChangeText={value => handlePhoneChange('codeSix', value)}
                 style={{
-                  fontFamily: 'Comfortaa',
+                  fontFamily: 'Manrope-Regular',
                 }}
               />
             </View>
           </View>
           <View className="my-10 flex flex-row justify-between">
             <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
               onPress={handleToggleModal}
               className="text-base text-blueberry">
               Reenviar código
             </Text>
             <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
               onPress={() => navigation.navigate('Register')}
               className="text-base text-blueberry">
               No recibo el código
@@ -208,7 +230,13 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
           <TouchableHighlight
             className="bg-blueberry py-4 rounded-full flex justify-center items-center"
             onPress={() => navigation.navigate(newPassword)}>
-            <Text className="text-xl font-bold text-white">Verificar</Text>
+            <Text
+              style={{
+                fontFamily: 'Manrope-Bold',
+              }}
+              className="text-xl text-white">
+              Verificar
+            </Text>
           </TouchableHighlight>
         </View>
       </View>
@@ -216,13 +244,25 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
         isVisible={isModalVisible}
         handleBackButtonPress={handleToggleModal}
         handleBackdropPress={handleToggleModal}>
-        <Text className="mt-8 text-black text-xl text-center font-bold">
+        <Text
+          style={{
+            fontFamily: 'Comfortaa-Bold',
+          }}
+          className="mt-8 text-black text-xl text-center">
           Código reenviado
         </Text>
-        <Text className="text-platinum text-lg my-3 text-center">
+        <Text
+          style={{
+            fontFamily: 'Manrope-Regular',
+          }}
+          className="text-platinum text-lg my-3 text-center">
           En breve recibiras un código al celular:
         </Text>
-        <Text className="mb-10 text-blueberry text-xl text-center">
+        <Text
+          style={{
+            fontFamily: 'Manrope-Regular',
+          }}
+          className="mb-10 text-blueberry text-xl text-center">
           +57 305 3424910
         </Text>
         <View className="mb-8 mx-3 flex flex-row justify-between items-center">
@@ -231,10 +271,18 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
               handleToggleModal();
               navigation.navigate(passwordRecovery);
             }}
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
             className="text-platinum text-lg">
             Cambiar celular
           </Text>
-          <Text onPress={handleToggleModal} className="text-blueberry text-lg">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            onPress={handleToggleModal}
+            className="text-blueberry text-lg">
             Aceptar
           </Text>
         </View>

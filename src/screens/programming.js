@@ -42,7 +42,11 @@ const ProgrammingScreen = ({navigation}) => {
             className="rounded-xl p-1 w-12 h-12 shadow-2xl shadow-blueberry bg-white flex justify-center items-center">
             <IconImageComponent image={ArrowLeftIcon} height={40} width={40} />
           </TouchableHighlight>
-          <Text className="text-3xl font-bold text-chineseblack ml-5">
+          <Text
+            style={{
+              fontFamily: 'Comfortaa-Bold',
+            }}
+            className="text-3xl text-chineseblack ml-5">
             Programar servicio
           </Text>
         </View>
@@ -54,13 +58,21 @@ const ProgrammingScreen = ({navigation}) => {
               width: 80,
             }}
           />
-          <View className="flex-row justify-between ml-5">
+          <View className="flex-row justify-between ml-2">
             <View className="flex-col">
-              <Text className="text-xl text-chineseblack">
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Bold',
+                }}
+                className="text-xl text-chineseblack">
                 Conductor elegido
               </Text>
               <View className="flex-row justify-center items-center">
-                <Text className="text-xl text-platinum">
+                <Text
+                  style={{
+                    fontFamily: 'Manrope-Regular',
+                  }}
+                  className="text-xl text-platinum">
                   Detalles del servicio
                 </Text>
                 <View className="ml-3">
@@ -73,14 +85,30 @@ const ProgrammingScreen = ({navigation}) => {
                 </View>
               </View>
             </View>
-            <Text className="text-lg text-blueberry">Cambiar</Text>
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="text-lg text-blueberry">
+              Cambiar
+            </Text>
           </View>
         </View>
         <View className="mt-10">
-          <Text className="text-platinum text-lg font-bold">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Bold',
+            }}
+            className="text-platinum text-lg">
             Detalles de solicitud
           </Text>
-          <Text className="text-platinum text-lg mt-5">Dirección</Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-platinum text-lg mt-5">
+            Dirección
+          </Text>
           <View className="flex-row mt-3 justify-start items-center">
             <IconImageComponent image={TeacherIcon} width={24} height={24} />
             <TouchableOpacity onPress={() => {}}>
@@ -89,6 +117,7 @@ const ProgrammingScreen = ({navigation}) => {
                   className="ml-3 text-chineseblack text-xl"
                   style={{
                     maxWidth: 250,
+                    fontFamily: 'Manrope-Regular',
                   }}>
                   Carrera 49, Cl. 7 Sur #50
                 </Text>
@@ -101,14 +130,24 @@ const ProgrammingScreen = ({navigation}) => {
                 </View>
               </View>
             </TouchableOpacity>
-            <Text className="text-blueberry text-lg absolute right-0 mr-3">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="text-blueberry text-lg absolute right-0 mr-3">
               Mapa
             </Text>
           </View>
 
           <View className="flex-row justify-between mt-5">
             <View className="flex-col">
-              <Text className="text-platinum text-lg">Fecha</Text>
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
+                className="text-platinum text-lg">
+                Fecha
+              </Text>
               <View className="flex-row mt-3 justify-start items-center">
                 <IconImageComponent
                   image={CalendarSmallIcon}
@@ -120,7 +159,11 @@ const ProgrammingScreen = ({navigation}) => {
                     setOpenDate(true);
                   }}>
                   <View className="flex-row justify-start items-center">
-                    <Text className="ml-3 text-chineseblack text-xl">
+                    <Text
+                      style={{
+                        fontFamily: 'Manrope-Regular',
+                      }}
+                      className="ml-3 text-chineseblack text-xl">
                       {formateDate(date)}
                     </Text>
                     <View className="ml-3 ">
@@ -135,7 +178,13 @@ const ProgrammingScreen = ({navigation}) => {
               </View>
             </View>
             <View className="flex-col">
-              <Text className="text-platinum text-lg">Hora</Text>
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
+                className="text-platinum text-lg">
+                Hora
+              </Text>
               <View className="flex-row mt-3 justify-start items-center mr-3">
                 <IconImageComponent
                   image={ClockSmallIcon}
@@ -147,7 +196,11 @@ const ProgrammingScreen = ({navigation}) => {
                     setOpenHour(true);
                   }}>
                   <View className="flex-row justify-start items-center">
-                    <Text className="ml-3 text-chineseblack text-xl">
+                    <Text
+                      style={{
+                        fontFamily: 'Manrope-Regular',
+                      }}
+                      className="ml-3 text-chineseblack text-xl">
                       {formateTime(hour)}
                     </Text>
                     <View className="ml-3 ">
@@ -163,12 +216,24 @@ const ProgrammingScreen = ({navigation}) => {
             </View>
           </View>
 
-          <Text className="mt-5 text-platinum text-lg">Medio de pago</Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="mt-5 text-platinum text-lg">
+            Medio de pago
+          </Text>
           <View className="flex-row mt-3 justify-start items-center">
             <IconImageComponent image={MoneyIcon} width={24} height={24} />
             <TouchableOpacity onPress={() => {}}>
               <View className="flex-row justify-start items-center">
-                <Text className="ml-3 text-chineseblack text-xl">Efectivo</Text>
+                <Text
+                  style={{
+                    fontFamily: 'Manrope-Regular',
+                  }}
+                  className="ml-3 text-chineseblack text-xl">
+                  Efectivo
+                </Text>
                 <View className="ml-3 ">
                   <IconImageComponent
                     image={ArrowBottomBigIcon}
@@ -179,8 +244,20 @@ const ProgrammingScreen = ({navigation}) => {
               </View>
             </TouchableOpacity>
           </View>
-          <Text className="mt-5 text-platinum text-lg">Total</Text>
-          <Text className="mt-3 text-chineseblack text-xl">$100.000 cop</Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="mt-5 text-platinum text-lg">
+            Total
+          </Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="mt-3 text-chineseblack text-xl">
+            $100.000 cop
+          </Text>
           <Text className="mt-5 text-platinum text-lg">Nota</Text>
           <View
             className={`mt-3 flex flex-row justify-center items-start appearance-none border rounded-xl leading-tight focus:outline-none focus:shadow-outline h-20 mr-3 ${
@@ -195,7 +272,7 @@ const ProgrammingScreen = ({navigation}) => {
               placeholderTextColor={platinum}
               onChangeText={value => setRemember(value)}
               style={{
-                fontFamily: 'Comfortaa',
+                fontFamily: 'Manrope-Regular',
               }}
             />
           </View>
@@ -205,7 +282,13 @@ const ProgrammingScreen = ({navigation}) => {
           onPress={() => {
             navigation.navigate(scheduled);
           }}>
-          <Text className="text-xl font-bold text-white">Confirmar</Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Bold',
+            }}
+            className="text-xl text-white">
+            Confirmar
+          </Text>
         </TouchableHighlight>
       </View>
       <DatePicker

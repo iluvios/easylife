@@ -53,9 +53,19 @@ const DashboardScreen = ({navigation}) => {
               <Image source={ProfileIcon} />
             </TouchableHighlight>
             <View className="flex-col ml-3">
-              <Text className="text-3xl text-blueberry">Camilo</Text>
+              <Text
+                style={{
+                  fontFamily: 'Comfortaa-Bold',
+                }}
+                className="text-3xl text-blueberry">
+                Camilo
+              </Text>
               <View className="flex-row justify-center items-center">
-                <Text className="text-chineseblack text-xs">
+                <Text
+                  style={{
+                    fontFamily: 'Manrope-Regular',
+                  }}
+                  className="text-chineseblack text-xs">
                   Carrera 49, Cl. 7 Sur #50
                 </Text>
                 <Image source={ArrowBottomIcon} className="ml-3" />
@@ -84,7 +94,7 @@ const DashboardScreen = ({navigation}) => {
                 placeholderTextColor={platinum}
                 onChangeText={value => handleChangeSearchInput(value)}
                 style={{
-                  fontFamily: 'Comfortaa',
+                  fontFamily: 'Manrope-Regular',
                 }}
               />
             </View>
@@ -106,8 +116,17 @@ const DashboardScreen = ({navigation}) => {
 
         <View className="mt-10 ml-3">
           <View className="flex flex-row justify-between">
-            <Text className="text-xl font-bold text-platinum">Servicios</Text>
             <Text
+              style={{
+                fontFamily: 'Manrope-Bold',
+              }}
+              className="text-xl text-platinum">
+              Servicios
+            </Text>
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
               onPress={handleChangeViewServicesOpen}
               className="text-lg text-blueberry mr-3">
               {isViewServicesOpen ? 'Ocultar' : 'Ver todos'}
@@ -166,11 +185,18 @@ const DashboardScreen = ({navigation}) => {
         </View>
         <Animatable.View animation="fadeInUp">
           <TouchableHighlight
-            className="bg-white my-10 py-4 rounded-full border-turquoise border-2 mx-3"
+            className="bg-white my-10 py-4 rounded-full border-turquoise mx-3"
+            style={{
+              borderWidth: 1,
+            }}
             onPress={() => {}}>
             <View className="flex flex-row justify-center items-center">
               <Image source={TicketStarIcon} />
-              <Text className="text-xl font-bold text-turquoise ml-3">
+              <Text
+                style={{
+                  fontFamily: 'Comfortaa-Bold',
+                }}
+                className="text-xl text-turquoise ml-3">
                 Tus creditos
               </Text>
             </View>

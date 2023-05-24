@@ -24,16 +24,28 @@ const RateScreen = ({navigation}) => {
 
   return (
     <View className="bg-white h-full w-full">
-      <Text className="text-chineseblack text-3xl font bold mt-12 text-center">
+      <Text
+        style={{
+          fontFamily: 'Comfortaa-Bold',
+        }}
+        className="text-chineseblack text-3xl mt-12 text-center">
         Califica el servicio
       </Text>
       <View className="mt-14 flex justify-center items-center">
         <Image source={AvatarImage} />
       </View>
-      <Text className="mt-5 text-chineseblack text-lg font-bold text-center">
+      <Text
+        style={{
+          fontFamily: 'Manrope-Bold',
+        }}
+        className="mt-5 text-chineseblack text-lg text-center">
         Juan Pablo Ramirez
       </Text>
-      <Text className="mt-16 text-chineseblack text-lg text-center">
+      <Text
+        style={{
+          fontFamily: 'Manrope-Regular',
+        }}
+        className="mt-16 text-chineseblack text-lg text-center">
         ¿Cómo fue el servicio recibido?
       </Text>
       <View className="ml-3">
@@ -76,7 +88,7 @@ const RateScreen = ({navigation}) => {
               placeholderTextColor={platinum}
               onChangeText={value => setComment(value)}
               style={{
-                fontFamily: 'Comfortaa',
+                fontFamily: 'Manrope-Regular',
               }}
             />
           </View>
@@ -88,14 +100,26 @@ const RateScreen = ({navigation}) => {
           onPress={() => {
             navigation.dispatch(popAction);
           }}>
-          <Text className="text-xl font-bold text-white">Omitir</Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Bold',
+            }}
+            className="text-xl text-white">
+            Omitir
+          </Text>
         </TouchableHighlight>
         <TouchableHighlight
           className="bg-blueberry w-44 py-4 rounded-full flex justify-center items-center"
           onPress={() => {
             handleToggleModal();
           }}>
-          <Text className="text-xl font-bold text-white">Enviar</Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Bold',
+            }}
+            className="text-xl text-white">
+            Enviar
+          </Text>
         </TouchableHighlight>
       </View>
       <ModalComponent
@@ -115,16 +139,27 @@ const RateScreen = ({navigation}) => {
             }}
           />
         </View>
-        <Text className="mt-8 text-black text-xl text-center font-bold">
+        <Text
+          style={{
+            fontFamily: 'Comfortaa-Bold',
+          }}
+          className="mt-8 text-black text-xl text-center">
           Muchas gracias!
         </Text>
-        <Text className="text-chineseblack text-lg my-7 text-center mx-3">
+        <Text
+          style={{
+            fontFamily: 'Manrope-Regular',
+          }}
+          className="text-chineseblack text-lg my-7 text-center mx-3">
           Tus opiniones son lo más importante para nosotros.{' '}
           <Text className="text-blueberry">
             Gracias por ayudarnos a mejorar.
           </Text>
         </Text>
         <Text
+          style={{
+            fontFamily: 'Manrope-Regular',
+          }}
           onPress={() => {
             handleToggleModal();
             navigation.dispatch(popAction);

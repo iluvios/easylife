@@ -20,7 +20,13 @@ const CardWithIcon = ({image, title, isLast, navigate}) => {
         <View className="mt-2">
           <IconImageComponent image={image} height={60} width={60} />
         </View>
-        <Text className="mb-2 text-blueberry text-base">{title}</Text>
+        <Text
+          style={{
+            fontFamily: 'Manrope-Medium',
+          }}
+          className="mb-2 text-blueberry text-base">
+          {title}
+        </Text>
       </View>
     </TouchableHighlight>
   );

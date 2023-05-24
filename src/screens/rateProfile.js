@@ -78,17 +78,28 @@ const RateProfileScreen = ({navigation}) => {
         <View className="ml-5">
           <View className="flex-row justify-between">
             <View className="flex-row justify-center items-center">
-              <Text className="mr-3 text-chineseblack text-xl font-bold">
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Bold',
+                }}
+                className="mr-3 text-chineseblack text-xl">
                 {userName.substring(0, 7)}
               </Text>
               {renderStarImages(stars)}
             </View>
-            <Text className="text-platinum text-base">{formateDate(date)}</Text>
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="text-platinum text-base">
+              {formateDate(date)}
+            </Text>
           </View>
           <Text
             className="text-platinum text-base"
             style={{
               maxWidth: 270,
+              fontFamily: 'Manrope-Regular',
             }}>
             {comment}
           </Text>
@@ -108,18 +119,32 @@ const RateProfileScreen = ({navigation}) => {
             className="rounded-xl p-1 w-12 h-12 shadow-2xl shadow-blueberry bg-white flex justify-center items-center">
             <IconImageComponent image={ArrowLeftIcon} height={40} width={40} />
           </TouchableHighlight>
-          <Text className="text-3xl font-bold text-chineseblack ml-5">
+          <Text
+            style={{
+              fontFamily: 'Comfortaa-Bold',
+            }}
+            className="text-3xl text-chineseblack ml-5">
             Perfil
           </Text>
         </View>
         <View className="mt-10 flex justify-center items-center">
           <Image source={AvatarImage} />
         </View>
-        <Text className="mt-5 text-chineseblack text-lg font-bold text-center">
+        <Text
+          style={{
+            fontFamily: 'Manrope-Bold',
+          }}
+          className="mt-5 text-chineseblack text-lg text-center">
           Juan Pablo Ramirez
         </Text>
         <View className="justify-center items-center flex-row mt-5">
-          <Text className="text-platinum text-lg mr-1">4.5</Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-platinum text-lg mr-1">
+            4.5
+          </Text>
           <Image source={StarYellowSmallImage} />
         </View>
       </View>

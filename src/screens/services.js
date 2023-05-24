@@ -12,11 +12,19 @@ const ServicesScreen = ({navigation}) => {
   return (
     <View className="bg-white h-full">
       <View className="mx-3 h-full">
-        <Text className="mt-10 text-3xl font-bold text-chineseblack text-center">
+        <Text
+          style={{
+            fontFamily: 'Comfortaa-Bold',
+          }}
+          className="mt-10 text-3xl text-chineseblack text-center">
           Servicios
         </Text>
         <View className="mt-5">
-          <Text className="text-platinum text-lg">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-platinum text-lg">
             Cómo ayudaremos al mundo?
           </Text>
           <ScrollView className="mt-10 h-4/6">
@@ -46,7 +54,13 @@ const ServicesScreen = ({navigation}) => {
         <TouchableHighlight
           className="bg-blueberry py-4 rounded-full absolute bottom-10 w-full justify-center items-center"
           onPress={() => {}}>
-          <Text className="text-xl font-bold text-white">Confirmar</Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Bold',
+            }}
+            className="text-xl text-white">
+            Confirmar
+          </Text>
         </TouchableHighlight>
       </View>
     </View>

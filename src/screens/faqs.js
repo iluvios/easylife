@@ -60,8 +60,20 @@ const FaqsScreen = ({navigation}) => {
         style={{
           backgroundColor: 'rgba(181, 181, 181, 0.3)',
         }}>
-        <Text className="text-chineseblack text-xl font-bold">{question}</Text>
-        <Text className="mt-3 text-chineseblack text-base">{description}</Text>
+        <Text
+          style={{
+            fontFamily: 'Manrope-Bold',
+          }}
+          className="text-chineseblack text-xl">
+          {question}
+        </Text>
+        <Text
+          style={{
+            fontFamily: 'Manrope-Regular',
+          }}
+          className="mt-3 text-chineseblack text-base">
+          {description}
+        </Text>
       </View>
     );
   };
@@ -77,11 +89,19 @@ const FaqsScreen = ({navigation}) => {
             className="rounded-xl p-1 w-12 h-12 shadow-2xl shadow-blueberry bg-white flex justify-center items-center">
             <IconImageComponent image={ArrowLeftIcon} height={40} width={40} />
           </TouchableHighlight>
-          <Text className="text-3xl font-bold text-chineseblack ml-5">
+          <Text
+            style={{
+              fontFamily: 'Comfortaa-Bold',
+            }}
+            className="text-3xl text-chineseblack ml-5">
             FAQs
           </Text>
         </View>
-        <Text className="mt-12 text-chineseblack text-xl font-bold">
+        <Text
+          style={{
+            fontFamily: 'Manrope-Bold',
+          }}
+          className="mt-12 text-chineseblack text-xl">
           Preguntas? tenemos <Text className="text-blueberry">respuestas</Text>{' '}
           al instante
         </Text>
@@ -97,7 +117,12 @@ const FaqsScreen = ({navigation}) => {
                   borderWidth: 1,
                 }}>
                 <Text
-                  className={` font-bold text-lg px-4 text-center ${
+                  style={{
+                    fontFamily: categoriesState[key].state
+                      ? 'Manrope-Bold'
+                      : 'Manrope-Regular',
+                  }}
+                  className={`text-lg px-4 text-center ${
                     categoriesState[key].state ? 'text-white' : 'text-turquoise'
                   }`}>
                   {categoriesState[key].label}

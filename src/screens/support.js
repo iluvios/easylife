@@ -36,7 +36,11 @@ const SupportScreen = ({navigation}) => {
     switch (id) {
       case 1:
         return (
-          <Text className="text-platinum text-base">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-platinum text-base">
             Cuéntanoslo y lo solucionamos, así de{' '}
             <Text className="text-blueberry">easy</Text>.
           </Text>
@@ -44,10 +48,11 @@ const SupportScreen = ({navigation}) => {
       case 2:
         return (
           <Text
-            className="text-platinum text-base"
             style={{
+              fontFamily: 'Manrope-Regular',
               maxWidth: 270,
-            }}>
+            }}
+            className="text-platinum text-base">
             Encuentra respuestas inteligentes muy{' '}
             <Text className="text-blueberry">easy</Text>.
           </Text>
@@ -55,10 +60,11 @@ const SupportScreen = ({navigation}) => {
       case 3:
         return (
           <Text
-            className="text-platinum text-base"
             style={{
+              fontFamily: 'Manrope-Regular',
               maxWidth: 270,
-            }}>
+            }}
+            className="text-platinum text-base">
             Obtén una solución <Text className="text-blueberry">easy</Text> a tu
             bandeja de entrada.
           </Text>
@@ -78,7 +84,13 @@ const SupportScreen = ({navigation}) => {
             <Image source={iconImage} />
           </View>
           <View className="flex-col ml-5">
-            <Text className="text-chineseblack font-bold text-xl">{title}</Text>
+            <Text
+              style={{
+                fontFamily: 'Manrope-Bold',
+              }}
+              className="text-chineseblack text-xl">
+              {title}
+            </Text>
             <View
               style={{
                 maxWidth: 270,
@@ -111,14 +123,28 @@ const SupportScreen = ({navigation}) => {
                 width={40}
               />
             </TouchableHighlight>
-            <Text className="ml-5 text-white text-3xl font-bold">
+            <Text
+              style={{
+                fontFamily: 'Comfortaa-Bold',
+              }}
+              className="ml-5 text-white text-3xl">
               Necesitas ayuda?
             </Text>
           </View>
           <View className="justify-center items-center mt-12">
             <Image source={HeartCircle} />
-            <Text className="mt-1 text-white text-xl font-bold">24/7</Text>
-            <Text className="mt-1 text-white text-3xl font-bold">
+            <Text
+              style={{
+                fontFamily: 'Comfortaa-Bold',
+              }}
+              className="mt-1 text-white text-xl">
+              24/7
+            </Text>
+            <Text
+              style={{
+                fontFamily: 'Comfortaa-Bold',
+              }}
+              className="mt-1 text-white text-3xl">
               Centro de ayuda
             </Text>
           </View>
@@ -135,7 +161,11 @@ const SupportScreen = ({navigation}) => {
         <View className="bg-white min-h-fit rounded-tr-3xl rounded-tl-3xl">
           <View className="mx-3">
             <View>
-              <Text className="mt-8 text-chineseblack font-bold text-xl">
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Bold',
+                }}
+                className="mt-8 text-chineseblack text-xl">
                 Dinos como podemos ayudarte
               </Text>
               <View className="mt-10">

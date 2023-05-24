@@ -64,7 +64,11 @@ const RegisterScreen = ({navigation}) => {
           </Animatable.View>
         </View>
         <Animatable.View animation="fadeIn">
-          <Text className="text-center text-3xl font-bold text-black my-10 leading-8">
+          <Text
+            style={{
+              fontFamily: 'Comfortaa-Bold',
+            }}
+            className="text-center text-3xl text-black my-10 leading-8">
             Registrarme
           </Text>
           <View className="mx-3">
@@ -88,7 +92,7 @@ const RegisterScreen = ({navigation}) => {
                 placeholderTextColor={platinum}
                 onChangeText={value => handleChangeInput('name', value)}
                 style={{
-                  fontFamily: 'Comfortaa',
+                  fontFamily: 'Manrope-Regular',
                 }}
               />
             </View>
@@ -113,7 +117,7 @@ const RegisterScreen = ({navigation}) => {
                 placeholderTextColor={platinum}
                 onChangeText={value => handleChangeInput('email', value)}
                 style={{
-                  fontFamily: 'Comfortaa',
+                  fontFamily: 'Manrope-Regular',
                 }}
               />
             </View>
@@ -138,7 +142,7 @@ const RegisterScreen = ({navigation}) => {
                 placeholderTextColor={platinum}
                 onChangeText={value => handleChangeInput('password', value)}
                 style={{
-                  fontFamily: 'Comfortaa',
+                  fontFamily: 'Manrope-Regular',
                 }}
               />
             </View>
@@ -146,19 +150,32 @@ const RegisterScreen = ({navigation}) => {
               <TouchableHighlight
                 className="bg-blueberry mt-10 py-4 rounded-full flex justify-center items-center"
                 onPress={handleToggleModal}>
-                <Text className="text-xl font-bold text-white">Continuar</Text>
+                <Text
+                  style={{
+                    fontFamily: 'Manrope-Bold',
+                  }}
+                  className="text-xl text-white">
+                  Continuar
+                </Text>
               </TouchableHighlight>
             </Animatable.View>
             <View className="mt-4 flex flex-row py-5 justify-center items-center">
               <View className="w-2/6 border-t border-x-platinum border-platinum" />
-              <Text className="mx-4 text-platinum text-lg">Ingresa con</Text>
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
+                className="mx-4 text-platinum text-lg">
+                Ingresa con
+              </Text>
               <View className="w-2/6 border-t border-x-platinum border-platinum" />
             </View>
             <Animatable.View
               animation="fadeInRight"
               className="flex flex-row justify-between items-center">
               <TouchableHighlight
-                className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
+                className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry w-12 h-12"
+                style={{borderWidth: 1}}
                 onPress={() => navigation.navigate(register)}>
                 <IconImageComponent
                   image={FacebookIcon}
@@ -168,7 +185,8 @@ const RegisterScreen = ({navigation}) => {
                 />
               </TouchableHighlight>
               <TouchableHighlight
-                className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
+                className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry w-12 h-12"
+                style={{borderWidth: 1}}
                 onPress={() => navigation.navigate(register)}>
                 <IconImageComponent
                   image={GoogleIcon}
@@ -178,7 +196,8 @@ const RegisterScreen = ({navigation}) => {
                 />
               </TouchableHighlight>
               <TouchableHighlight
-                className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
+                className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry w-12 h-12"
+                style={{borderWidth: 1}}
                 onPress={() => navigation.navigate(register)}>
                 <IconImageComponent
                   image={AppleIcon}
@@ -189,9 +208,14 @@ const RegisterScreen = ({navigation}) => {
               </TouchableHighlight>
             </Animatable.View>
             <TouchableHighlight
-              className="bg-white my-10 py-4 rounded-full flex justify-center items-center border-turquoise border-2"
+              className="bg-white my-10 py-4 rounded-full flex justify-center items-center border-turquoise"
+              style={{borderWidth: 1}}
               onPress={() => navigation.navigate(register)}>
-              <Text className="text-xl font-bold text-turquoise">
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Bold',
+                }}
+                className="text-xl text-turquoise">
                 Ya tengo cuenta
               </Text>
             </TouchableHighlight>
@@ -202,15 +226,26 @@ const RegisterScreen = ({navigation}) => {
         isVisible={isModalVisible}
         handleBackButtonPress={handleToggleModal}
         handleBackdropPress={handleToggleModal}>
-        <Text className="mt-8 text-black text-3xl text-center font-bold">
+        <Text
+          style={{
+            fontFamily: 'Comfortaa-Bold',
+          }}
+          className="mt-8 text-black text-3xl text-center">
           Atención
         </Text>
-        <Text className="text-chineseblack text-lg my-6 text-center">
+        <Text
+          style={{
+            fontFamily: 'Manrope-Regular',
+          }}
+          className="text-chineseblack text-lg my-6 text-center">
           Al registrarte aceptas los terminos y condiciones con los que operamos
           para ofrecerte el mejor servicio, si deseas conocer tus derechos, los
           terminos y/ó condiciones de la plataforma visita el siguiente link.
         </Text>
         <Text
+          style={{
+            fontFamily: 'Manrope-Regular',
+          }}
           onPress={() => {
             handleToggleModal();
             navigation.navigate(terms);
@@ -218,13 +253,26 @@ const RegisterScreen = ({navigation}) => {
           className="mb-10 text-blueberry text-lg text-center">
           Mis derechos, términos y condiciones
         </Text>
-        <Text className="text-chineseblack text-lg text-center">
+        <Text
+          style={{
+            fontFamily: 'Manrope-Regular',
+          }}
+          className="text-chineseblack text-lg text-center">
           Puedes revisarlo en cualquier momento en:
         </Text>
-        <Text className="text-platinum text-lg text-center">
-          {'Mi perfil > Mis derechos > Términos y condiciones'}
+        <Text
+          style={{
+            fontFamily: 'Manrope-Regular',
+          }}
+          className="text-platinum text-lg text-center">
+          Mi perfil <Text className="text-turquoise">{'>'}</Text>
+          Mis derechos <Text className="text-turquoise">{'>'}</Text>
+          Términos y condiciones
         </Text>
         <Text
+          style={{
+            fontFamily: 'Manrope-Regular',
+          }}
           onPress={handleToggleModal}
           className="text-blueberry text-lg text-center mt-6 mb-8">
           Aceptar y continuar

@@ -1,12 +1,5 @@
 import React, {useState} from 'react';
-import {
-  Text,
-  View,
-  ScrollView,
-  TouchableOpacity,
-  TouchableHighlight,
-  Image,
-} from 'react-native';
+import {Text, View, ScrollView, TouchableHighlight, Image} from 'react-native';
 import ConductorImage from '../assets/images/services/conductor.png';
 import TaskImage from '../assets/images/task.png';
 import IconImageComponent from '../components/iconImage';
@@ -18,13 +11,7 @@ import AddIcon from '../assets/icons/add.png';
 import CalendarSmallIcon from '../assets/icons/calendar-small.png';
 import ClockSmallIcon from '../assets/icons/clock.png';
 import {StackActions} from '@react-navigation/native';
-import {
-  requestService,
-  schedule,
-  services,
-  formateDate,
-  formateTime,
-} from '../util/const';
+import {services, formateDate, formateTime} from '../util/const';
 import {green, blueberry, platinum} from '../assets/styles/const';
 const popAction = StackActions.pop(1);
 
@@ -129,12 +116,19 @@ const ScheduledScreen = ({navigation}) => {
         key={id}
         className="bg-white rounded-3xl mb-5 flex-col py-2 px-3 shadow-md shadow-black items-center">
         <View className="flex-row justify-between w-full">
-          <Text className="text-xl text-chineseblack font-bold">{service}</Text>
           <Text
-            className="text-base font-bold"
             style={{
+              fontFamily: 'Manrope-Bold',
+            }}
+            className="text-xl text-chineseblack">
+            {service}
+          </Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Bold',
               color: imageColor,
-            }}>
+            }}
+            className="text-base ">
             {state}
           </Text>
         </View>
@@ -156,7 +150,8 @@ const ScheduledScreen = ({navigation}) => {
               <Text
                 className="ml-1 text-lg text-chineseblack"
                 style={{
-                  maxWidth: 200,
+                  fontFamily: 'Manrope-Regular',
+                  maxWidth: 217,
                 }}>
                 {address}
               </Text>
@@ -169,7 +164,11 @@ const ScheduledScreen = ({navigation}) => {
                     width={24}
                     height={24}
                   />
-                  <Text className="ml-1 text-chineseblack text-lg">
+                  <Text
+                    style={{
+                      fontFamily: 'Manrope-Regular',
+                    }}
+                    className="ml-1 text-chineseblack text-lg">
                     {formateDate(date)}
                   </Text>
                 </View>
@@ -180,13 +179,23 @@ const ScheduledScreen = ({navigation}) => {
                     width={24}
                     height={24}
                   />
-                  <Text className="ml-1 text-chineseblack text-lg">
+                  <Text
+                    style={{
+                      fontFamily: 'Manrope-Regular',
+                    }}
+                    className="ml-1 text-chineseblack text-lg">
                     {formateTime(date)}
                   </Text>
                 </View>
               </View>
             )}
-            <Text className="mt-1 text-lg text-chineseblack">{total}</Text>
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="mt-1 text-lg text-chineseblack">
+              {total}
+            </Text>
             <View className="mt-1 flex flex-row items-center">
               <IconImageComponent
                 image={iconImage}
@@ -194,7 +203,11 @@ const ScheduledScreen = ({navigation}) => {
                 width={20}
                 color={platinum}
               />
-              <Text className="ml-2 text-lg text-platinum">
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
+                className="ml-2 text-lg text-platinum">
                 {paymentMethod}
               </Text>
             </View>
@@ -215,7 +228,11 @@ const ScheduledScreen = ({navigation}) => {
             className="rounded-xl p-1 w-12 h-12 shadow-2xl shadow-blueberry bg-white flex justify-center items-center">
             <IconImageComponent image={ArrowLeftIcon} height={40} width={40} />
           </TouchableHighlight>
-          <Text className="text-3xl font-bold text-chineseblack ml-5">
+          <Text
+            style={{
+              fontFamily: 'Comfortaa-Bold',
+            }}
+            className="text-3xl text-chineseblack ml-5">
             Mis servicios
           </Text>
         </View>
@@ -251,12 +268,19 @@ const ScheduledScreen = ({navigation}) => {
             <View className="mt-12 flex justify-center items-center">
               <Image source={TaskImage} />
             </View>
-            <Text className="mt-5 text-platinum text-center text-xl">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="mt-5 text-platinum text-center text-xl">
               Sin servicios agendados
             </Text>
             <View className="flex-row justify-center items-center absolute bottom-14 w-full">
               <IconImageComponent image={AddIcon} width={24} height={24} />
               <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
                 onPress={() => navigation.navigate(services)}
                 className="ml-3 text-xl text-blueberry">
                 Programar nuevo servicio

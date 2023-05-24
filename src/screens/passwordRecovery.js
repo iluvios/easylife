@@ -38,29 +38,63 @@ const PasswordRecoveryScreen = ({navigation}) => {
             className="rounded-xl p-1 w-12 h-12 shadow-2xl shadow-blueberry bg-white flex justify-center items-center">
             <IconImageComponent image={ArrowLeftIcon} height={40} width={40} />
           </TouchableHighlight>
-          <Text className="text-xl font-bold text-black ml-5">
+          <Text
+            style={{
+              fontFamily: 'Comfortaa-Bold',
+            }}
+            className="text-xl text-black ml-5">
             Recuperar contraseña
           </Text>
         </View>
         <View>
-          <Text className="mt-12 mb-8 text-base text-black">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="mt-12 mb-8 text-base text-black">
             El proceso es muy <Text className="text-blueberry">easy</Text>
           </Text>
-          <Text className="text-chineseblack text-base mb-1">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-chineseblack text-base mb-1">
             1. Ingresa tu número de celular.
           </Text>
-          <Text className="text-chineseblack text-base">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-chineseblack text-base">
             2. Te enviamos un código via{' '}
-            <Text className="text-green font-bold">Whatsapp</Text>.
+            <Text
+              style={{
+                fontFamily: 'Manrope-Bold',
+              }}
+              className="text-green">
+              Whatsapp
+            </Text>
+            .
           </Text>
-          <Text className="text-chineseblack text-sm ml-5 mb-1">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-chineseblack text-xs ml-5 mb-1">
             No lo compartas con nadie
           </Text>
-          <Text className="text-chineseblack text-base">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-chineseblack text-base">
             3. Lo ingresas y escribes tu nueva contraseña.
           </Text>
 
           <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
             onPress={handleToggleRecoveryWithPhone}
             className="mt-10 text-base text-blueberry">
             {isRecoveryWithPhone
@@ -81,6 +115,9 @@ const PasswordRecoveryScreen = ({navigation}) => {
                 />
               </View>
               <TextInput
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
                 onFocus={() => setIsEmailClicked(true)}
                 onBlur={() => setIsEmailClicked(false)}
                 keyboardType="email-address"
@@ -88,9 +125,6 @@ const PasswordRecoveryScreen = ({navigation}) => {
                 placeholder="Correo electrónico"
                 placeholderTextColor={platinum}
                 onChangeText={value => handlePhoneChange(value)}
-                style={{
-                  fontFamily: 'Comfortaa',
-                }}
               />
             </View>
           ) : (
@@ -106,6 +140,9 @@ const PasswordRecoveryScreen = ({navigation}) => {
                 />
               </View>
               <TextInput
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
                 onFocus={() => setIsPhoneClicked(true)}
                 onBlur={() => setIsPhoneClicked(false)}
                 keyboardType="phone-pad"
@@ -113,9 +150,6 @@ const PasswordRecoveryScreen = ({navigation}) => {
                 placeholder="Celular"
                 placeholderTextColor={platinum}
                 onChangeText={value => handlePhoneChange(value)}
-                style={{
-                  fontFamily: 'Comfortaa',
-                }}
               />
             </View>
           )}
@@ -123,7 +157,13 @@ const PasswordRecoveryScreen = ({navigation}) => {
           <TouchableHighlight
             className="bg-blueberry py-4 rounded-full flex justify-center items-center"
             onPress={() => navigation.navigate(passwordCode)}>
-            <Text className="text-xl font-bold text-white">Iniciar</Text>
+            <Text
+              style={{
+                fontFamily: 'Manrope-Bold',
+              }}
+              className="text-xl text-white">
+              Iniciar
+            </Text>
           </TouchableHighlight>
         </View>
       </View>

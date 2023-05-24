@@ -72,10 +72,18 @@ const CanceledServiceScreen = ({navigation}) => {
             <View className="mt-5">
               {isPanelVisible && (
                 <Animatable.View animation="fadeInUp">
-                  <Text className="mt-5 text-red font-bold text-3xl text-center">
+                  <Text
+                    style={{
+                      fontFamily: 'Manrope-Bold',
+                    }}
+                    className="mt-5 text-red text-3xl text-center">
                     Servicio cancelado
                   </Text>
-                  <Text className="text-chineseblack text-xl mt-5">
+                  <Text
+                    style={{
+                      fontFamily: 'Manrope-Regular',
+                    }}
+                    className="text-chineseblack text-xl mt-5">
                     Cuál fue la razón de la cancelación? queremos mejorar pora
                     tí.
                   </Text>
@@ -88,7 +96,11 @@ const CanceledServiceScreen = ({navigation}) => {
                         handleToggleCheckbox('delayedService', newValue)
                       }
                     />
-                    <Text className="ml-1 text-xl text-platinum">
+                    <Text
+                      style={{
+                        fontFamily: 'Manrope-Regular',
+                      }}
+                      className="ml-1 text-xl text-platinum">
                       Servicio demorado, tengo afán
                     </Text>
                   </View>
@@ -101,7 +113,11 @@ const CanceledServiceScreen = ({navigation}) => {
                         handleToggleCheckbox('iSolved', newValue)
                       }
                     />
-                    <Text className="ml-1 text-xl text-platinum">
+                    <Text
+                      style={{
+                        fontFamily: 'Manrope-Regular',
+                      }}
+                      className="ml-1 text-xl text-platinum">
                       Ya solucioné el problema
                     </Text>
                   </View>
@@ -114,14 +130,25 @@ const CanceledServiceScreen = ({navigation}) => {
                         handleToggleCheckbox('neverArrived', newValue)
                       }
                     />
-                    <Text className="ml-1 text-xl text-platinum">
+                    <Text
+                      style={{
+                        fontFamily: 'Manrope-Regular',
+                      }}
+                      className="ml-1 text-xl text-platinum">
                       El servicio nunca llegó
                     </Text>
                   </View>
-                  <Text className="ml-2 text-xl text-platinum">
+                  <Text
+                    style={{
+                      fontFamily: 'Manrope-Regular',
+                    }}
+                    className="ml-2 text-xl text-platinum">
                     Otra razón, cuentanos
                   </Text>
                   <Animatable.Text
+                    style={{
+                      fontFamily: 'Manrope-Regular',
+                    }}
                     animation="fadeInLeft"
                     onPress={() => {
                       navigation.navigate(home);

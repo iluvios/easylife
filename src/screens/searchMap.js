@@ -53,7 +53,11 @@ const SearchMapScreen = ({navigation}) => {
           </View>
           <View className="mt-5">
             <View className="mx-8 bg-white rounded-3xl justify-center items-center z-10">
-              <Text className="my-7 mx-9 text-blueberry text-3xl">
+              <Text
+                style={{
+                  fontFamily: 'Comfortaa-Bold',
+                }}
+                className="my-7 text-blueberry text-3xl">
                 Buscando easys
               </Text>
             </View>
@@ -81,15 +85,33 @@ const SearchMapScreen = ({navigation}) => {
             <View className="mt-5">
               {isPanelVisible && (
                 <View>
-                  <Text className="text-platinum text-xl">
+                  <Text
+                    style={{
+                      fontFamily: 'Manrope-Regular',
+                    }}
+                    className="text-platinum text-xl">
                     Detalles del servicio
                   </Text>
-                  <Text className="mt-5 text-chineseblack font-bold text-xl">
+                  <Text
+                    style={{
+                      fontFamily: 'Manrope-Bold',
+                    }}
+                    className="mt-5 text-chineseblack text-xl">
                     Conductor elegido
                   </Text>
-                  <Text className="text-platinum text-lg mt-3">Precio</Text>
+                  <Text
+                    style={{
+                      fontFamily: 'Manrope-Regular',
+                    }}
+                    className="text-platinum text-lg mt-3">
+                    Precio
+                  </Text>
                   <View className="flex-row justify-between mt-3">
-                    <Text className="text-chineseblack text-lg font-bold">
+                    <Text
+                      style={{
+                        fontFamily: 'Manrope-Bold',
+                      }}
+                      className="text-chineseblack text-lg">
                       $ 120.000 cop
                     </Text>
                     <View className="mr-3 flex-row justify-center items-center">
@@ -99,12 +121,22 @@ const SearchMapScreen = ({navigation}) => {
                         height={24}
                         color={platinum}
                       />
-                      <Text className="ml-1 text-platinum text-lg">
+                      <Text
+                        style={{
+                          fontFamily: 'Manrope-Regular',
+                        }}
+                        className="ml-1 text-platinum text-lg">
                         Efectivo
                       </Text>
                     </View>
                   </View>
-                  <Text className="text-platinum text-lg mt-3">Conductor</Text>
+                  <Text
+                    style={{
+                      fontFamily: 'Manrope-Regular',
+                    }}
+                    className="text-platinum text-lg mt-3">
+                    Conductor
+                  </Text>
                   <View className="flex-row mt-3">
                     <LinearGradient
                       className="rounded-full w-8 h-8 justify-center items-center"
@@ -119,13 +151,20 @@ const SearchMapScreen = ({navigation}) => {
                         }}
                       />
                     </LinearGradient>
-                    <Text className="ml-3 text-chineseblack font-bold text-xl">
+                    <Text
+                      style={{
+                        fontFamily: 'Manrope-Bold',
+                      }}
+                      className="ml-3 text-chineseblack text-xl">
                       Buscando...
                     </Text>
                   </View>
                   <Text
+                    style={{
+                      fontFamily: 'Manrope-Bold',
+                    }}
                     onPress={() => navigation.navigate(onTheWayMap)}
-                    className="text-platinum font-bold text-2xl text-center mt-10 mb-7">
+                    className="text-platinum text-2xl text-center mt-10 mb-7">
                     Cancelar servicio
                   </Text>
                 </View>

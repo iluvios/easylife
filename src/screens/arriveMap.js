@@ -53,7 +53,11 @@ const ArriveMapScreen = ({navigation}) => {
           </View>
           <View className="mt-5">
             <View className="mx-8 bg-white rounded-3xl justify-center items-center z-10">
-              <Text className="my-7 mx-9 text-blueberry text-3xl">
+              <Text
+                style={{
+                  fontFamily: 'Comfortaa-Bold',
+                }}
+                className="my-7 text-blueberry text-3xl">
                 easy llegó
               </Text>
             </View>
@@ -87,10 +91,18 @@ const ArriveMapScreen = ({navigation}) => {
             <View className="mt-5">
               {isPanelVisible && (
                 <View>
-                  <Text className="mt-5 text-chineseblack font-bold text-xl">
+                  <Text
+                    style={{
+                      fontFamily: 'Manrope-Bold',
+                    }}
+                    className="mt-5 text-chineseblack text-xl">
                     easy se encuantra en la ubicación
                   </Text>
-                  <Text className="text-platinum text-xl mt-5">
+                  <Text
+                    style={{
+                      fontFamily: 'Manrope-Regular',
+                    }}
+                    className="text-platinum text-xl mt-5">
                     El servicio se cancela en 4:53 min
                   </Text>
                   <View className="flex-row justify-center items-center my-5">

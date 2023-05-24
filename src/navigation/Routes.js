@@ -22,8 +22,8 @@ const toastConfig = {
       contentContainerStyle={{paddingHorizontal: 60}}
       text1Style={{
         fontSize: 20,
-        fontWeight: '700',
         color: white,
+        fontFamily: 'Manrope-Bold',
       }}
     />
   ),

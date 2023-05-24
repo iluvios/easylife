@@ -85,7 +85,11 @@ const LoginScreen = ({navigation}) => {
       if (option.active) {
         return (
           <View key={index}>
-            <Text className="mt-8 text-black text-xl text-center font-bold">
+            <Text
+              style={{
+                fontFamily: 'Comfortaa-Bold',
+              }}
+              className="mt-8 text-black text-xl text-center">
               Ingresa <Text className="text-blueberry">easy</Text>
             </Text>
             <View className="mt-6 justify-center items-center">
@@ -93,6 +97,9 @@ const LoginScreen = ({navigation}) => {
             </View>
             <View className="mt-6 mb-8 mx-3 ">
               <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
                 onPress={handleToggleModal}
                 className="text-chineseblack text-lg text-center">
                 {option.message}
@@ -113,7 +120,11 @@ const LoginScreen = ({navigation}) => {
         </Animatable.View>
       </View>
       <Animatable.View animation="fadeIn">
-        <Text className="text-center text-3xl font-bold text-black my-10 leading-8">
+        <Text
+          style={{
+            fontFamily: 'Comfortaa-Bold',
+          }}
+          className="text-center text-3xl text-black my-10 leading-8">
           Iniciar sesión
         </Text>
         <View className="mx-3">
@@ -129,6 +140,9 @@ const LoginScreen = ({navigation}) => {
               />
             </View>
             <TextInput
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
               onFocus={() => setIsEmailClicked(true)}
               onBlur={() => setIsEmailClicked(false)}
               autoCapitalize="none"
@@ -137,13 +151,10 @@ const LoginScreen = ({navigation}) => {
               placeholder="Correo electronico"
               placeholderTextColor={platinum}
               onChangeText={value => handleChangeInput('email', value)}
-              style={{
-                fontFamily: 'Comfortaa',
-              }}
             />
           </View>
           <View
-            className={`mt-5 flex flex-row justify-center items-center appearance-none border rounded-md w-full leading-tight focus:outline-none focus:shadow-outline 
+            className={`mt-5 flex flex-row justify-center items-center appearance-none border rounded-xl w-full leading-tight focus:outline-none focus:shadow-outline 
           ${isPasswordClicked ? 'border-blueberry' : 'border-platinum'}`}>
             <View className="pl-4">
               <IconImageComponent
@@ -154,6 +165,9 @@ const LoginScreen = ({navigation}) => {
               />
             </View>
             <TextInput
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
               onFocus={() => setIsPasswordClicked(true)}
               onBlur={() => setIsPasswordClicked(false)}
               autoCorrect={false}
@@ -162,13 +176,13 @@ const LoginScreen = ({navigation}) => {
               placeholder="Contraseña"
               placeholderTextColor={platinum}
               onChangeText={value => handleChangeInput('password', value)}
-              style={{
-                fontFamily: 'Comfortaa',
-              }}
             />
           </View>
           <View className="pt-6 pl-1">
             <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
               onPress={() => navigation.navigate(passwordRecovery)}
               className="text-base text-blueberry">
               Recuperar contraseña
@@ -177,26 +191,44 @@ const LoginScreen = ({navigation}) => {
           <TouchableHighlight
             className="bg-blueberry mt-10 py-4 rounded-full flex justify-center items-center"
             onPress={() => navigation.navigate(register)}>
-            <Text className="text-xl font-bold text-white">Entrar</Text>
+            <Text
+              style={{
+                fontFamily: 'Manrope-Bold',
+              }}
+              className="text-xl text-white">
+              Entrar
+            </Text>
           </TouchableHighlight>
           <View className="mt-4 flex flex-row py-5 justify-center items-center">
             <View className="w-2/6 border-t border-x-platinum border-platinum" />
-            <Text className="mx-4 text-platinum text-lg">Ingresa con</Text>
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="mx-4 text-platinum text-lg">
+              Ingresa con
+            </Text>
             <View className="w-2/6 border-t border-x-platinum border-platinum" />
           </View>
           <View className="flex flex-row justify-between items-center">
             <TouchableHighlight
-              className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
+              className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry w-12 h-12"
+              style={{
+                borderWidth: 1,
+              }}
               onPress={() => navigation.navigate(register)}>
               <IconImageComponent
                 image={CellphoneIcon}
                 color={blueberry}
-                height={25}
-                width={25}
+                height={26}
+                width={26}
               />
             </TouchableHighlight>
             <TouchableHighlight
-              className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
+              className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry w-12 h-12"
+              style={{
+                borderWidth: 1,
+              }}
               onPress={() => {
                 setState({
                   facebookLogin: true,
@@ -208,12 +240,15 @@ const LoginScreen = ({navigation}) => {
               <IconImageComponent
                 image={FacebookIcon}
                 color={blueberry}
-                height={26}
+                height={25}
                 width={13}
               />
             </TouchableHighlight>
             <TouchableHighlight
-              className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
+              className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry w-12 h-12"
+              style={{
+                borderWidth: 1,
+              }}
               onPress={() => {
                 setState({
                   facebookLogin: false,
@@ -225,12 +260,15 @@ const LoginScreen = ({navigation}) => {
               <IconImageComponent
                 image={GoogleIcon}
                 color={blueberry}
-                height={23}
-                width={23}
+                height={25}
+                width={25}
               />
             </TouchableHighlight>
             <TouchableHighlight
-              className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry border-2 w-12 h-12"
+              className="bg-white p-3 rounded-md flex justify-center items-center border-blueberry w-12 h-12"
+              style={{
+                borderWidth: 1,
+              }}
               onPress={() => {
                 setState({
                   facebookLogin: false,
@@ -242,15 +280,19 @@ const LoginScreen = ({navigation}) => {
               <IconImageComponent
                 image={AppleIcon}
                 color={blueberry}
-                height={30}
-                width={23}
+                height={31}
+                width={24}
               />
             </TouchableHighlight>
           </View>
           <TouchableHighlight
             className="bg-white my-10 py-4 rounded-full flex justify-center items-center border-turquoise border-2"
             onPress={() => navigation.navigate(register)}>
-            <Text className="text-xl font-bold text-turquoise">
+            <Text
+              style={{
+                fontFamily: 'Manrope-Bold',
+              }}
+              className="text-xl text-turquoise">
               Soy proveedor
             </Text>
           </TouchableHighlight>
