@@ -1,0 +1,61 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Comfortaa-Bold.ttf",
+      "sha1": "25e88ec1e196a5c4b2bb90d1d4ec268a41fbcd87"
+    },
+    {
+      "path": "src/assets/fonts/Comfortaa-Light.ttf",
+      "sha1": "4566d459726b8bceffef8cf76dee59793056868d"
+    },
+    {
+      "path": "src/assets/fonts/Comfortaa-Medium.ttf",
+      "sha1": "0c568be4e4d75eaffb867e12b7b61b9d2f1cfb11"
+    },
+    {
+      "path": "src/assets/fonts/Comfortaa-Regular.ttf",
+      "sha1": "aa49d19d98f9a97d64c30eef325a5173359dcdd2"
+    },
+    {
+      "path": "src/assets/fonts/Comfortaa-SemiBold.ttf",
+      "sha1": "80628ca8ab68d1c06b822cd94367c079f23cbf6c"
+    },
+    {
+      "path": "src/assets/fonts/Comfortaa-VariableFont_wght.ttf",
+      "sha1": "b74ba103760891bc18f819dd9cbb1b32adb94745"
+    },
+    {
+      "path": "src/assets/fonts/Manrope-Bold.ttf",
+      "sha1": "6ac76705d556e62a621d382688851644f6ef8c5e"
+    },
+    {
+      "path": "src/assets/fonts/Manrope-ExtraBold.ttf",
+      "sha1": "354f38624776caf6ea35d04d8b23d66caed334db"
+    },
+    {
+      "path": "src/assets/fonts/Manrope-ExtraLight.ttf",
+      "sha1": "21fb00fbdba1f3c035398d3dbb75841805fb9783"
+    },
+    {
+      "path": "src/assets/fonts/Manrope-Light.ttf",
+      "sha1": "88b1a067d025a2a344406770a21e7cd67bca48ee"
+    },
+    {
+      "path": "src/assets/fonts/Manrope-Medium.ttf",
+      "sha1": "d8d99489be0842910ab8d185a5061c6f0016df82"
+    },
+    {
+      "path": "src/assets/fonts/Manrope-Regular.ttf",
+      "sha1": "9889c929884c8ae90aa507ff9fa9c94716b708b4"
+    },
+    {
+      "path": "src/assets/fonts/Manrope-SemiBold.ttf",
+      "sha1": "5a58a5ddc7415d660644b8ff233712d2122ad4dd"
+    },
+    {
+      "path": "src/assets/fonts/Manrope-VariableFont_wght.ttf",
+      "sha1": "17f562c3b7891010ca14b725b20b69aa42ef692e"
+    }
+  ]
+}
