@@ -10,8 +10,8 @@ const ServicesScreen = ({navigation}) => {
   const rowsArr = Array.from(Array(rows)).map((_, i) => i);
 
   return (
-    <View className="bg-white h-full">
-      <View className="mx-3 h-full">
+    <View className="bg-white h-full w-full">
+      <View className="h-full">
         <Text
           style={{
             fontFamily: 'Comfortaa-Bold',
@@ -24,7 +24,7 @@ const ServicesScreen = ({navigation}) => {
             style={{
               fontFamily: 'Manrope-Regular',
             }}
-            className="text-platinum text-lg">
+            className="text-platinum text-lg ml-3">
             Cómo ayudaremos al mundo?
           </Text>
           <ScrollView className="mt-10 h-4/6">
@@ -51,8 +51,10 @@ const ServicesScreen = ({navigation}) => {
             </View>
           </ScrollView>
         </View>
+      </View>
+      <View className="mx-3">
         <TouchableHighlight
-          className="bg-blueberry py-4 rounded-full absolute bottom-10 w-full justify-center items-center"
+          className="w-full bg-blueberry py-4 rounded-full absolute bottom-10 justify-center items-center"
           onPress={() => {}}>
           <Text
             style={{

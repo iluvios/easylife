@@ -25,7 +25,7 @@ import LocationIcon from '../assets/icons/location-small.png';
 import MoneyIcon from '../assets/icons/money-small.png';
 import {StackActions} from '@react-navigation/native';
 import {requestService, schedule} from '../util/const';
-import {platinum} from '../util/const';
+import {platinum} from '../assets/styles/const';
 
 const popAction = StackActions.pop(1);
 
@@ -97,7 +97,7 @@ const ServiceScreen = ({navigation}) => {
 
   const renderElement = (key, name, text) => {
     return (
-      <View className="flex-row justify-between items mt-5" key={key}>
+      <View className="flex-row items mt-5" key={key}>
         <View className="flex-row items-center">
           <Image
             source={name === 'isAddressContent' ? HomeOutline : MoneySmallImage}
@@ -105,6 +105,7 @@ const ServiceScreen = ({navigation}) => {
           <Text
             style={{
               fontFamily: 'Manrope-Regular',
+              maxWidth: 246,
             }}
             className="ml-3 text-chineseblack text-xl">
             {text}
@@ -114,7 +115,7 @@ const ServiceScreen = ({navigation}) => {
           style={{
             fontFamily: 'Manrope-Regular',
           }}
-          className="text-blueberry text-lg">
+          className="text-blueberry text-lg absolute right-1">
           Editar
         </Text>
       </View>
@@ -506,6 +507,7 @@ const ServiceScreen = ({navigation}) => {
           <Text
             style={{
               fontFamily: 'Comfortaa-Bold',
+              maxWidth: 323,
             }}
             className="text-3xl text-chineseblack ml-5">
             Conductor elegido
@@ -583,7 +585,7 @@ const ServiceScreen = ({navigation}) => {
                 <Text
                   className="ml-3 text-chineseblack text-xl"
                   style={{
-                    maxWidth: 250,
+                    maxWidth: 246,
                     fontFamily: 'Manrope-Regular',
                   }}>
                   Carrera 49, Cl. 7 Sur #50

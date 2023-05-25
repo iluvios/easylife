@@ -286,7 +286,9 @@ const LoginScreen = ({navigation}) => {
             </TouchableHighlight>
           </View>
           <TouchableHighlight
-            className="bg-white my-10 py-4 rounded-full flex justify-center items-center border-turquoise border-2"
+            className="bg-white my-10 py-4 rounded-full flex justify-center items-center border-turquoise" style={{
+              borderWidth: 1,
+            }}
             onPress={() => navigation.navigate(register)}>
             <Text
               style={{

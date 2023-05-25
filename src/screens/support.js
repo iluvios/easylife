@@ -127,7 +127,7 @@ const SupportScreen = ({navigation}) => {
               style={{
                 fontFamily: 'Comfortaa-Bold',
               }}
-              className="ml-5 text-white text-3xl">
+              className="ml-4 text-white text-3xl">
               Necesitas ayuda?
             </Text>
           </View>

@@ -102,7 +102,7 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
                 onFocus={() => handleFocusedCodeState('codeOne', true)}
                 onBlur={() => handleFocusedCodeState('codeOne', false)}
                 keyboardType="phone-pad"
-                className="text-sm ml-2 py-3 text-black "
+                className="text-sm py-3 text-black "
                 placeholder="___"
                 placeholderTextColor={platinum}
                 onChangeText={value => handlePhoneChange('codeOne', value)}
@@ -121,7 +121,7 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
                 onFocus={() => handleFocusedCodeState('codeTwo', true)}
                 onBlur={() => handleFocusedCodeState('codeTwo', false)}
                 keyboardType="phone-pad"
-                className="text-sm flex-1 ml-2 py-3 text-black"
+                className="text-sm flex-1 py-3 text-black"
                 placeholder="___"
                 placeholderTextColor={platinum}
                 onChangeText={value => handlePhoneChange('codeTwo', value)}
@@ -142,7 +142,7 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
                 onFocus={() => handleFocusedCodeState('codeThree', true)}
                 onBlur={() => handleFocusedCodeState('codeThree', false)}
                 keyboardType="phone-pad"
-                className="text-sm flex-1 ml-2 py-3 text-black"
+                className="text-sm flex-1 py-3 text-black"
                 placeholder="___"
                 placeholderTextColor={platinum}
                 onChangeText={value => handlePhoneChange('codeThree', value)}
@@ -161,7 +161,7 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
                 onFocus={() => handleFocusedCodeState('codeFour', true)}
                 onBlur={() => handleFocusedCodeState('codeFour', false)}
                 keyboardType="phone-pad"
-                className="text-sm flex-1 ml-2 py-3 text-black"
+                className="text-sm flex-1 py-3 text-black"
                 placeholder="___"
                 placeholderTextColor={platinum}
                 onChangeText={value => handlePhoneChange('codeFour', value)}
@@ -180,7 +180,7 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
                 onFocus={() => handleFocusedCodeState('codeFive', true)}
                 onBlur={() => handleFocusedCodeState('codeFive', false)}
                 keyboardType="phone-pad"
-                className="text-sm flex-1 ml-2 py-3 text-black"
+                className="text-sm flex-1 py-3 text-black"
                 placeholder="___"
                 placeholderTextColor={platinum}
                 onChangeText={value => handlePhoneChange('codeFive', value)}
@@ -199,7 +199,7 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
                 onFocus={() => handleFocusedCodeState('codeSix', true)}
                 onBlur={() => handleFocusedCodeState('codeSix', false)}
                 keyboardType="phone-pad"
-                className="text-sm flex-1 ml-2 py-3 text-black"
+                className="text-sm flex-1 py-3 text-black"
                 placeholder="___"
                 placeholderTextColor={platinum}
                 onChangeText={value => handlePhoneChange('codeSix', value)}
@@ -244,47 +244,49 @@ const CodeRecoveryPasswordScreen = ({navigation}) => {
         isVisible={isModalVisible}
         handleBackButtonPress={handleToggleModal}
         handleBackdropPress={handleToggleModal}>
-        <Text
-          style={{
-            fontFamily: 'Comfortaa-Bold',
-          }}
-          className="mt-8 text-black text-xl text-center">
-          Código reenviado
-        </Text>
-        <Text
-          style={{
-            fontFamily: 'Manrope-Regular',
-          }}
-          className="text-platinum text-lg my-3 text-center">
-          En breve recibiras un código al celular:
-        </Text>
-        <Text
-          style={{
-            fontFamily: 'Manrope-Regular',
-          }}
-          className="mb-10 text-blueberry text-xl text-center">
-          +57 305 3424910
-        </Text>
-        <View className="mb-8 mx-3 flex flex-row justify-between items-center">
+        <View className="mx-3">
           <Text
-            onPress={() => {
-              handleToggleModal();
-              navigation.navigate(passwordRecovery);
-            }}
             style={{
-              fontFamily: 'Manrope-Regular',
+              fontFamily: 'Comfortaa-Bold',
             }}
-            className="text-platinum text-lg">
-            Cambiar celular
+            className="mt-8 text-black text-xl text-center">
+            Código reenviado
           </Text>
           <Text
             style={{
               fontFamily: 'Manrope-Regular',
             }}
-            onPress={handleToggleModal}
-            className="text-blueberry text-lg">
-            Aceptar
+            className="text-platinum text-lg my-3 text-center">
+            En breve recibiras un código al celular:
           </Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="mb-10 text-blueberry text-xl text-center">
+            +57 305 3424910
+          </Text>
+          <View className="mb-8 flex flex-row justify-between items-center">
+            <Text
+              onPress={() => {
+                handleToggleModal();
+                navigation.navigate(passwordRecovery);
+              }}
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              className="text-platinum text-lg">
+              Cambiar celular
+            </Text>
+            <Text
+              style={{
+                fontFamily: 'Manrope-Regular',
+              }}
+              onPress={handleToggleModal}
+              className="text-blueberry text-lg">
+              Aceptar
+            </Text>
+          </View>
         </View>
       </ModalComponent>
     </View>

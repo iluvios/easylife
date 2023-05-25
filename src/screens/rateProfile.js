@@ -75,8 +75,12 @@ const RateProfileScreen = ({navigation}) => {
             }}
           />
         </LinearGradient>
-        <View className="ml-5">
-          <View className="flex-row justify-between">
+        <View className="ml-5 w-full">
+          <View
+            className="flex-row justify-between"
+            style={{
+              maxWidth: 260,
+            }}>
             <View className="flex-row justify-center items-center">
               <Text
                 style={{

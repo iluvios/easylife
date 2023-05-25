@@ -14,7 +14,7 @@ const CardWithIcon = ({image, title, isLast, navigate}) => {
       }`}
       style={{
         height: 113,
-        width: 123,
+        width: 127,
       }}>
       <View className="flex-col justify-center items-center">
         <View className="mt-2">

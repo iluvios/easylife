@@ -53,7 +53,7 @@ const LoadingScreen = ({navigation}) => {
         style={{
           fontFamily: 'Comfortaa-Bold',
         }}
-        className="text-platinum text-xl absolute bottom-20">
+        className="text-platinum text-xl absolute bottom-20 text-center mx-3">
         Estamos preparando todo para ti
       </Text>
     </View>

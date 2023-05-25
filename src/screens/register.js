@@ -233,50 +233,53 @@ const RegisterScreen = ({navigation}) => {
           className="mt-8 text-black text-3xl text-center">
           Atención
         </Text>
-        <Text
-          style={{
-            fontFamily: 'Manrope-Regular',
-          }}
-          className="text-chineseblack text-lg my-6 text-center">
-          Al registrarte aceptas los terminos y condiciones con los que operamos
-          para ofrecerte el mejor servicio, si deseas conocer tus derechos, los
-          terminos y/ó condiciones de la plataforma visita el siguiente link.
-        </Text>
-        <Text
-          style={{
-            fontFamily: 'Manrope-Regular',
-          }}
-          onPress={() => {
-            handleToggleModal();
-            navigation.navigate(terms);
-          }}
-          className="mb-10 text-blueberry text-lg text-center">
-          Mis derechos, términos y condiciones
-        </Text>
-        <Text
-          style={{
-            fontFamily: 'Manrope-Regular',
-          }}
-          className="text-chineseblack text-lg text-center">
-          Puedes revisarlo en cualquier momento en:
-        </Text>
-        <Text
-          style={{
-            fontFamily: 'Manrope-Regular',
-          }}
-          className="text-platinum text-lg text-center">
-          Mi perfil <Text className="text-turquoise">{'>'}</Text>
-          Mis derechos <Text className="text-turquoise">{'>'}</Text>
-          Términos y condiciones
-        </Text>
-        <Text
-          style={{
-            fontFamily: 'Manrope-Regular',
-          }}
-          onPress={handleToggleModal}
-          className="text-blueberry text-lg text-center mt-6 mb-8">
-          Aceptar y continuar
-        </Text>
+        <View className="mx-2">
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-chineseblack text-lg my-6 text-center">
+            Al registrarte aceptas los terminos y condiciones con los que
+            operamos para ofrecerte el mejor servicio, si deseas conocer tus
+            derechos, los terminos y/ó condiciones de la plataforma visita el
+            siguiente link.
+          </Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            onPress={() => {
+              handleToggleModal();
+              navigation.navigate(terms);
+            }}
+            className="mb-10 text-blueberry text-lg text-center">
+            Mis derechos, términos y condiciones
+          </Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-chineseblack text-lg text-center">
+            Puedes revisarlo en cualquier momento en:
+          </Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            className="text-platinum text-lg text-center">
+            Mi perfil <Text className="text-turquoise">{'>'}</Text>
+            Mis derechos <Text className="text-turquoise">{'>'}</Text>
+            Términos y condiciones
+          </Text>
+          <Text
+            style={{
+              fontFamily: 'Manrope-Regular',
+            }}
+            onPress={handleToggleModal}
+            className="text-blueberry text-lg text-center mt-6 mb-8">
+            Aceptar y continuar
+          </Text>
+        </View>
       </ModalComponent>
     </ScrollView>
   );

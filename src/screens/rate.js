@@ -49,24 +49,24 @@ const RateScreen = ({navigation}) => {
         ¿Cómo fue el servicio recibido?
       </Text>
       <View className="ml-3">
-        <View className="mt-10 flex-row">
+        <View className="mt-10 flex-row justify-between">
           <View className="mr-3">
             <Image source={EmojiSadImage} />
           </View>
-          <View className="mr-4">
+          <View className="mr-3">
             <Image source={StarYellow} />
           </View>
-          <View className="mr-4">
+          <View className="mr-3">
             <Image source={StarYellow} />
           </View>
-          <View className="mr-4">
+          <View className="mr-3">
             <Image source={StarYellow} />
           </View>
-          <View className="mr-4">
+          <View className="mr-3">
             <Image source={StarWhite} />
           </View>
           <Image source={StarWhite} />
-          <View className="ml-3">
+          <View className="ml-3 mr-2">
             <Image source={EmojiGoodImage} />
           </View>
         </View>

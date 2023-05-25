@@ -49,7 +49,7 @@ const TermsScreen = ({navigation}) => {
           <TouchableHighlight
             className={`${
               isPolicyOpen ? 'bg-white' : 'bg-skyblue'
-            } px-4 pb-1 rounded-full flex justify-center items-center`}
+            } px-2 pb-1 rounded-full flex justify-center items-center`}
             onPress={handleClosePolicy}>
             <Text
               style={{
@@ -64,7 +64,7 @@ const TermsScreen = ({navigation}) => {
           <TouchableHighlight
             className={`${
               isPolicyOpen ? 'bg-skyblue' : 'bg-white'
-            } px-4 pb-1 rounded-full flex justify-center items-center`}
+            } px-2 pb-1 rounded-full flex justify-center items-center`}
             onPress={handleOpenPolicy}>
             <Text
               style={{

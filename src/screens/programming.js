@@ -45,6 +45,7 @@ const ProgrammingScreen = ({navigation}) => {
           <Text
             style={{
               fontFamily: 'Comfortaa-Bold',
+              maxWidth: 331,
             }}
             className="text-3xl text-chineseblack ml-5">
             Programar servicio
@@ -58,8 +59,8 @@ const ProgrammingScreen = ({navigation}) => {
               width: 80,
             }}
           />
-          <View className="flex-row justify-between ml-2">
-            <View className="flex-col">
+          <View className="flex-col ml-3">
+            <View className="flex-row justify-between">
               <Text
                 style={{
                   fontFamily: 'Manrope-Bold',
@@ -67,31 +68,31 @@ const ProgrammingScreen = ({navigation}) => {
                 className="text-xl text-chineseblack">
                 Conductor elegido
               </Text>
-              <View className="flex-row justify-center items-center">
-                <Text
-                  style={{
-                    fontFamily: 'Manrope-Regular',
-                  }}
-                  className="text-xl text-platinum">
-                  Detalles del servicio
-                </Text>
-                <View className="ml-3">
-                  <IconImageComponent
-                    image={ArrowBottomBigIcon}
-                    height={7}
-                    width={15}
-                    color={platinum}
-                  />
-                </View>
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
+                className="ml-2 text-lg text-blueberry">
+                Cambiar
+              </Text>
+            </View>
+            <View className="flex-row items-center">
+              <Text
+                style={{
+                  fontFamily: 'Manrope-Regular',
+                }}
+                className="text-xl text-platinum">
+                Detalles del servicio
+              </Text>
+              <View className="ml-3">
+                <IconImageComponent
+                  image={ArrowBottomBigIcon}
+                  height={7}
+                  width={15}
+                  color={platinum}
+                />
               </View>
             </View>
-            <Text
-              style={{
-                fontFamily: 'Manrope-Regular',
-              }}
-              className="text-lg text-blueberry">
-              Cambiar
-            </Text>
           </View>
         </View>
         <View className="mt-10">
@@ -116,7 +117,7 @@ const ProgrammingScreen = ({navigation}) => {
                 <Text
                   className="ml-3 text-chineseblack text-xl"
                   style={{
-                    maxWidth: 250,
+                    maxWidth: 246,
                     fontFamily: 'Manrope-Regular',
                   }}>
                   Carrera 49, Cl. 7 Sur #50

@@ -73,7 +73,7 @@ const OnTheWayMapScreen = ({navigation}) => {
             </TouchableHighlight>
           </View>
           <View className="mt-5">
-            <View className="mx-8 bg-white rounded-3xl justify-center items-center z-10">
+            <View className="mx-6 bg-white rounded-3xl justify-center items-center z-10">
               <Text
                 style={{
                   fontFamily: 'Comfortaa-Bold',
@@ -225,12 +225,12 @@ const OnTheWayMapScreen = ({navigation}) => {
                       onPress={() => {
                         navigation.navigate(rateProfile);
                       }}
-                      className="ml-3 text-blueberry text-lg ">
+                      className="ml-2 text-blueberry text-lg ">
                       Profile
                     </Text>
                     <TouchableHighlight
                       onPress={() => navigation.navigate(arriveMap)}
-                      className="ml-4 justify-center items-center bg-blueberry rounded-full"
+                      className="ml-2 justify-center items-center bg-blueberry rounded-full"
                       style={{
                         width: 48,
                         height: 50,
@@ -238,7 +238,7 @@ const OnTheWayMapScreen = ({navigation}) => {
                       <Image source={PhoneWhiteImage} />
                     </TouchableHighlight>
                     <View
-                      className="ml-4 justify-center items-center bg-green rounded-full"
+                      className="ml-1 justify-center items-center bg-green rounded-full"
                       style={{
                         width: 48,
                         height: 50,

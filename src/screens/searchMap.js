@@ -52,7 +52,7 @@ const SearchMapScreen = ({navigation}) => {
             </TouchableHighlight>
           </View>
           <View className="mt-5">
-            <View className="mx-8 bg-white rounded-3xl justify-center items-center z-10">
+            <View className="mx-6 bg-white rounded-3xl justify-center items-center z-10">
               <Text
                 style={{
                   fontFamily: 'Comfortaa-Bold',
